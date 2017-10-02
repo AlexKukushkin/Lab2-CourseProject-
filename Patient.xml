@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<patient>
+    <address>Ростов-на-Дону, пр.Ворошиловский 10, 12</address>
+    <birthDay>19/06/1988</birthDay>
+    <familyName>Владимиров</familyName>
+    <firstName>Владимир</firstName>
+    <idPatient>11</idPatient>
+    <passport>B1110333</passport>
+    <polisNumber>1234567</polisNumber>
+    <registerLocation>г.Москва, ул.Пушкина 15, 1</registerLocation>
+    <SNILS>1000BCA</SNILS>
+    <secondName>Владимирович</secondName>
+    <sexType>male</sexType>
+</patient>

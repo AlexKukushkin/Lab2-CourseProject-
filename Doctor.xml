@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<doctor>
+    <familyName>Петров</familyName>
+    <firstName>Андрей</firstName>
+    <idDoctor>1</idDoctor>
+    <idSpecialization>1</idSpecialization>
+    <office>a102</office>
+    <secondName>Иванович</secondName>
+    <specialization>Хирургия</specialization>
+</doctor>
