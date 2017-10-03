@@ -138,15 +138,4 @@ public class Patient extends User{
         this.address = address;
         this.registerLocation = registerLocation;
     }
-
-    @Override
-    void logIn(String login) {
-        this.login = login;
-    }
-
-
-    @Override
-    void setPassword(String password) {
-        this.password = password;
-    }
 }

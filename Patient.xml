@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <patient>
+    <login>abc</login>
+    <password>abc</password>
     <address>Ростов-на-Дону, пр.Ворошиловский 10, 12</address>
     <birthDay>19/06/1988</birthDay>
     <familyName>Владимиров</familyName>

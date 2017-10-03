@@ -7,7 +7,7 @@ public class Main {
 
         Admin admin1 = new Admin("admin", "qwe123");
 
-        admin1.logIn("admin");
+        admin1.setLogin("admin");
         admin1.setPassword("qwe123");
 
         Patient patient1 = new Patient("abc", "abc", 11, "male", "Владимир",
