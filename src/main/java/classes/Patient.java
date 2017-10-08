@@ -2,22 +2,59 @@ package classes;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 
 @XmlRootElement
-public class Patient extends User{
+public class Patient extends User implements Serializable{
 
     private int idPatient;
-    private String sexType;
     private String firstName;
-    private String secondName;
     private String familyName;
-    private String birthDay;
-    private int polisNumber;
+    private String patronymic;
+    private String birthDate;
     private String passport;
     private String SNILS;
-    private String address;
+    private String medPolis;
     private String registerLocation;
+    private String address;
+    private String sexType;
+
+    public Patient(String login, String password, String firstName, String familyName, String patronymic,
+                   String birthDate, String passport, String SNILS, String medPolis,
+                   String registerLocation, String address, String sexType) {
+        super(login, password);
+        this.idPatient = 0;
+        this.firstName = firstName;
+        this.familyName = familyName;
+        this.patronymic = patronymic;
+        this.birthDate = birthDate;
+        this.passport = passport;
+        this.SNILS = SNILS;
+        this.medPolis = medPolis;
+        this.registerLocation = registerLocation;
+        this.address = address;
+        this.sexType = sexType;
+    }
+
+    public Patient(int idPatient, String firstName, String familyName, String patronymic,
+                   String birthDate, String passport, String SNILS, String medPolis, String registerLocation,
+                   String address, String sexType) {
+        this.idPatient = idPatient;
+        this.firstName = firstName;
+        this.familyName = familyName;
+        this.patronymic = patronymic;
+        this.birthDate = birthDate;
+        this.passport = passport;
+        this.SNILS = SNILS;
+        this.medPolis = medPolis;
+        this.registerLocation = registerLocation;
+        this.address = address;
+        this.sexType = sexType;
+    }
+
+    public Patient() {
+    }
 
     public int getIdPatient() {
         return idPatient;
@@ -46,15 +83,6 @@ public class Patient extends User{
         this.firstName = firstName;
     }
 
-    public String getSecondName() {
-        return secondName;
-    }
-
-    @XmlElement
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
-
     public String getFamilyName() {
         return familyName;
     }
@@ -64,22 +92,31 @@ public class Patient extends User{
         this.familyName = familyName;
     }
 
-    public String getBirthDay() {
-        return birthDay;
+    public String getPatronymic() {
+        return patronymic;
     }
 
     @XmlElement
-    public void setBirthDay(String birthDay) {
-        this.birthDay = birthDay;
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
     }
 
-    public int getPolisNumber() {
-        return polisNumber;
+    public String getBirthDate() {
+        return birthDate;
     }
 
     @XmlElement
-    public void setPolisNumber(int polisNumber) {
-        this.polisNumber = polisNumber;
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getMedPolis() {
+        return medPolis;
+    }
+
+    @XmlElement
+    public void setMedPolis(String medPolis) {
+        this.medPolis = medPolis;
     }
 
     public String getPassport() {
@@ -115,27 +152,6 @@ public class Patient extends User{
 
     @XmlElement
     public void setRegisterLocation(String registerLocation) {
-        this.registerLocation = registerLocation;
-    }
-
-    public Patient() {
-    }
-
-    public Patient(String login, String password, int idPatient, String sexType, String firstName,
-                   String secondName, String familyName, String birthDay, int polisNumber, String passport,
-                   String SNILS, String address, String registerLocation)
-    {
-        super(login, password);
-        this.idPatient = idPatient;
-        this.sexType = sexType;
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.familyName = familyName;
-        this.birthDay = birthDay;
-        this.polisNumber = polisNumber;
-        this.passport = passport;
-        this.SNILS = SNILS;
-        this.address = address;
         this.registerLocation = registerLocation;
     }
 }

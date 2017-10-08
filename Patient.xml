@@ -3,14 +3,14 @@
     <login>abc</login>
     <password>abc</password>
     <address>Ростов-на-Дону, пр.Ворошиловский 10, 12</address>
-    <birthDay>19/06/1988</birthDay>
-    <familyName>Владимиров</familyName>
+    <birthDate>1980/05/01</birthDate>
+    <familyName>Владимирович</familyName>
     <firstName>Владимир</firstName>
-    <idPatient>11</idPatient>
-    <passport>B1110333</passport>
-    <polisNumber>1234567</polisNumber>
-    <registerLocation>г.Москва, ул.Пушкина 15, 1</registerLocation>
-    <SNILS>1000BCA</SNILS>
-    <secondName>Владимирович</secondName>
-    <sexType>male</sexType>
+    <idPatient>0</idPatient>
+    <medPolis>str117771</medPolis>
+    <passport>b557891</passport>
+    <patronymic>Владимиров</patronymic>
+    <registerLocation>г.Москва, ул. Петропавловская 13/1, 12</registerLocation>
+    <SNILS>sn127832</SNILS>
+    <sexType>мужской</sexType>
 </patient>

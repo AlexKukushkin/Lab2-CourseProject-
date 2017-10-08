@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <doctor>
-    <familyName>Петров</familyName>
-    <firstName>Андрей</firstName>
-    <idDoctor>1</idDoctor>
-    <idSpecialization>1</idSpecialization>
-    <office>a102</office>
-    <secondName>Иванович</secondName>
-    <specialization>Хирургия</specialization>
+    <login>doc</login>
+    <password>d</password>
+    <birthDate>1980/05/01</birthDate>
+    <familyName>Иванов</familyName>
+    <firstName>Иван</firstName>
+    <idDoctor>0</idDoctor>
+    <office>b101</office>
+    <patronymic>Иванович</patronymic>
+    <specialization>неврология</specialization>
 </doctor>

@@ -5,25 +5,47 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
 @XmlRootElement
-public class Doctor implements Serializable{
+public class Doctor extends User implements Serializable {
     private int idDoctor;
     private String firstName;
-    private String secondName;
+    private String patronymic;
     private String familyName;
+    private String birthDate;
     private String office;
-    private int idSpecialization;
     private String specialization;
+
+    public Doctor(String login, String password, String firstName, String patronymic,
+                  String familyName, String birthDate, String office, String specialization) {
+        super(login, password);
+        this.idDoctor = 0;
+        this.firstName = firstName;
+        this.patronymic = patronymic;
+        this.familyName = familyName;
+        this.birthDate = birthDate;
+        this.office = office;
+        this.specialization = specialization;
+    }
+
+    public Doctor(int idDoctor, String firstName, String patronymic, String familyName, String birthDate, String office, String specialization) {
+        this.idDoctor = idDoctor;
+        this.firstName = firstName;
+        this.patronymic = patronymic;
+        this.familyName = familyName;
+        this.birthDate = birthDate;
+        this.office = office;
+        this.specialization = specialization;
+    }
 
     public Doctor() {
     }
 
-    public Doctor(int idDoctor, String firstName, String secondName, String familyName, String office, int idSpecialization, String specialization) {
-        this.idDoctor = idDoctor;
+    public Doctor(String firstName, String patronymic, String familyName, String birthDate, String office, String specialization) {
+        this.idDoctor = 0;
         this.firstName = firstName;
-        this.secondName = secondName;
+        this.patronymic = patronymic;
         this.familyName = familyName;
+        this.birthDate = birthDate;
         this.office = office;
-        this.idSpecialization = idSpecialization;
         this.specialization = specialization;
     }
 
@@ -45,13 +67,13 @@ public class Doctor implements Serializable{
         this.firstName = firstName;
     }
 
-    public String getSecondName() {
-        return secondName;
+    public String getPatronymic() {
+        return patronymic;
     }
 
     @XmlElement
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
     }
 
     public String getFamilyName() {
@@ -72,15 +94,6 @@ public class Doctor implements Serializable{
         this.office = office;
     }
 
-    public int getIdSpecialization() {
-        return idSpecialization;
-    }
-
-    @XmlElement
-    public void setIdSpecialization(int idSpecialization) {
-        this.idSpecialization = idSpecialization;
-    }
-
     public String getSpecialization() {
         return specialization;
     }
@@ -88,5 +101,14 @@ public class Doctor implements Serializable{
     @XmlElement
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    @XmlElement
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 }

@@ -8,20 +8,23 @@ import java.io.Serializable;
 public class MedCenter implements Serializable{
     private int idMedCenter;
     private String centerName;
-    private int idRegion;
     private String regionName;
-    private int idLocation;
     private String locationName;
 
     public MedCenter() {
     }
 
-    public MedCenter(int idMedCenter, String centerName, int idRegion, String regionName, int idLocation, String locationName) {
+    public MedCenter(int idMedCenter, String centerName, String regionName, String locationName) {
         this.idMedCenter = idMedCenter;
         this.centerName = centerName;
-        this.idRegion = idRegion;
         this.regionName = regionName;
-        this.idLocation = idLocation;
+        this.locationName = locationName;
+    }
+
+    public MedCenter(String centerName, String regionName, String locationName) {
+        this.idMedCenter = 0;
+        this.centerName = centerName;
+        this.regionName = regionName;
         this.locationName = locationName;
     }
 
@@ -34,22 +37,13 @@ public class MedCenter implements Serializable{
         this.idMedCenter = idMedCenter;
     }
 
-    public String getCenterName() {
+    public String getMedCenterName() {
         return centerName;
     }
 
     @XmlElement
-    public void setCenterName(String centerName) {
+    public void setMedCenterName(String centerName) {
         this.centerName = centerName;
-    }
-
-    public int getIdRegion() {
-        return idRegion;
-    }
-
-    @XmlElement
-    public void setIdRegion(int idRegion) {
-        this.idRegion = idRegion;
     }
 
     public String getRegionName() {
@@ -59,15 +53,6 @@ public class MedCenter implements Serializable{
     @XmlElement
     public void setRegionName(String regionName) {
         this.regionName = regionName;
-    }
-
-    public int getIdLocation() {
-        return idLocation;
-    }
-
-    @XmlElement
-    public void setIdLocation(int idLocation) {
-        this.idLocation = idLocation;
     }
 
     public String getLocationName() {

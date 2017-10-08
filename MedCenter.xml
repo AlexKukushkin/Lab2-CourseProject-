@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <medCenter>
-    <centerName>МедЦентр 'Здоровье'</centerName>
-    <idLocation>12</idLocation>
-    <idMedCenter>111</idMedCenter>
-    <idRegion>53</idRegion>
-    <locationName>Ворошиловский райнон</locationName>
-    <regionName>Тульская область</regionName>
+    <centerName>Радуга</centerName>
+    <idMedCenter>0</idMedCenter>
+    <locationName>г.Санкт-Петербург, ул.Ленинградская 17</locationName>
+    <regionName>Адмиралтейский район</regionName>
 </medCenter>
