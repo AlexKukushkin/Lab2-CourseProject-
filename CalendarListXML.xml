@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<calendars>
+    <calendars>
+        <friDay>-</friDay>
+        <idCalendar>1</idCalendar>
+        <idDoctor>1</idDoctor>
+        <monDay>8:00 - 15:00</monDay>
+        <saturDay>-</saturDay>
+        <sunDay>-</sunDay>
+        <thursDay>13:00 - 18:00</thursDay>
+        <tuesDay>13:00 - 18:00</tuesDay>
+        <wednesDay>8:00 - 15:00</wednesDay>
+    </calendars>
+    <calendars>
+        <friDay>8:00 - 13:00</friDay>
+        <idCalendar>2</idCalendar>
+        <idDoctor>2</idDoctor>
+        <monDay>9:00 - 16:00</monDay>
+        <saturDay>-</saturDay>
+        <sunDay>-</sunDay>
+        <thursDay>8:00 - 13:00</thursDay>
+        <tuesDay>14:00 - 18:00</tuesDay>
+        <wednesDay>8:00 - 15:00</wednesDay>
+    </calendars>
+    <calendars>
+        <friDay>-</friDay>
+        <idCalendar>3</idCalendar>
+        <idDoctor>3</idDoctor>
+        <monDay>8:00 - 13:00</monDay>
+        <saturDay>-</saturDay>
+        <sunDay>-</sunDay>
+        <thursDay>13:00 - 17:00</thursDay>
+        <tuesDay>13:00 - 17:00 </tuesDay>
+        <wednesDay>8:00 - 13:00</wednesDay>
+    </calendars>
+    <calendars>
+        <friDay>-</friDay>
+        <idCalendar>4</idCalendar>
+        <idDoctor>4</idDoctor>
+        <monDay>9:00 - 16:00</monDay>
+        <saturDay>-</saturDay>
+        <sunDay>-</sunDay>
+        <thursDay>13:00 - 18:00</thursDay>
+        <tuesDay>13:00 - 18:00</tuesDay>
+        <wednesDay>8:00 - 13:00</wednesDay>
+    </calendars>
+    <calendars>
+        <friDay>-</friDay>
+        <idCalendar>5</idCalendar>
+        <idDoctor>5</idDoctor>
+        <monDay>9:00 - 16:00</monDay>
+        <saturDay>-</saturDay>
+        <sunDay>-</sunDay>
+        <thursDay>9:00 - 16:00</thursDay>
+        <tuesDay>8:00 - 13:00</tuesDay>
+        <wednesDay>8:00 - 13:00</wednesDay>
+    </calendars>
+    <calendars>
+        <friDay>-</friDay>
+        <idCalendar>6</idCalendar>
+        <idDoctor>6</idDoctor>
+        <monDay>8:00 - 13:00</monDay>
+        <saturDay>-</saturDay>
+        <sunDay>-</sunDay>
+        <thursDay>13:00 - 17:00</thursDay>
+        <tuesDay>13:00 - 17:00</tuesDay>
+        <wednesDay>8:00 - 13:00</wednesDay>
+    </calendars>
+    <calendars>
+        <friDay>9:00 - 12:00</friDay>
+        <idCalendar>7</idCalendar>
+        <idDoctor>7</idDoctor>
+        <monDay>9:00 - 12:00</monDay>
+        <saturDay>9:00 - 13:00</saturDay>
+        <sunDay>-</sunDay>
+        <thursDay>13:00 - 17:00</thursDay>
+        <tuesDay>13:00 - 17:00</tuesDay>
+        <wednesDay>9:00 - 12:00</wednesDay>
+    </calendars>
+</calendars>
