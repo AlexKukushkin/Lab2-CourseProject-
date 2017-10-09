@@ -32,6 +32,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM calendar");
             while (resultSet.next()) {
                 Calendar calendar = new Calendar(
+                        resultSet.getInt("id"),
                         resultSet.getInt("doctor_id"),
                         resultSet.getString("monday"),
                         resultSet.getString("tuesday"),
@@ -58,6 +59,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             return new Calendar(
+                    resultSet.getInt("id"),
                     resultSet.getInt("doctor_id"),
                     resultSet.getString("monday"),
                     resultSet.getString("tuesday"),
@@ -83,13 +85,15 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
         PreparedStatement statement = null;
         try {
             statement = getUpdateStatement();
-            statement.setInt(1, calendar.getIdDoctor());
-            statement.setString(2, calendar.getMonDay());
-            statement.setString(3, calendar.getTuesDay());
-            statement.setString(4, calendar.getWednesDay());
-            statement.setString(5, calendar.getFriDay());
-            statement.setString(6, calendar.getSaturDay());
-            statement.setString(7, calendar.getSunDay());
+            statement.setInt(1, calendar.getIdCalendar());
+            statement.setInt(2, calendar.getIdDoctor());
+            statement.setString(3, calendar.getMonDay());
+            statement.setString(4, calendar.getTuesDay());
+            statement.setString(5, calendar.getWednesDay());
+            statement.setString(6, calendar.getThursDay());
+            statement.setString(7, calendar.getFriDay());
+            statement.setString(8, calendar.getSaturDay());
+            statement.setString(9, calendar.getSunDay());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -103,13 +107,15 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
         try {
             statement = getUpdateStatement();
             for (Calendar calendar : calendarList) {
-                statement.setInt(1, calendar.getIdDoctor());
-                statement.setString(2, calendar.getMonDay());
-                statement.setString(3, calendar.getTuesDay());
-                statement.setString(4, calendar.getWednesDay());
-                statement.setString(5, calendar.getFriDay());
-                statement.setString(6, calendar.getSaturDay());
-                statement.setString(7, calendar.getSunDay());
+                statement.setInt(1, calendar.getIdCalendar());
+                statement.setInt(2, calendar.getIdDoctor());
+                statement.setString(3, calendar.getMonDay());
+                statement.setString(4, calendar.getTuesDay());
+                statement.setString(5, calendar.getWednesDay());
+                statement.setString(6, calendar.getThursDay());
+                statement.setString(7, calendar.getFriDay());
+                statement.setString(8, calendar.getSaturDay());
+                statement.setString(9, calendar.getSunDay());
                 statement.addBatch();
             }
             statement.executeBatch();
@@ -135,8 +141,8 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
 
     private PreparedStatement getInsertStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
-                "INSERT INTO calendar VALUE doctor_id = ?, monday = ?, tuesday = ?, " +
-                        "wednesday = ?, thursday = ?, friday = ?, saturday = ?, sunday = ?)");
+                "INSERT INTO calendar (id, doctor_id, monday, tuesday, wednesday, " +
+                        "thursday, friday, saturday, sunday) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     }
 
     @Override
@@ -144,13 +150,15 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
         PreparedStatement statement = null;
         try {
             statement = getInsertStatement();
-            statement.setInt(1, calendar.getIdDoctor());
-            statement.setString(2, calendar.getMonDay());
-            statement.setString(3, calendar.getTuesDay());
-            statement.setString(4, calendar.getWednesDay());
-            statement.setString(5, calendar.getFriDay());
-            statement.setString(6, calendar.getSaturDay());
-            statement.setString(7, calendar.getSunDay());
+            statement.setInt(1, calendar.getIdCalendar());
+            statement.setInt(2, calendar.getIdDoctor());
+            statement.setString(3, calendar.getMonDay());
+            statement.setString(4, calendar.getTuesDay());
+            statement.setString(5, calendar.getWednesDay());
+            statement.setString(6, calendar.getThursDay());
+            statement.setString(7, calendar.getFriDay());
+            statement.setString(8, calendar.getSaturDay());
+            statement.setString(9, calendar.getSunDay());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -165,13 +173,15 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
         try {
             statement = getInsertStatement();
             for (Calendar calendar : calendarList) {
-                statement.setInt(1, calendar.getIdDoctor());
-                statement.setString(2, calendar.getMonDay());
-                statement.setString(3, calendar.getTuesDay());
-                statement.setString(4, calendar.getWednesDay());
-                statement.setString(5, calendar.getFriDay());
-                statement.setString(6, calendar.getSaturDay());
-                statement.setString(7, calendar.getSunDay());
+                statement.setInt(1, calendar.getIdCalendar());
+                statement.setInt(2, calendar.getIdDoctor());
+                statement.setString(3, calendar.getMonDay());
+                statement.setString(4, calendar.getTuesDay());
+                statement.setString(5, calendar.getWednesDay());
+                statement.setString(6, calendar.getThursDay());
+                statement.setString(7, calendar.getFriDay());
+                statement.setString(8, calendar.getSaturDay());
+                statement.setString(9, calendar.getSunDay());
                 statement.addBatch();
             }
             statement.executeBatch();

@@ -35,6 +35,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
                     "FROM doctor dc LEFT JOIN calendar c ON dc.id = c.doctor_id;");
             while (resultSet.next()) {
                 Doctor doctor = new Doctor(
+                        resultSet.getInt("id"),
                         resultSet.getString("login"),
                         resultSet.getString("password"),
                         resultSet.getString("first_name"),
@@ -61,6 +62,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             return new Doctor(
+                    resultSet.getInt("id"),
                     resultSet.getString("login"),
                     resultSet.getString("password"),
                     resultSet.getString("first_name"),
@@ -142,9 +144,8 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
 
     private PreparedStatement getInsertStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
-                "INSERT INTO doctor " +
-                        "VALUE  (first_name = ?, family_name = ?, patronymic = ?, birth_date = ?, specialization = ?," +
-                        "office = ?, login = ?, password = ?)");
+                "INSERT INTO doctor (id, first_name, family_name, patronymic, birth_date, specialization," +
+                        "office, login, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     }
 
     @Override
@@ -152,14 +153,15 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
         PreparedStatement statement = null;
         try {
             statement = getInsertStatement();
-            statement.setString(1, doctor.getFirstName());
-            statement.setString(2, doctor.getFamilyName());
-            statement.setString(3, doctor.getPatronymic());
-            statement.setDate(4, Date.valueOf(doctor.getBirthDate()));
-            statement.setString(5, doctor.getSpecialization());
-            statement.setString(6, doctor.getOffice());
-            statement.setString(7, doctor.getLogin());
-            statement.setString(8, doctor.getPassword());
+            statement.setInt(1, doctor.getIdDoctor());
+            statement.setString(2, doctor.getFirstName());
+            statement.setString(3, doctor.getFamilyName());
+            statement.setString(4, doctor.getPatronymic());
+            statement.setDate(5, Date.valueOf(doctor.getBirthDate()));
+            statement.setString(6, doctor.getSpecialization());
+            statement.setString(7, doctor.getOffice());
+            statement.setString(8, doctor.getLogin());
+            statement.setString(9, doctor.getPassword());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -174,14 +176,15 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
         try {
             statement = getInsertStatement();
             for (Doctor doctor : doctorList) {
-                statement.setString(1, doctor.getFirstName());
-                statement.setString(2, doctor.getFamilyName());
-                statement.setString(3, doctor.getPatronymic());
-                statement.setDate(4, Date.valueOf(doctor.getBirthDate()));
-                statement.setString(5, doctor.getSpecialization());
-                statement.setString(6, doctor.getOffice());
-                statement.setString(7, doctor.getLogin());
-                statement.setString(8, doctor.getPassword());
+                statement.setInt(1, doctor.getIdDoctor());
+                statement.setString(2, doctor.getFirstName());
+                statement.setString(3, doctor.getFamilyName());
+                statement.setString(4, doctor.getPatronymic());
+                statement.setDate(5, Date.valueOf(doctor.getBirthDate()));
+                statement.setString(6, doctor.getSpecialization());
+                statement.setString(7, doctor.getOffice());
+                statement.setString(8, doctor.getLogin());
+                statement.setString(9, doctor.getPassword());
                 statement.addBatch();
             }
             statement.executeBatch();

@@ -14,10 +14,27 @@ public class Calendar implements Serializable {
     private String SaturDay;
     private String SunDay;
 
+    public Calendar() {
+    }
+
     public Calendar(int idDoctor, String monDay, String tuesDay,
                     String wednesDay, String thursDay, String friDay,
                     String saturDay, String sunDay) {
         this.idCalendar = 0;
+        this.idDoctor = idDoctor;
+        MonDay = monDay;
+        TuesDay = tuesDay;
+        WednesDay = wednesDay;
+        ThursDay = thursDay;
+        FriDay = friDay;
+        SaturDay = saturDay;
+        SunDay = sunDay;
+    }
+
+    public Calendar(int idCalendar, int idDoctor, String monDay, String tuesDay,
+                    String wednesDay, String thursDay, String friDay,
+                    String saturDay, String sunDay) {
+        this.idCalendar = idCalendar;
         this.idDoctor = idDoctor;
         MonDay = monDay;
         TuesDay = tuesDay;

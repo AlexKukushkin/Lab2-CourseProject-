@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <patients>
     <patients>
-        <login>patient1</login>
+        <login>val</login>
         <password>123</password>
-        <address>Ростов-на-Дону, пр.Ворошиловский 15, 5</address>
-        <birthDate>1976-07-09</birthDate>
+        <address>Казань</address>
+        <birthDate>1987-09-09</birthDate>
         <familyName>Петров</familyName>
-        <firstName>Андрей</firstName>
-        <idPatient>1</idPatient>
-        <medPolis>str123457</medPolis>
-        <passport>b127178</passport>
-        <patronymic>Иванович</patronymic>
-        <registerLocation>Ростов-на-Дону, пр.Ворошиловский 15, 5</registerLocation>
-        <SNILS>SN111098</SNILS>
+        <firstName>Валентин</firstName>
+        <idPatient>2</idPatient>
+        <medPolis>str82173</medPolis>
+        <passport>b187287</passport>
+        <patronymic>Петрович</patronymic>
+        <registerLocation>Казань</registerLocation>
+        <SNILS>SN17888</SNILS>
         <sexType>мужской</sexType>
     </patients>
     <patients>
-        <login>patient2</login>
-        <password>&#xD;</password>
-        <address>Ростов-на-Дону, пр.Буденновский 17, 9</address>
-        <birthDate>1980-09-09</birthDate>
-        <familyName>Петрова</familyName>
-        <firstName>Марина</firstName>
-        <idPatient>2</idPatient>
-        <medPolis>str128789</medPolis>
-        <passport>b121879</passport>
-        <patronymic>Сергеевна</patronymic>
-        <registerLocation>Ростов-на-Дону, пр.Буденновский 17, 9</registerLocation>
-        <SNILS>SN123879</SNILS>
+        <login>iri</login>
+        <password>qwe</password>
+        <address>Москва</address>
+        <birthDate>1977-09-07</birthDate>
+        <familyName>Иванова</familyName>
+        <firstName>Ирина</firstName>
+        <idPatient>3</idPatient>
+        <medPolis>str89819</medPolis>
+        <passport>b127890</passport>
+        <patronymic>Игоревна</patronymic>
+        <registerLocation>Москва</registerLocation>
+        <SNILS>SN12378</SNILS>
         <sexType>женский</sexType>
     </patients>
 </patients>

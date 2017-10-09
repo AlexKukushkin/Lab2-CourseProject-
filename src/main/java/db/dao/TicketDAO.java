@@ -4,10 +4,9 @@ import classes.Ticket;
 import db.ConnectionManagerPostresSQL;
 import db.IConnectionManager;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,12 +32,13 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
                     "FROM ticket tk LEFT JOIN patient pt ON pt.id = tk.patient_id");
             while (resultSet.next()) {
                 Ticket ticket = new Ticket(
+                        resultSet.getInt("id"),
                         resultSet.getInt("patient_id"),
                         resultSet.getInt("doctor_id"),
                         resultSet.getInt("medcenter_id"),
+                        resultSet.getString("day_patient"),
                         resultSet.getString("time_patient"),
-                        resultSet.getString("date_patient"),
-                        resultSet.getString("day_patient"));
+                        resultSet.getString("date_patient"));
                 ticketList.add(ticket);
             }
             System.out.println(ticketList);
@@ -58,12 +58,13 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             return new Ticket(
+                    resultSet.getInt("id"),
                     resultSet.getInt("patient_id"),
                     resultSet.getInt("doctor_id"),
                     resultSet.getInt("medcenter_id"),
-                    resultSet.getString("time_patient"),
                     resultSet.getString("date_patient"),
-                    resultSet.getString("day_patient"));
+                    resultSet.getString("day_patient"),
+                    resultSet.getString("time_patient"));
         } catch (SQLException e) {
             e.printStackTrace();
             throw new TicketDAOException();
@@ -81,12 +82,13 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         PreparedStatement statement = null;
         try {
             statement = getUpdateStatement();
-            statement.setInt(1, ticket.getIdPatient());
-            statement.setInt(2, ticket.getIdDoctor());
-            statement.setInt(3, ticket.getIdMedCenter());
-            statement.setString(4, ticket.getPatientTime());
-            statement.setString(5, ticket.getPatientDate());
-            statement.setString(6, ticket.getPatientDay());
+            statement.setInt(1, ticket.getIdTicket());
+            statement.setString(2, ticket.getPatientTime());
+            statement.setString(3, ticket.getPatientDate());
+            statement.setString(4, ticket.getPatientDay());
+            statement.setInt(5, ticket.getIdPatient());
+            statement.setInt(6, ticket.getIdDoctor());
+            statement.setInt(7, ticket.getIdMedCenter());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -100,12 +102,13 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         try {
             statement = getUpdateStatement();
             for (Ticket ticket : ticketList) {
-                statement.setInt(1, ticket.getIdPatient());
-                statement.setInt(2, ticket.getIdDoctor());
-                statement.setInt(3, ticket.getIdMedCenter());
-                statement.setString(4, ticket.getPatientTime());
-                statement.setString(5, ticket.getPatientDate());
-                statement.setString(6, ticket.getPatientDay());
+                statement.setInt(1, ticket.getIdTicket());
+                statement.setString(2, ticket.getPatientTime());
+                statement.setString(3, ticket.getPatientDate());
+                statement.setString(4, ticket.getPatientDay());
+                statement.setInt(5, ticket.getIdPatient());
+                statement.setInt(6, ticket.getIdDoctor());
+                statement.setInt(7, ticket.getIdMedCenter());
                 statement.addBatch();
             }
             statement.executeBatch();
@@ -130,9 +133,9 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
     }
 
     private PreparedStatement getInsertStatement() throws SQLException {
-        return manager.getConnection().prepareStatement("INSERT INTO ticket VALUE " +
-                "(patient_id = ?, doctor_id = ?, medcenter_id = ?, time_patient = ?, date_patient = ?, " +
-                "day_patient = ?)");
+        return manager.getConnection().
+                prepareStatement("INSERT INTO ticket (id, time_patient, date_patient, day_patient, patient_id, doctor_id, medcenter_id)" +
+                " VALUES (?, ?, ?, ?, ?, ?, ?) ");
     }
 
     @Override
@@ -140,16 +143,19 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         PreparedStatement statement = null;
         try {
             statement = getInsertStatement();
-            statement.setInt(1, ticket.getIdPatient());
-            statement.setInt(2, ticket.getIdDoctor());
-            statement.setInt(3, ticket.getIdMedCenter());
-            statement.setString(4, ticket.getPatientTime());
-            statement.setString(5, ticket.getPatientDate());
-            statement.setString(6, ticket.getPatientDay());
+            statement.setInt(1, ticket.getIdTicket());
+            statement.setString(2, ticket.getPatientTime());
+            statement.setString(4, ticket.getPatientDay());
+            statement.setDate(3, new java.sql.Date(new SimpleDateFormat("yyyy-mm-dd").parse(ticket.getPatientDate()).getTime()));
+            statement.setInt(5, ticket.getIdPatient());
+            statement.setInt(6, ticket.getIdDoctor());
+            statement.setInt(7, ticket.getIdMedCenter());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
             throw new TicketDAOException();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 
@@ -159,18 +165,21 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         try {
             statement = getInsertStatement();
             for (Ticket ticket : ticketList) {
-                statement.setInt(1, ticket.getIdPatient());
-                statement.setInt(2, ticket.getIdDoctor());
-                statement.setInt(3, ticket.getIdMedCenter());
-                statement.setString(4, ticket.getPatientTime());
-                statement.setString(5, ticket.getPatientDate());
-                statement.setString(6, ticket.getPatientDay());
+                statement.setInt(1, ticket.getIdTicket());
+                statement.setString(2, ticket.getPatientTime());
+                statement.setString(4, ticket.getPatientDay());
+                statement.setDate(3, new java.sql.Date(new SimpleDateFormat("yyyy-mm-dd").parse(ticket.getPatientDate()).getTime()));
+                statement.setInt(5, ticket.getIdPatient());
+                statement.setInt(6, ticket.getIdDoctor());
+                statement.setInt(7, ticket.getIdMedCenter());
                 statement.addBatch();
             }
             statement.executeBatch();
         } catch (SQLException e) {
             e.printStackTrace();
             throw new TicketDAOException();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 }

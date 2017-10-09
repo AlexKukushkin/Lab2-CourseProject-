@@ -26,6 +26,17 @@ public class Doctor extends User implements Serializable {
         this.specialization = specialization;
     }
 
+    public Doctor(int idDoctor, String login, String password, String firstName, String patronymic,
+                  String familyName, String birthDate, String office, String specialization) {
+        super(login, password);
+        this.idDoctor = idDoctor;
+        this.firstName = firstName;
+        this.patronymic = patronymic;
+        this.familyName = familyName;
+        this.birthDate = birthDate;
+        this.office = office;
+        this.specialization = specialization;
+    }
     public Doctor(int idDoctor, String firstName, String patronymic, String familyName, String birthDate, String office, String specialization) {
         this.idDoctor = idDoctor;
         this.firstName = firstName;

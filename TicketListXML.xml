@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <tickets>
     <tickets>
-        <idDoctor>1</idDoctor>
+        <idDoctor>3</idDoctor>
         <idMedCenter>1</idMedCenter>
-        <idPatient>1</idPatient>
+        <idPatient>2</idPatient>
         <idTicket>1</idTicket>
-        <patientDate>понедельник</patientDate>
-        <patientDay>8:30</patientDay>
-        <patientTime>2017-10-08</patientTime>
-    </tickets>
-    <tickets>
-        <idDoctor>1</idDoctor>
-        <idMedCenter>1</idMedCenter>
-        <idPatient>3</idPatient>
-        <idTicket>2</idTicket>
-        <patientDate>вторник</patientDate>
-        <patientDay>9:00</patientDay>
-        <patientTime>2017-10-10</patientTime>
+        <patientDate>2017-09-09</patientDate>
+        <patientDay>вторник</patientDay>
+        <patientTime>8:00</patientTime>
     </tickets>
 </tickets>
