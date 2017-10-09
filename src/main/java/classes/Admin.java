@@ -1,5 +1,6 @@
 package classes;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 
@@ -10,16 +11,25 @@ public class Admin extends User {
     public Admin() {
     }
 
-//    public Admin(int idAdmin, String login, String password) {
-//        this.idAdmin = idAdmin;
-//    }
+    public Admin(int idAdmin, String login, String password) {
+        this.idAdmin = idAdmin;
+    }
 
     public Admin(String login, String password) {
         super(login, password);
         this.idAdmin = 0;
     }
-    public Admin(int idAdmin, String login, String password) {
-        super(login, password);
+//    public Admin(int idAdmin, String login, String password) {
+//        super(login, password);
+//        this.idAdmin = idAdmin;
+//    }
+
+    public int getIdAdmin() {
+        return idAdmin;
+    }
+
+    @XmlElement
+    public void setIdAdmin(int idAdmin) {
         this.idAdmin = idAdmin;
     }
 }

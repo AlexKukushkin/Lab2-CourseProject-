@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<medCenters>
+    <medCenters>
+        <idMedCenter>1</idMedCenter>
+        <locationName>Ворошиловский район</locationName>
+        <medCenterName>Здоровье</medCenterName>
+        <regionName>Ростовская область</regionName>
+    </medCenters>
+    <medCenters>
+        <idMedCenter>2</idMedCenter>
+        <locationName>Адмиралтейский район</locationName>
+        <medCenterName>Солнечный луч</medCenterName>
+        <regionName>Ленинградская область</regionName>
+    </medCenters>
+    <medCenters>
+        <idMedCenter>3</idMedCenter>
+        <locationName>Кировский район</locationName>
+        <medCenterName>Дом здоровья</medCenterName>
+        <regionName>Московская область</regionName>
+    </medCenters>
+</medCenters>

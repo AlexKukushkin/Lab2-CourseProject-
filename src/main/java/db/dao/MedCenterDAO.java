@@ -71,9 +71,10 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
         PreparedStatement statement = null;
         try {
             statement = getUpdateStatement();
-            statement.setString(1, medCenter.getMedCenterName());
-            statement.setString(2, medCenter.getRegionName());
-            statement.setString(3, medCenter.getLocationName());
+            statement.setInt(1, medCenter.getIdMedCenter());
+            statement.setString(2, medCenter.getMedCenterName());
+            statement.setString(3, medCenter.getRegionName());
+            statement.setString(4, medCenter.getLocationName());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -87,9 +88,10 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
         try {
             statement = getUpdateStatement();
             for (MedCenter medCenter : medCenterList) {
-                statement.setString(1, medCenter.getMedCenterName());
-                statement.setString(2, medCenter.getRegionName());
-                statement.setString(3, medCenter.getLocationName());
+                statement.setInt(1, medCenter.getIdMedCenter());
+                statement.setString(2, medCenter.getMedCenterName());
+                statement.setString(3, medCenter.getRegionName());
+                statement.setString(4, medCenter.getLocationName());
                 statement.addBatch();
             }
             statement.executeBatch();
@@ -114,7 +116,8 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     }
 
     private PreparedStatement getInsertStatement() throws SQLException {
-        return manager.getConnection().prepareStatement("INSERT INTO medcenter VALUE (medcenter_name = ?, region_name = ?, location_name = ?)");
+        return manager.getConnection().prepareStatement("INSERT INTO medcenter (id, medcenter_name, " +
+                "region_name, location_name) VALUES (?, ?, ?, ?)");
     }
 
     @Override
@@ -122,9 +125,10 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
         PreparedStatement statement = null;
         try {
             statement = getInsertStatement();
-            statement.setString(1, medCenter.getMedCenterName());
-            statement.setString(2, medCenter.getRegionName());
-            statement.setString(3, medCenter.getLocationName());
+            statement.setInt(1, medCenter.getIdMedCenter());
+            statement.setString(2, medCenter.getMedCenterName());
+            statement.setString(3, medCenter.getRegionName());
+            statement.setString(4, medCenter.getLocationName());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -138,9 +142,10 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
         try {
             statement = getInsertStatement();
             for (MedCenter medCenter : medCenterList) {
-                statement.setString(1, medCenter.getMedCenterName());
-                statement.setString(2, medCenter.getRegionName());
-                statement.setString(3, medCenter.getLocationName());
+                statement.setInt(1, medCenter.getIdMedCenter());
+                statement.setString(2, medCenter.getMedCenterName());
+                statement.setString(3, medCenter.getRegionName());
+                statement.setString(4, medCenter.getLocationName());
                 statement.addBatch();
             }
             statement.executeBatch();

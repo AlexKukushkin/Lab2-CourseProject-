@@ -21,7 +21,7 @@ public class AdminDAO implements IAbstractDAO<Admin> {
 
     @Override
     public List<Admin> getAll() throws AdminDAOException {
-        List<Admin> AdminList = new ArrayList<>();
+        List<Admin> adminList = new ArrayList<>();
         Statement statement = null;
 
         try {
@@ -32,13 +32,13 @@ public class AdminDAO implements IAbstractDAO<Admin> {
                         resultSet.getInt("id"),
                         resultSet.getString("login"),
                         resultSet.getString("password"));
-                AdminList.add(admin);
+                adminList.add(admin);
             }
         } catch (SQLException e) {
             e.printStackTrace();
             throw new AdminDAOException();
         }
-        return AdminList;
+        return adminList;
     }
 
     @Override
@@ -111,7 +111,7 @@ public class AdminDAO implements IAbstractDAO<Admin> {
 
     private PreparedStatement getInsertStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
-                "INSERT INTO admin VALUE login = ?, password = ?)");
+                "INSERT INTO admin (id, login, password) VALUES (?, ?, ?)");
     }
 
     @Override
@@ -119,8 +119,9 @@ public class AdminDAO implements IAbstractDAO<Admin> {
         PreparedStatement statement = null;
         try {
             statement = getInsertStatement();
-            statement.setString(1, admin.getLogin());
-            statement.setString(2, admin.getPassword());
+            statement.setInt(1, admin.getIdAdmin());
+            statement.setString(2, admin.getLogin());
+            statement.setString(3, admin.getPassword());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -135,8 +136,9 @@ public class AdminDAO implements IAbstractDAO<Admin> {
         try {
             statement = getInsertStatement();
             for (Admin admin : adminList) {
-                statement.setString(1, admin.getLogin());
-                statement.setString(2, admin.getPassword());
+                statement.setInt(1, admin.getIdAdmin());
+                statement.setString(2, admin.getLogin());
+                statement.setString(3, admin.getPassword());
                 statement.addBatch();
             }
             statement.executeBatch();

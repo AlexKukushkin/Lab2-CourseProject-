@@ -2,25 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ed270bb-a29e-436c-86e8-381469eb0e4c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/db/CalendarDatabaseManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/db/DoctorDatabaseManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/db/PatientDatabaseManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/db/TicketDatabaseManager.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/db/DatabaseManager.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AdminListXML.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MedCenterListXML.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/db/AdminDatabaseManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/db/MedCenterDatabaseManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/classes/Admin.class" afterPath="$PROJECT_DIR$/out/production/classes/classes/Admin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/classes/Doctor.class" afterPath="$PROJECT_DIR$/out/production/classes/classes/Doctor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/classes/Patient.class" afterPath="$PROJECT_DIR$/out/production/classes/classes/Patient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PatientListXML.xml" afterPath="$PROJECT_DIR$/PatientListXML.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TicketListXML.xml" afterPath="$PROJECT_DIR$/TicketListXML.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/classes/Admin.java" afterPath="$PROJECT_DIR$/src/main/java/classes/Admin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/classes/Calendar.java" afterPath="$PROJECT_DIR$/src/main/java/classes/Calendar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/classes/Doctor.java" afterPath="$PROJECT_DIR$/src/main/java/classes/Doctor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/classes/Patient.java" afterPath="$PROJECT_DIR$/src/main/java/classes/Patient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/AdminDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/AdminDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Admin.xml" afterPath="$PROJECT_DIR$/xmlFiles/Admin.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Doctor.xml" afterPath="$PROJECT_DIR$/xmlFiles/Doctor.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DoctorsList.xml" afterPath="$PROJECT_DIR$/xmlFiles/DoctorsList.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/MedCenter.xml" afterPath="$PROJECT_DIR$/xmlFiles/MedCenter.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/MedCenterDAO.xml" afterPath="$PROJECT_DIR$/xmlFiles/MedCenterDAO.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Patient.xml" afterPath="$PROJECT_DIR$/xmlFiles/Patient.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Ticket1.xml" afterPath="$PROJECT_DIR$/xmlFiles/Ticket1.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -39,43 +36,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DoctorDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java">
+      <file leaf-file-name="AdminDatabaseManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/AdminDatabaseManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="40" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#677#678#0" expanded="true" />
+                <element signature="e#730#731#0" expanded="true" />
+                <element signature="e#794#795#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/AdminDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="517">
+              <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+              <folding>
+                <marker date="1507582108288" expanded="true" signature="734:753" ph="SELECT * FRO... admin" />
+                <marker date="1507582108288" expanded="true" signature="1401:1433" ph="SELECT * FRO... admin" />
+                <marker date="1507582108288" expanded="true" signature="2018:2071" ph="UPDATE admin... " />
+                <marker date="1507582108288" expanded="true" signature="3719:3775" ph="INSERT INTO admin... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MedCenterDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="147" column="68" lean-forward="false" selection-start-line="147" selection-start-column="68" selection-end-line="147" selection-end-column="68" />
+              <folding>
+                <marker date="1507582562605" expanded="true" signature="766:789" ph="SELECT * FRO... medcenter" />
+                <marker date="1507582562605" expanded="true" signature="1547:1583" ph="SELECT * FRO... medcenter" />
+                <marker date="1507582562605" expanded="true" signature="2246:2334" ph="UPDATE medce... " />
+                <marker date="1507582562605" expanded="true" signature="4317:4408" ph="INSERT INTO medcenter... " />
+                <marker date="1507582562605" expanded="true" signature="4317:4428" ph="INSERT INTO medcenter... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MedCenterDatabaseManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/MedCenterDatabaseManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
-              <caret line="186" column="61" lean-forward="false" selection-start-line="186" selection-start-column="61" selection-end-line="186" selection-end-column="61" />
+              <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
               <folding>
-                <marker date="1507580914678" expanded="true" signature="879:978" ph="SELECT dc.*,... doctor" />
-                <marker date="1507580914678" expanded="true" signature="1991:2024" ph="SELECT * FRO... doctor" />
-                <marker date="1507580914678" expanded="true" signature="2942:3151" ph="UPDATE docto... " />
-                <marker date="1507580914678" expanded="true" signature="5582:5758" ph="INSERT INTO doctor... " />
-                <marker date="1507580914678" expanded="true" signature="5582:5759" ph="INSERT INTO doctor... " />
-                <marker date="1507580914678" expanded="true" signature="5582:5760" ph="INSERT INTO doctor... " />
+                <element signature="imports" expanded="true" />
+                <element signature="e#787#788#0" expanded="true" />
+                <element signature="e#844#845#0" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#991#992#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoctorDatabaseManager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/db/DoctorDatabaseManager.java">
+      <file leaf-file-name="MedCenterListXML.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MedCenterListXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JAXBSerialization.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/serialization/JAXBSerialization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,7 +124,6 @@
       <find>LocalDate</find>
       <find>secondName</find>
       <find>second_name</find>
-      <find>Admin</find>
       <find>DoctorDAOException</find>
       <find>DoctorDAO.</find>
       <find>birthDay</find>
@@ -105,6 +133,8 @@
       <find>MedCenter</find>
       <find>TicketDAO.</find>
       <find>Doctor</find>
+      <find>Doctors</find>
+      <find>Admin</find>
     </findStrings>
     <replaceStrings>
       <replace>String</replace>
@@ -114,9 +144,10 @@
       <replace>Patient</replace>
       <replace>birthDate</replace>
       <replace>MedCenterDAOException</replace>
-      <replace>MedCenter</replace>
       <replace>Ticket</replace>
       <replace>Calendar</replace>
+      <replace>Admins</replace>
+      <replace>MedCenter</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -423,16 +454,13 @@
         <option value="$PROJECT_DIR$/src/main/java/classes/Ticket.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/ConnectionManagerPostresSQL.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dao/IAbstractDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dao/AdminDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/classes/MedCenter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/serialization/JAXBSerialization.java" />
         <option value="$PROJECT_DIR$/src/main/java/classes/Main.java" />
         <option value="$PROJECT_DIR$/PatientListXML.xml" />
         <option value="$PROJECT_DIR$/TicketListXML.xml" />
         <option value="$PROJECT_DIR$/src/main/java/classes/Patient.java" />
         <option value="$PROJECT_DIR$/src/main/java/classes/Doctor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/classes/Admin.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/DatabaseManager.java" />
@@ -443,6 +471,11 @@
         <option value="$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/DoctorDatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/AdminDatabaseManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/classes/Admin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dao/AdminDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/MedCenterDatabaseManager.java" />
       </list>
     </option>
   </component>
@@ -537,13 +570,6 @@
             </path>
             <path>
               <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -571,6 +597,9 @@
     <property name="Repository.Attach.Sources" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Курсовая (Innopolis)\CourseProject\xmlFiles" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -593,7 +622,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DoctorDatabaseManager">
+  <component name="RunManager" selected="Application.MedCenterDatabaseManager">
+    <configuration name="AdminDatabaseManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="db.AdminDatabaseManager" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CourseProject_main" />
+      <envs />
+    </configuration>
     <configuration name="CalendarDatabaseManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -632,33 +680,14 @@
       <module name="CourseProject_main" />
       <envs />
     </configuration>
-    <configuration name="JAXBSerialization" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="MedCenterDatabaseManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="serialization.*" />
+          <option name="PATTERN" value="db.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="serialization.JAXBSerialization" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="CourseProject_main" />
-      <envs />
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="classes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="classes.Main" />
+      <option name="MAIN_CLASS_NAME" value="db.MedCenterDatabaseManager" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -770,19 +799,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.JAXBSerialization" />
-      <item index="2" class="java.lang.String" itemvalue="Application.PatientDatabaseManager" />
-      <item index="3" class="java.lang.String" itemvalue="Application.CalendarDatabaseManager" />
-      <item index="4" class="java.lang.String" itemvalue="Application.DoctorDatabaseManager" />
+      <item index="0" class="java.lang.String" itemvalue="Application.PatientDatabaseManager" />
+      <item index="1" class="java.lang.String" itemvalue="Application.CalendarDatabaseManager" />
+      <item index="2" class="java.lang.String" itemvalue="Application.DoctorDatabaseManager" />
+      <item index="3" class="java.lang.String" itemvalue="Application.AdminDatabaseManager" />
+      <item index="4" class="java.lang.String" itemvalue="Application.MedCenterDatabaseManager" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.DoctorDatabaseManager" />
-        <item index="1" class="java.lang.String" itemvalue="Application.CalendarDatabaseManager" />
-        <item index="2" class="java.lang.String" itemvalue="Application.PatientDatabaseManager" />
-        <item index="3" class="java.lang.String" itemvalue="Application.JAXBSerialization" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="0" class="java.lang.String" itemvalue="Application.MedCenterDatabaseManager" />
+        <item index="1" class="java.lang.String" itemvalue="Application.AdminDatabaseManager" />
+        <item index="2" class="java.lang.String" itemvalue="Application.DoctorDatabaseManager" />
+        <item index="3" class="java.lang.String" itemvalue="Application.CalendarDatabaseManager" />
+        <item index="4" class="java.lang.String" itemvalue="Application.PatientDatabaseManager" />
       </list>
     </recent_temporary>
   </component>
@@ -821,7 +850,7 @@
       <workItem from="1507298560208" duration="2355000" />
       <workItem from="1507454152206" duration="39842000" />
       <workItem from="1507532281141" duration="8851000" />
-      <workItem from="1507563387142" duration="15385000" />
+      <workItem from="1507563387142" duration="17147000" />
     </task>
     <task id="LOCAL-00001" summary="serialization&#10;deserialization">
       <created>1507044674744</created>
@@ -851,11 +880,25 @@
       <option name="project" value="LOCAL" />
       <updated>1507528221851</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="serialization&#10;deserialization&#10;JDBC&#10;DAO classes&#10;DatabaseManager">
+      <created>1507581004253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1507581004253</updated>
+    </task>
+    <task id="LOCAL-00006" summary="serialization&#10;deserialization&#10;JDBC&#10;DAO classes&#10;DatabaseManager">
+      <created>1507581066397</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1507581066397</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107372000" />
+    <option name="totallyTimeSpent" value="109134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -902,7 +945,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="serialization&#10;deserialization" />
     <MESSAGE value="serialization&#10;deserialization&#10;JDBC&#10;DAO classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="serialization&#10;deserialization&#10;JDBC&#10;DAO classes" />
+    <MESSAGE value="serialization&#10;deserialization&#10;JDBC&#10;DAO classes&#10;DatabaseManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="serialization&#10;deserialization&#10;JDBC&#10;DAO classes&#10;DatabaseManager" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -949,38 +993,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/classes/Doctor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/serialization/JAXBSerialization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="119" column="8" lean-forward="false" selection-start-line="119" selection-start-column="8" selection-end-line="119" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorsList.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/classes/Calendar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="49" lean-forward="false" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/classes/MedCenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -995,7 +1007,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Doctor.xml">
+    <entry file="file://$PROJECT_DIR$/xmlFiles/Doctor.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1155,7 +1167,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Admin.xml">
+    <entry file="file://$PROJECT_DIR$/xmlFiles/Admin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1169,7 +1181,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Patient.xml">
+    <entry file="file://$PROJECT_DIR$/xmlFiles/Patient.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1205,21 +1217,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/AdminDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="150" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Doctor.xml">
+    <entry file="file://$PROJECT_DIR$/xmlFiles/Doctor.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
@@ -1227,7 +1225,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoctorsList.xml">
+    <entry file="file://$PROJECT_DIR$/xmlFiles/DoctorsList.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
@@ -1263,14 +1261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/classes/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/classes/Doctor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -1290,20 +1280,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/classes/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/classes/Ticket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1366,11 +1348,11 @@
         <state relative-caret-position="561">
           <caret line="39" column="47" lean-forward="false" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#687#688#0" expanded="false" />
+            <element signature="e#741#742#0" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#873#874#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1478,10 +1460,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/db/DoctorDatabaseManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="true" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/classes/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/classes/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdminListXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/AdminDatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="40" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/AdminDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+          <folding>
+            <marker date="1507582108288" expanded="true" signature="734:753" ph="SELECT * FRO... admin" />
+            <marker date="1507582108288" expanded="true" signature="1401:1433" ph="SELECT * FRO... admin" />
+            <marker date="1507582108288" expanded="true" signature="2018:2071" ph="UPDATE admin... " />
+            <marker date="1507582108288" expanded="true" signature="3719:3775" ph="INSERT INTO admin... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="147" column="68" lean-forward="false" selection-start-line="147" selection-start-column="68" selection-end-line="147" selection-end-column="68" />
+          <folding>
+            <marker date="1507582562605" expanded="true" signature="766:789" ph="SELECT * FRO... medcenter" />
+            <marker date="1507582562605" expanded="true" signature="1547:1583" ph="SELECT * FRO... medcenter" />
+            <marker date="1507582562605" expanded="true" signature="2246:2334" ph="UPDATE medce... " />
+            <marker date="1507582562605" expanded="true" signature="4317:4408" ph="INSERT INTO medcenter... " />
+            <marker date="1507582562605" expanded="true" signature="4317:4428" ph="INSERT INTO medcenter... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MedCenterListXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/MedCenterDatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="44" column="1" lean-forward="true" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
           </folding>
         </state>
       </provider>
