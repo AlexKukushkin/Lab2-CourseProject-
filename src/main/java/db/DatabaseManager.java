@@ -35,10 +35,9 @@ public class DatabaseManager {
             Patients patients = new Patients();
             patients.setPatients(patientList);
             //System.out.println(patient);
-            JAXBSerialization.jaxbSerializeObject("PatientListXML.xml", patients);
+            //JAXBSerialization.jaxbSerializeObject("PatientListXML.xml", patients);
             patients = JAXBSerialization.jaxbDeSerializeObject("PatientListXML.xml", Patients.class);
-            //System.out.println(patients.getPatients().get(1).getFirstName());
-            //patientDAO.insertAll(patients.getPatients());
+            patientDAO.insertAll(patients.getPatients());
             //=====================================
             @XmlRootElement(name = "tickets")
             @XmlAccessorType(XmlAccessType.FIELD)
@@ -51,16 +50,18 @@ public class DatabaseManager {
                 }
 
                 public void setTickets(List<Ticket> ticketList) {
-                    this.tickets = tickets;
+                    this.tickets = ticketList;
                 }
             }
 
             TicketDAO ticketDAO = new TicketDAO();
             List<Ticket> ticketList = ticketDAO.getAll();
+            System.out.println(ticketList);
             Tickets tickets = new Tickets();
             tickets.setTickets(ticketList);
-            JAXBSerialization.jaxbSerializeObject("TicketListXML.xml", tickets);
+            //JAXBSerialization.jaxbSerializeObject("TicketListXML.xml", tickets);
             tickets = JAXBSerialization.jaxbDeSerializeObject("TicketListXML.xml", Tickets.class);
+            ticketDAO.insertAll(tickets.getTickets());
 
         } catch (PatientDAO.PatientDAOException e) {
             e.printStackTrace();

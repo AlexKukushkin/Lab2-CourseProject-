@@ -29,7 +29,8 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
         try {
             statement = manager.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM ticket");
+            ResultSet resultSet = statement.executeQuery("SELECT tk.*" +
+                    "FROM ticket tk LEFT JOIN patient pt ON pt.id = tk.patient_id");
             while (resultSet.next()) {
                 Ticket ticket = new Ticket(
                         resultSet.getInt("patient_id"),
@@ -40,6 +41,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
                         resultSet.getString("day_patient"));
                 ticketList.add(ticket);
             }
+            System.out.println(ticketList);
         } catch (SQLException e) {
             e.printStackTrace();
             throw new TicketDAOException();
