@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<patients>
+    <patients>
+        <login>patient1</login>
+        <password>123</password>
+        <address>Ростов-на-Дону, пр.Ворошиловский 15, 5</address>
+        <birthDate>1976-07-09</birthDate>
+        <familyName>Петров</familyName>
+        <firstName>Андрей</firstName>
+        <idPatient>1</idPatient>
+        <medPolis>str123457</medPolis>
+        <passport>b127178</passport>
+        <patronymic>Иванович</patronymic>
+        <registerLocation>Ростов-на-Дону, пр.Ворошиловский 15, 5</registerLocation>
+        <SNILS>SN111098</SNILS>
+        <sexType>мужской</sexType>
+    </patients>
+    <patients>
+        <login>patient2</login>
+        <password>&#xD;</password>
+        <address>Ростов-на-Дону, пр.Буденновский 17, 9</address>
+        <birthDate>1980-09-09</birthDate>
+        <familyName>Петрова</familyName>
+        <firstName>Марина</firstName>
+        <idPatient>2</idPatient>
+        <medPolis>str128789</medPolis>
+        <passport>b121879</passport>
+        <patronymic>Сергеевна</patronymic>
+        <registerLocation>Ростов-на-Дону, пр.Буденновский 17, 9</registerLocation>
+        <SNILS>SN123879</SNILS>
+        <sexType>женский</sexType>
+    </patients>
+</patients>

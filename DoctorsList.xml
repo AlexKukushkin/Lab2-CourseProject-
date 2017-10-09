@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<doctors>
+    <doctors>
+        <login>doc2</login>
+        <password>d2</password>
+        <birthDate>1980/05/01</birthDate>
+        <familyName>Петров</familyName>
+        <firstName>Петр</firstName>
+        <idDoctor>0</idDoctor>
+        <office>b102</office>
+        <patronymic>Петрович</patronymic>
+        <specialization>неврология</specialization>
+    </doctors>
+    <doctors>
+        <login>doc3</login>
+        <password>d3</password>
+        <birthDate>1980/05/01</birthDate>
+        <familyName>Алексеев</familyName>
+        <firstName>Алексей</firstName>
+        <idDoctor>0</idDoctor>
+        <office>b104</office>
+        <patronymic>Алексеевич</patronymic>
+        <specialization>пульмонология</specialization>
+    </doctors>
+    <doctors>
+        <login>doc4</login>
+        <password>d4</password>
+        <birthDate>1980/05/01</birthDate>
+        <familyName>Клюева</familyName>
+        <firstName>Анна</firstName>
+        <idDoctor>0</idDoctor>
+        <office>b103</office>
+        <patronymic>Романовна</patronymic>
+        <specialization>неврология</specialization>
+    </doctors>
+    <doctors>
+        <login>doc5</login>
+        <password>d5</password>
+        <birthDate>1980/05/01</birthDate>
+        <familyName>Сергеева</familyName>
+        <firstName>Ольга</firstName>
+        <idDoctor>0</idDoctor>
+        <office>b105</office>
+        <patronymic>Ивановна</patronymic>
+        <specialization>кинезиотерапия</specialization>
+    </doctors>
+</doctors>
