@@ -4,77 +4,77 @@
         <login>aaa</login>
         <password>1</password>
         <birthDate>1975-01-01</birthDate>
-        <familyName>Петрович</familyName>
+        <familyName>Петров</familyName>
         <firstName>Иван</firstName>
         <idDoctor>1</idDoctor>
-        <office>хирургия</office>
-        <patronymic>Петров</patronymic>
-        <specialization>b101</specialization>
+        <office>b101</office>
+        <patronymic>Петрович</patronymic>
+        <specialization>хирургия</specialization>
     </doctors>
     <doctors>
         <login>bbb</login>
         <password>2</password>
         <birthDate>1965-01-01</birthDate>
-        <familyName>Петрович</familyName>
+        <familyName>Иванов</familyName>
         <firstName>Андрей</firstName>
         <idDoctor>2</idDoctor>
-        <office>стоматология</office>
-        <patronymic>Иванов</patronymic>
-        <specialization>b102</specialization>
+        <office>b102</office>
+        <patronymic>Петрович</patronymic>
+        <specialization>стоматология</specialization>
     </doctors>
     <doctors>
         <login>ccc</login>
         <password>3</password>
         <birthDate>1963-01-01</birthDate>
-        <familyName>Сергеевич</familyName>
+        <familyName>Сидоров</familyName>
         <firstName>Петр</firstName>
         <idDoctor>3</idDoctor>
-        <office>нейрохирургия</office>
-        <patronymic>Сидоров</patronymic>
-        <specialization>b103</specialization>
+        <office>b103</office>
+        <patronymic>Сергеевич</patronymic>
+        <specialization>нейрохирургия</specialization>
     </doctors>
     <doctors>
         <login>ddd</login>
         <password>4</password>
         <birthDate>1957-03-03</birthDate>
-        <familyName>Валентинович</familyName>
+        <familyName>Андреев</familyName>
         <firstName>Сергей</firstName>
         <idDoctor>4</idDoctor>
-        <office>кардиология</office>
-        <patronymic>Андреев</patronymic>
-        <specialization>b104</specialization>
+        <office>b104</office>
+        <patronymic>Валентинович</patronymic>
+        <specialization>кардиология</specialization>
     </doctors>
     <doctors>
         <login>fff</login>
         <password>5</password>
         <birthDate>1967-07-05</birthDate>
-        <familyName>Петрович</familyName>
+        <familyName>Маршалов</familyName>
         <firstName>Иван</firstName>
         <idDoctor>5</idDoctor>
-        <office>травматология</office>
-        <patronymic>Маршалов</patronymic>
-        <specialization>b105</specialization>
+        <office>b105</office>
+        <patronymic>Петрович</patronymic>
+        <specialization>травматология</specialization>
     </doctors>
     <doctors>
         <login>eee</login>
         <password>6</password>
         <birthDate>1971-01-09</birthDate>
-        <familyName>Сергеевич</familyName>
+        <familyName>Кирсанов</familyName>
         <firstName>Валентин</firstName>
         <idDoctor>6</idDoctor>
-        <office>пульмонология</office>
-        <patronymic>Кирсанов</patronymic>
-        <specialization>b106</specialization>
+        <office>b106</office>
+        <patronymic>Сергеевич</patronymic>
+        <specialization>пульмонология</specialization>
     </doctors>
     <doctors>
         <login>jjj</login>
         <password>7</password>
         <birthDate>1968-07-09</birthDate>
-        <familyName>Алексеевна</familyName>
+        <familyName>Кирсеева</familyName>
         <firstName>Татьяна</firstName>
         <idDoctor>7</idDoctor>
-        <office>аллергология</office>
-        <patronymic>Кирсеева</patronymic>
-        <specialization>b107</specialization>
+        <office>b107</office>
+        <patronymic>Алексеевна</patronymic>
+        <specialization>аллергология</specialization>
     </doctors>
 </doctors>

@@ -1,7 +1,7 @@
 package db.dao;
 
-import classes.Calendar;
-import db.ConnectionManagerPostresSQL;
+import pojo.Calendar;
+import db.ConnectionManagerPostgreSQL;
 import db.IConnectionManager;
 
 import java.sql.PreparedStatement;
@@ -19,7 +19,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     private static IConnectionManager manager;
 
     static {
-        manager = ConnectionManagerPostresSQL.getInstance();
+        manager = ConnectionManagerPostgreSQL.getInstance();
     }
 
     @Override
@@ -32,7 +32,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
             ResultSet resultSet = statement.executeQuery("SELECT * FROM calendar");
             while (resultSet.next()) {
                 Calendar calendar = new Calendar(
-                        resultSet.getInt("id"),
+                        resultSet.getInt("id_calendar"),
                         resultSet.getInt("doctor_id"),
                         resultSet.getString("monday"),
                         resultSet.getString("tuesday"),
@@ -54,12 +54,12 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     public Calendar getByID(int id) throws CalendarDAOException {
         PreparedStatement statement = null;
         try {
-            statement = manager.getConnection().prepareStatement("SELECT * FROM calendar WHERE id = ? ");
+            statement = manager.getConnection().prepareStatement("SELECT * FROM calendar WHERE id_calendar = ? ");
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             return new Calendar(
-                    resultSet.getInt("id"),
+                    resultSet.getInt("id_calendar"),
                     resultSet.getInt("doctor_id"),
                     resultSet.getString("monday"),
                     resultSet.getString("tuesday"),
@@ -77,7 +77,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     private PreparedStatement getUpdateStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
                 "UPDATE calendar SET doctor_id = ?, monday = ?, tuesday = ?, " +
-                        "wednesday = ?, thursday = ?, friday = ?, saturday = ?, sunday = ? WHERE id = ?");
+                        "wednesday = ?, thursday = ?, friday = ?, saturday = ?, sunday = ? WHERE id_calendar = ?");
     }
 
     @Override
@@ -130,7 +130,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
         PreparedStatement statement = null;
         try {
             statement = manager.getConnection().prepareStatement(
-                    "DELETE calendar WHERE id = ? ");
+                    "DELETE calendar WHERE id_calendar = ? ");
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -141,7 +141,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
 
     private PreparedStatement getInsertStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
-                "INSERT INTO calendar (id, doctor_id, monday, tuesday, wednesday, " +
+                "INSERT INTO calendar (id_calendar, doctor_id, monday, tuesday, wednesday, " +
                         "thursday, friday, saturday, sunday) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     }
 

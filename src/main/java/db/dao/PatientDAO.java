@@ -1,7 +1,7 @@
 package db.dao;
 
-import classes.Patient;
-import db.ConnectionManagerPostresSQL;
+import pojo.Patient;
+import db.ConnectionManagerPostgreSQL;
 import db.IConnectionManager;
 
 import java.sql.*;
@@ -16,7 +16,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     private static IConnectionManager manager;
 
     static {
-        manager = ConnectionManagerPostresSQL.getInstance();
+        manager = ConnectionManagerPostgreSQL.getInstance();
     }
 
     @Override
@@ -26,14 +26,11 @@ public class PatientDAO implements IAbstractDAO <Patient>{
 
         try {
             statement = manager.getConnection().createStatement();
-//            ResultSet resultSet = statement.executeQuery("SELECT pt.*, tk.*" +
-//                    "FROM patient pt LEFT JOIN ticket tk ON pt.id = tk.patient_id");
+
             ResultSet resultSet = statement.executeQuery("SELECT * FROM patient");
             while (resultSet.next()) {
                 Patient patient = new Patient(
-                        resultSet.getInt("id"),
-                        resultSet.getString("login"),
-                        resultSet.getString("password"),
+                        resultSet.getInt("id_patient"),
                         resultSet.getString("first_name"),
                         resultSet.getString("family_name"),
                         resultSet.getString("patronymic"),
@@ -43,7 +40,8 @@ public class PatientDAO implements IAbstractDAO <Patient>{
                         resultSet.getString("medpolis"),
                         resultSet.getString("registration"),
                         resultSet.getString("home_location"),
-                        resultSet.getString("sextype"));
+                        resultSet.getString("sextype"),
+                        resultSet.getInt("user_id"));
                 patientList.add(patient);
             }
         } catch (SQLException e) {
@@ -57,14 +55,12 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     public Patient getByID(int id) throws PatientDAOException {
         PreparedStatement statement = null;
         try {
-            statement = manager.getConnection().prepareStatement("SELECT * FROM patient WHERE id = ? ");
+            statement = manager.getConnection().prepareStatement("SELECT * FROM patient WHERE id_patient = ? ");
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             return new Patient(
-                    resultSet.getInt("id"),
-                    resultSet.getString("login"),
-                    resultSet.getString("password"),
+                    resultSet.getInt("id_patient"),
                     resultSet.getString("first_name"),
                     resultSet.getString("family_name"),
                     resultSet.getString("patronymic"),
@@ -74,7 +70,8 @@ public class PatientDAO implements IAbstractDAO <Patient>{
                     resultSet.getString("medpolis"),
                     resultSet.getString("registration"),
                     resultSet.getString("home_location"),
-                    resultSet.getString("sextype"));
+                    resultSet.getString("sextype"),
+                    resultSet.getInt("user_id"));
         } catch (SQLException e) {
             e.printStackTrace();
             throw new PatientDAOException();
@@ -86,7 +83,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
                 "UPDATE patient" +
                         "SET first_name = ?, family_name = ?, patronymic = ?, birth_date = ?, " +
                         "passport = ?, SNILS = ?, medpolis = ?, registration = ?, home_location = ?, sextype = ?" +
-                        "login = ?, password = ? WHERE id = ? ");
+                        "user_id = ? WHERE id_patient = ? ");
     }
 
     @Override
@@ -105,8 +102,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
             statement.setString(9, patient.getRegisterLocation());
             statement.setString(10, patient.getAddress());
             statement.setString(11, patient.getSexType());
-            statement.setString(12, patient.getLogin());
-            statement.setString(13, patient.getPassword());
+            statement.setInt(12, patient.getIdUser());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -131,8 +127,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
                 statement.setString(9, patient.getRegisterLocation());
                 statement.setString(10, patient.getAddress());
                 statement.setString(11, patient.getSexType());
-                statement.setString(12, patient.getLogin());
-                statement.setString(13, patient.getPassword());
+                statement.setInt(12, patient.getIdUser());
                 statement.addBatch();
             }
             statement.executeBatch();
@@ -147,7 +142,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
         PreparedStatement statement = null;
         try {
             statement = manager.getConnection().prepareStatement(
-                    "DELETE patient WHERE id = ? ");
+                    "DELETE patient WHERE id_patient = ? ");
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -158,8 +153,8 @@ public class PatientDAO implements IAbstractDAO <Patient>{
 
     private PreparedStatement getInsertStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
-                "INSERT INTO patient(id, first_name, family_name, patronymic, birth_date," +
-                        " passport, \"SNILS\", medpolis, registration, home_location, sextype, login, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                "INSERT INTO patient(id_patient, first_name, family_name, patronymic, birth_date," +
+                        " passport, \"SNILS\", medpolis, registration, home_location, sextype, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     }
 
     @Override
@@ -178,8 +173,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
             statement.setString(9, patient.getRegisterLocation());
             statement.setString(10, patient.getAddress());
             statement.setString(11, patient.getSexType());
-            statement.setString(12, patient.getLogin());
-            statement.setString(13, patient.getPassword());
+            statement.setInt(12, patient.getIdUser());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -205,8 +199,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
                 statement.setString(9, patient.getRegisterLocation());
                 statement.setString(10, patient.getAddress());
                 statement.setString(11, patient.getSexType());
-                statement.setString(12, patient.getLogin());
-                statement.setString(13, patient.getPassword());
+                statement.setInt(12, patient.getIdUser());
                 statement.addBatch();
             }
             statement.executeBatch();

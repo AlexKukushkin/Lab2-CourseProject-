@@ -1,7 +1,7 @@
 package db.dao;
 
-import classes.Ticket;
-import db.ConnectionManagerPostresSQL;
+import pojo.Ticket;
+import db.ConnectionManagerPostgreSQL;
 import db.IConnectionManager;
 
 import java.sql.*;
@@ -18,7 +18,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
     private static IConnectionManager manager;
 
     static {
-        manager = ConnectionManagerPostresSQL.getInstance();
+        manager = ConnectionManagerPostgreSQL.getInstance();
     }
 
     @Override
@@ -29,10 +29,10 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         try {
             statement = manager.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT tk.*" +
-                    "FROM ticket tk LEFT JOIN patient pt ON pt.id = tk.patient_id");
+                    "FROM ticket tk LEFT JOIN patient pt ON pt.id_patient = tk.patient_id");
             while (resultSet.next()) {
                 Ticket ticket = new Ticket(
-                        resultSet.getInt("id"),
+                        resultSet.getInt("id_ticket"),
                         resultSet.getInt("patient_id"),
                         resultSet.getInt("doctor_id"),
                         resultSet.getInt("medcenter_id"),
@@ -53,12 +53,12 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
     public Ticket getByID(int id) throws TicketDAOException {
         PreparedStatement statement = null;
         try {
-            statement = manager.getConnection().prepareStatement("SELECT * FROM ticket WHERE id = ? ");
+            statement = manager.getConnection().prepareStatement("SELECT * FROM ticket WHERE id_ticket = ? ");
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             return new Ticket(
-                    resultSet.getInt("id"),
+                    resultSet.getInt("id_ticket"),
                     resultSet.getInt("patient_id"),
                     resultSet.getInt("doctor_id"),
                     resultSet.getInt("medcenter_id"),
@@ -74,7 +74,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
     private PreparedStatement getUpdateStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
                 "UPDATE ticket SET patient_id = ?, doctor_id = ?, medcenter_id = ?, " +
-                        "time_patient = ?, date_patient = ?, day_patient = ? WHERE id = ? ");
+                        "time_patient = ?, date_patient = ?, day_patient = ? WHERE id_ticket = ? ");
     }
 
     @Override
@@ -123,7 +123,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         PreparedStatement statement = null;
         try {
             statement = manager.getConnection().prepareStatement(
-                    "DELETE ticket WHERE id = ? ");
+                    "DELETE ticket WHERE id_ticket = ? ");
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -134,7 +134,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
     private PreparedStatement getInsertStatement() throws SQLException {
         return manager.getConnection().
-                prepareStatement("INSERT INTO ticket (id, time_patient, date_patient, day_patient, patient_id, doctor_id, medcenter_id)" +
+                prepareStatement("INSERT INTO ticket (id_ticket, time_patient, date_patient, day_patient, patient_id, doctor_id, medcenter_id)" +
                 " VALUES (?, ?, ?, ?, ?, ?, ?) ");
     }
 

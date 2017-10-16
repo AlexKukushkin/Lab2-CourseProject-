@@ -1,8 +1,7 @@
 package db;
 
-import classes.MedCenter;
+import pojo.MedCenter;
 import db.dao.MedCenterDAO;
-import serialization.JAXBSerialization;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

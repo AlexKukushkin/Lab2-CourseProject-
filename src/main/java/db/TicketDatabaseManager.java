@@ -1,6 +1,6 @@
 package db;
 
-import classes.Ticket;
+import pojo.Ticket;
 import db.dao.TicketDAO;
 import serialization.JAXBSerialization;
 

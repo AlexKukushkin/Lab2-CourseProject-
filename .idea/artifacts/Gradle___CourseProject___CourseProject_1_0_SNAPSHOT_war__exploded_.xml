@@ -16,6 +16,12 @@
           <element id="module-output" name="CourseProject_main" />
           <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: log4j:log4j:1.2.16" />
+          <element id="library" level="project" name="Gradle: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Gradle: javax.servlet:servlet-api:3.0-alpha-1" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/42.1.4/1c7788d16b67d51f2f38ae99e474ece968bf715a/postgresql-42.1.4.jar" />
+        </element>
       </element>
     </root>
   </artifact>

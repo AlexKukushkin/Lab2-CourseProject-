@@ -1,6 +1,6 @@
 package db;
 
-import classes.Doctor;
+import pojo.Doctor;
 import db.dao.DoctorDAO;
 import serialization.JAXBSerialization;
 

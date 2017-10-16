@@ -1,6 +1,6 @@
 package db;
 
-import classes.Calendar;
+import pojo.Calendar;
 import db.dao.CalendarDAO;
 import serialization.JAXBSerialization;
 

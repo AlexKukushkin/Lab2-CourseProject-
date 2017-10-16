@@ -1,7 +1,7 @@
 package db.dao;
 
-import classes.MedCenter;
-import db.ConnectionManagerPostresSQL;
+import pojo.MedCenter;
+import db.ConnectionManagerPostgreSQL;
 import db.IConnectionManager;
 
 import java.sql.*;
@@ -16,7 +16,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     private static IConnectionManager manager;
 
     static {
-        manager = ConnectionManagerPostresSQL.getInstance();
+        manager = ConnectionManagerPostgreSQL.getInstance();
     }
 
     @Override
@@ -29,7 +29,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
             ResultSet resultSet = statement.executeQuery("SELECT * FROM medcenter");
             while (resultSet.next()) {
                 MedCenter medCenter = new MedCenter(
-                        resultSet.getInt("id"),
+                        resultSet.getInt("id_medcenter"),
                         resultSet.getString("medcenter_name"),
                         resultSet.getString("region_name"),
                         resultSet.getString("location_name"));
@@ -46,12 +46,12 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     public MedCenter getByID(int id) throws MedCenterDAOException {
         PreparedStatement statement = null;
         try {
-            statement = manager.getConnection().prepareStatement("SELECT * FROM medcenter WHERE id = ? ");
+            statement = manager.getConnection().prepareStatement("SELECT * FROM medcenter WHERE id_medcenter = ? ");
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             return new MedCenter(
-                    resultSet.getInt("id"),
+                    resultSet.getInt("id_medcenter"),
                     resultSet.getString("medcenter_name"),
                     resultSet.getString("region_name"),
                     resultSet.getString("location_name"));
@@ -63,7 +63,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
 
     private PreparedStatement getUpdateStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
-                "UPDATE medcenter SET medcenter_name = ?, region_name = ?, location_name = ? WHERE id = ? ");
+                "UPDATE medcenter SET medcenter_name = ?, region_name = ?, location_name = ? WHERE id_medcenter = ? ");
     }
 
     @Override
@@ -106,7 +106,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
         PreparedStatement statement = null;
         try {
             statement = manager.getConnection().prepareStatement(
-                    "DELETE medcenter WHERE id = ? ");
+                    "DELETE medcenter WHERE id_medcenter = ? ");
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
@@ -116,7 +116,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     }
 
     private PreparedStatement getInsertStatement() throws SQLException {
-        return manager.getConnection().prepareStatement("INSERT INTO medcenter (id, medcenter_name, " +
+        return manager.getConnection().prepareStatement("INSERT INTO medcenter (id_medcenter, medcenter_name, " +
                 "region_name, location_name) VALUES (?, ?, ?, ?)");
     }
 

@@ -4,9 +4,13 @@
         <idAdmin>1</idAdmin>
     </admins>
     <admins>
+        <login>alex</login>
+        <password>alex</password>
         <idAdmin>2</idAdmin>
     </admins>
     <admins>
+        <login>master</login>
+        <password>master</password>
         <idAdmin>3</idAdmin>
     </admins>
 </admins>
