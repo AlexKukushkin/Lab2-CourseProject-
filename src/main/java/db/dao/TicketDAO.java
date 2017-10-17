@@ -1,5 +1,6 @@
 package db.dao;
 
+import org.apache.log4j.Logger;
 import pojo.Ticket;
 import db.ConnectionManagerPostgreSQL;
 import db.IConnectionManager;
@@ -16,6 +17,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
     }
 
     private static IConnectionManager manager;
+    private static final Logger logger = Logger.getLogger(TicketDAO.class);
 
     static {
         manager = ConnectionManagerPostgreSQL.getInstance();
@@ -24,6 +26,8 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
     @Override
     public List<Ticket> getAll() throws TicketDAOException {
         List<Ticket> ticketList = new ArrayList<>();
+        logger.info("Log for getAll Tickets");
+
         Statement statement = null;
 
         try {
@@ -43,7 +47,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             }
             System.out.println(ticketList);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new TicketDAOException();
         }
         return ticketList;
@@ -52,6 +56,8 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
     @Override
     public Ticket getByID(int id) throws TicketDAOException {
         PreparedStatement statement = null;
+        logger.info("Log for get Ticket by ID");
+
         try {
             statement = manager.getConnection().prepareStatement("SELECT * FROM ticket WHERE id_ticket = ? ");
             statement.setInt(1, id);
@@ -66,7 +72,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
                     resultSet.getString("day_patient"),
                     resultSet.getString("time_patient"));
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new TicketDAOException();
         }
     }
@@ -91,7 +97,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             statement.setInt(7, ticket.getIdMedCenter());
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new TicketDAOException();
         }
     }
@@ -113,7 +119,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             }
             statement.executeBatch();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new TicketDAOException();
         }
     }
@@ -127,7 +133,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new TicketDAOException();
         }
     }
@@ -152,10 +158,10 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             statement.setInt(7, ticket.getIdMedCenter());
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new TicketDAOException();
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
     }
 
@@ -176,10 +182,10 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             }
             statement.executeBatch();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new TicketDAOException();
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
     }
 }

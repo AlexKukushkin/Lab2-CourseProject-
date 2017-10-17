@@ -1,5 +1,6 @@
 package db.dao;
 
+import org.apache.log4j.Logger;
 import pojo.Calendar;
 import db.ConnectionManagerPostgreSQL;
 import db.IConnectionManager;
@@ -17,6 +18,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     }
 
     private static IConnectionManager manager;
+    private static final Logger logger = Logger.getLogger(CalendarDAO.class);
 
     static {
         manager = ConnectionManagerPostgreSQL.getInstance();
@@ -25,6 +27,8 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     @Override
     public List<Calendar> getAll() throws CalendarDAOException {
         List<Calendar> calendarList = new ArrayList<>();
+        logger.info("Log for getAll Doctors' schedules");
+
         Statement statement = null;
 
         try {
@@ -44,7 +48,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
                         calendarList.add(calendar);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new CalendarDAOException();
         }
         return calendarList;
@@ -53,6 +57,8 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     @Override
     public Calendar getByID(int id) throws CalendarDAOException {
         PreparedStatement statement = null;
+        logger.info("Log for get Calendar by id");
+
         try {
             statement = manager.getConnection().prepareStatement("SELECT * FROM calendar WHERE id_calendar = ? ");
             statement.setInt(1, id);
@@ -69,7 +75,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
                     resultSet.getString("saturday"),
                     resultSet.getString("sunday"));
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new CalendarDAOException();
         }
     }

@@ -1,5 +1,6 @@
 package db.dao;
 
+import org.apache.log4j.Logger;
 import pojo.MedCenter;
 import db.ConnectionManagerPostgreSQL;
 import db.IConnectionManager;
@@ -14,6 +15,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     }
 
     private static IConnectionManager manager;
+    private static final Logger logger = Logger.getLogger(MedCenterDAO.class);
 
     static {
         manager = ConnectionManagerPostgreSQL.getInstance();
@@ -22,6 +24,8 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     @Override
     public List<MedCenter> getAll() throws MedCenterDAOException {
         List<MedCenter> medCenterList = new ArrayList<>();
+        logger.info("Log for getAll MedCenters");
+
         Statement statement = null;
 
         try {
@@ -36,7 +40,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
                 medCenterList.add(medCenter);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new MedCenterDAOException();
         }
         return medCenterList;
@@ -45,6 +49,8 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     @Override
     public MedCenter getByID(int id) throws MedCenterDAOException {
         PreparedStatement statement = null;
+        logger.info("Log for get MedCenter by ID");
+
         try {
             statement = manager.getConnection().prepareStatement("SELECT * FROM medcenter WHERE id_medcenter = ? ");
             statement.setInt(1, id);
@@ -56,7 +62,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
                     resultSet.getString("region_name"),
                     resultSet.getString("location_name"));
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new MedCenterDAOException();
         }
     }
@@ -77,7 +83,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
             statement.setString(4, medCenter.getLocationName());
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new MedCenterDAOException();
         }
     }
@@ -96,7 +102,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
             }
             statement.executeBatch();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new MedCenterDAOException();
         }
     }
@@ -110,7 +116,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new MedCenterDAOException();
         }
     }
@@ -131,7 +137,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
             statement.setString(4, medCenter.getLocationName());
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new MedCenterDAOException();
         }
     }
@@ -150,7 +156,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
             }
             statement.executeBatch();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new MedCenterDAOException();
         }
     }

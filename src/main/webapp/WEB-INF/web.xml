@@ -46,18 +46,18 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>
-            PatientInsertServlet
-        </servlet-name>
-        <servlet-class>
-            servlets.PatientInsertServlet
-        </servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>PatientInsertServlet</servlet-name>
-        <url-pattern>/patient_main</url-pattern>
-    </servlet-mapping>
+    <!--<servlet>-->
+        <!--<servlet-name>-->
+            <!--PatientMainServlet-->
+        <!--</servlet-name>-->
+        <!--<servlet-class>-->
+            <!--servlets.PatientMainServlet-->
+        <!--</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>PatientMainServlet</servlet-name>-->
+        <!--<url-pattern>/patient_main</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <jsp-config>
         <jsp-property-group>

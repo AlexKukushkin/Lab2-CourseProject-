@@ -7,13 +7,22 @@ public class AuthorizationServiceImpl implements AuthorizationService {
     private static IUserDAO userDAO = new UserDAOImpl();
 
     @Override
-    public Boolean auth(String login, String password) {
+    public String auth(String login, String password) {
         if (login == null || password == null) {
-            return false;
+            return "false";
         }
-        if (userDAO.getUserByLoginAndPassword(login, PasswordEncoder.encode(password)) != null) {
-            return true;
+        if (userDAO.getUserByLoginAndPassword(login, PasswordEncoder.encode(password)) != null
+                && "admin".equals(userDAO.getUserRole(login, PasswordEncoder.encode(password)))){
+            return "admin";
         }
-        return false;
+        else if (userDAO.getUserByLoginAndPassword(login, PasswordEncoder.encode(password)) != null
+                && "doctor".equals(userDAO.getUserRole(login, PasswordEncoder.encode(password)))){
+            return "doctor";
+        }
+        else if(userDAO.getUserByLoginAndPassword(login, PasswordEncoder.encode(password)) != null
+                && "patient".equals(userDAO.getUserRole(login, PasswordEncoder.encode(password)))){
+                return "patient";
+        }
+        return "false";
     }
 }

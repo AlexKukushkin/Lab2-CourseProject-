@@ -18,7 +18,7 @@ public class RegisterFilter implements Filter {
         if(isSingUp != null && isSingUp){
             chain.doFilter(request, response);
         }else{
-            ((HttpServletResponse)response).sendRedirect("/webstudents");
+            ((HttpServletResponse)response).sendRedirect("/web");
         }
     }
 

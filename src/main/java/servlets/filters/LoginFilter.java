@@ -18,7 +18,7 @@ public class LoginFilter implements Filter {
         if(isAuth != null && isAuth){
             chain.doFilter(request, response);
         }else{
-            ((HttpServletResponse)response).sendRedirect("/webstudents");
+            ((HttpServletResponse)response).sendRedirect("/web");
         }
     }
 

@@ -25,7 +25,7 @@
 <body>
 <div class="container">
     <form class="form-signin" id="myForm" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Электронная запись к врачу</h2>
         <label for="inputLogin" class="sr-only">Login</label>
         <input type="login" id="inputLogin" name="inputLogin" class="form-control" placeholder="Username" required
                autofocus>
@@ -34,11 +34,11 @@
                required>
         <div class="checkbox">
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me"> Запомнить
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" formaction="/web/auth" value="login" type="submit">
-            Login
+            Войти в личный кабинет
         </button>
     </form>
 </div>
@@ -46,7 +46,7 @@
     <div class="col-sm-12">
         <div class="text-center">
             <a class="btn btn-lg btn-success" style="width: 22%" href="registration.jsp" value="register"
-                    type="submit">Register
+                    type="submit">Регистрация
             </a>
         </div>
     </div>

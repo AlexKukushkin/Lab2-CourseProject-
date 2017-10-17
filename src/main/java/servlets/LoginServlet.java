@@ -17,10 +17,16 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("inputLogin");
         String password = req.getParameter("inputPassword");
-        if (authorizationService.auth(login, password)) {
+        if ("admin".equals(authorizationService.auth(login, password))) {
             req.getSession().setAttribute("isAuth", true);
-//            req.getRequestDispatcher("/student").forward(req, resp);
-            ((HttpServletResponse)resp).sendRedirect("/web/main");
+            req.getRequestDispatcher("/admin_main.jsp").forward(req, resp);
+//            ((HttpServletResponse)resp).sendRedirect("/web/patient_main.jsp");
+        }else if("doctor".equals(authorizationService.auth(login, password))){
+            req.getSession().setAttribute("isAuth", true);
+            req.getRequestDispatcher("/doctor_main.jsp").forward(req, resp);
+        }else if("patient".equals(authorizationService.auth(login, password))){
+            req.getSession().setAttribute("isAuth", true);
+            req.getRequestDispatcher("/patient_main.jsp").forward(req, resp);
         }else{
             getServletContext().getRequestDispatcher("/").forward(req, resp);
         }

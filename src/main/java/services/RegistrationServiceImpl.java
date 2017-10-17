@@ -16,4 +16,12 @@ public class RegistrationServiceImpl implements RegistrationService {
         }
         return userDAO.createUser(new User(login, encode(password), "patient"));
     }
+
+    @Override
+    public int getUserID(String login, String password) {
+        if(login == null || password == null){
+            return 0;
+        }
+        return userDAO.getUserId(login, PasswordEncoder.encode(password));
+    }
 }

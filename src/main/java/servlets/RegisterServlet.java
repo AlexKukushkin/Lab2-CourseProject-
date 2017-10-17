@@ -1,6 +1,7 @@
 package servlets;
 
 import db.dao.PatientDAO;
+import db.dao.UserDAOImpl;
 import pojo.Patient;
 import services.RegistrationService;
 import services.RegistrationServiceImpl;
@@ -22,19 +23,23 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         System.out.println("POST");
         PatientDAO patientDAO = new PatientDAO();
+        UserDAOImpl userDAO = new UserDAOImpl();
 
         String login = req.getParameter("inputLogin");
         String password = req.getParameter("inputPassword");
 
         if (registrationService.regUser(login, password)) {
             try {
+                int idUser = registrationService.getUserID(login, password);
                 patientDAO.insertOne(new Patient(req.getParameter("firstName"),
                         req.getParameter("familyName"), req.getParameter("patronymic"),
                         req.getParameter("birthDate"), req.getParameter("passport"),
                         req.getParameter("SNILS"), req.getParameter("medPolis"),
-                        req.getParameter("registerLocation"), req.getParameter("address"), req.getParameter("sexType")));
+                        req.getParameter("registerLocation"), req.getParameter("address"),
+                        req.getParameter("sexType"), idUser));
             } catch (PatientDAO.PatientDAOException e) {
                 e.printStackTrace();
             }

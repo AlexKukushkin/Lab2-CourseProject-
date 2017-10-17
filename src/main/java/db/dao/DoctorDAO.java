@@ -1,6 +1,7 @@
 package db.dao;
 
 import db.ConnectionManagerPostgreSQL;
+import org.apache.log4j.Logger;
 import pojo.Doctor;
 import db.IConnectionManager;
 import java.sql.*;
@@ -13,6 +14,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
     }
 
     private static IConnectionManager manager;
+    private static final Logger logger = Logger.getLogger(DoctorDAO.class);
 
     static {
         manager = ConnectionManagerPostgreSQL.getInstance();
@@ -26,6 +28,8 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
     @Override
     public List<Doctor> getAll() throws DoctorDAOException {
         List<Doctor> doctorList = new ArrayList<>();
+        logger.info("Log for getAll Doctors");
+
         Statement statement = null;
 
         try {
@@ -48,7 +52,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
                 doctorList.add(doctor);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new DoctorDAOException();
         }
         return doctorList;
@@ -57,6 +61,8 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
     @Override
     public Doctor getByID(int id) throws DoctorDAOException {
         PreparedStatement statement = null;
+        logger.debug("Log for get certain Doctor by ID");
+
         try {
             statement = manager.getConnection().prepareStatement("SELECT * FROM doctor WHERE id_doctor = ? ");
             statement.setInt(1, id);
@@ -75,7 +81,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
                     resultSet.getString("office"),
                     resultSet.getInt("user_id"));
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new DoctorDAOException();
         }
     }
@@ -101,7 +107,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             statement.setInt(7, doctor.getIdUser());
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new DoctorDAOException();
         }
     }
@@ -125,7 +131,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             }
             statement.executeBatch();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new DoctorDAOException();
         }
     }
@@ -139,7 +145,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new DoctorDAOException();
         }
     }
@@ -164,7 +170,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             statement.setInt(7, doctor.getIdUser());
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new DoctorDAOException();
         }
 
@@ -190,7 +196,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             }
             statement.executeBatch();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new DoctorDAOException();
         }
     }

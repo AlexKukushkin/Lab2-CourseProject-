@@ -59,7 +59,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></div>
-                        <input id="birthDate" name="birthDate" type="text" class="form-control" placeholder="Birthday">
+                        <input id="birthDate" name="birthDate" type="text" class="form-control" placeholder="yyyy-mm-dd">
                     </div>
                     <span class="help-block" id="error4"></span>
                 </div>
