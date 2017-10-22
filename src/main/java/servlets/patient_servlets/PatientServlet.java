@@ -14,6 +14,13 @@ public class PatientServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ((HttpServletResponse)resp).sendRedirect("/web/patient_main");
+        String exit = req.getParameter("exit");
+        if ("exit".equals(exit)) {
+            req.getSession().setAttribute("isAuth", false);
+            req.getSession().setAttribute("role", null);
+            ((HttpServletResponse) resp).sendRedirect("/web");
+        } else {
+            ((HttpServletResponse) resp).sendRedirect("/web/patient_main");
+        }
     }
 }
