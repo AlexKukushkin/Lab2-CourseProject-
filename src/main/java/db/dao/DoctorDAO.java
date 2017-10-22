@@ -121,7 +121,6 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
                 statement.setString(6, doctor.getOffice());
                 statement.setInt(7, doctor.getIdUser());
                 statement.addBatch();
-
             }
             statement.executeBatch();
         } catch (SQLException e) {

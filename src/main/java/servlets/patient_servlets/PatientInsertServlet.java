@@ -1,4 +1,4 @@
-package servlets;
+package servlets.patient_servlets;
 
 import db.dao.PatientDAO;
 import db.dao.UserDAOImpl;

@@ -13,11 +13,9 @@ public class AdminFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        System.out.println("Admin Filter START");
         String role = (String) ((HttpServletRequest)request).getSession().getAttribute("role");
         if("admin".equals(role)){
             chain.doFilter(request, response);
-//            ((HttpServletRequest)request).getSession().setAttribute("isAuth", "admin");
         }else{
             ((HttpServletResponse)response).sendRedirect("/web");
         }

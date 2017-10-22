@@ -14,6 +14,30 @@ public class Ticket implements Serializable {
     private String patientTime;
     private String patientDate;
 
+    private String firstName;
+    private String familyName;
+    private String patronymic;
+    private String doctorFIO;
+    private String office;
+    private String specialization;
+    private String centerName;
+
+    public Ticket(int idTicket, String firstName, String familyName,
+                  String patronymic, String doctorFIO, String office, String specialization, String patientDay,
+                  String patientTime, String patientDate, String centerName) {
+        this.idTicket = idTicket;
+        this.firstName = firstName;
+        this.familyName = familyName;
+        this.patronymic = patronymic;
+        this.doctorFIO = doctorFIO;
+        this.office = office;
+        this.specialization = specialization;
+        this.patientDay = patientDay;
+        this.patientTime = patientTime;
+        this.patientDate = patientDate;
+        this.centerName = centerName;
+    }
+
     public Ticket() {
     }
 
@@ -97,5 +121,61 @@ public class Ticket implements Serializable {
     @XmlElement
     public void setPatientDate(String patientDate) {
         this.patientDate = patientDate;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getFamilyName() {
+        return familyName;
+    }
+
+    public void setFamilyName(String familyName) {
+        this.familyName = familyName;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public String getDoctorFIO() {
+        return doctorFIO;
+    }
+
+    public void setDoctorFIO(String doctorFIO) {
+        this.doctorFIO = doctorFIO;
+    }
+
+    public String getOffice() {
+        return office;
+    }
+
+    public void setOffice(String office) {
+        this.office = office;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    public String getCenterName() {
+        return centerName;
+    }
+
+    public void setCenterName(String centerName) {
+        this.centerName = centerName;
     }
 }

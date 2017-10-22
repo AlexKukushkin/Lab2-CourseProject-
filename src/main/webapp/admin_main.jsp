@@ -32,22 +32,10 @@
                     class="brand" href="registration3.jsp">ADMIN DASHBOARD </a>
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                class="icon-cog"></i> Аккаунт <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:;">Настройки</a></li>
-                                <li><a href="javascript:;">Помощь</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                class="icon-user"></i>Личный кабинет<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="javascript:;">Профиль</a></li>
-                                <button name="exit" class="btn btn-sm btn-success btn-block" formaction="/web/admin_main" value="exit" type="submit">
-                                    Выход
-                                </button>
-                            </ul>
-                        </li>
+                        <button name="exit" class="btn btn-md btn-success btn-block" formaction="/web/admin_main"
+                                value="exit" type="submit">
+                            Выход
+                        </button>
                     </ul>
                     <%--<form class="navbar-search pull-right">--%>
                     <%--</form>--%>
@@ -57,20 +45,6 @@
             <!-- /container -->
         </div>
         <!-- /navbar-inner -->
-</div>
-<!-- /navbar -->
-<div class="subnavbar">
-    <div class="subnavbar-inner">
-        <div class="container">
-            <ul class="mainnav">
-                <li class="active"><a href="registration3.jsp"><i
-                        class="icon-dashboard"></i><span>База пользователей</span> </a></li>
-                <li><a href="reports.html"><i class="icon-list-alt"></i><span>Отчёты</span> </a></li>
-            </ul>
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /subnavbar-inner -->
 </div>
 <!-- /subnavbar -->
 <div class="main">
@@ -101,24 +75,30 @@
                         <!-- /widget-header -->
                         <div class="widget-content">
                             <div class="shortcuts">
-                                <button type="submit" name="showPatients" value="showPatients" class="shortcut" formaction="/web/patient_list">
+                                <button type="submit" name="showPatients" value="showPatients" class="shortcut"
+                                        formaction="/web/patient_list">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы пациентов</span>
                                 </button>
-                                <button type="submit" name="showUsers" value="showUsers" class="shortcut" formaction="/web/user_list">
+                                <button type="submit" name="showUsers" value="showUsers" class="shortcut"
+                                        formaction="/web/user_list">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы пользователей</span>
                                 </button>
-                                <button type="submit" name="showDoctors" value="showDoctors" class="shortcut" formaction="/web/doctor_list">
+                                <button type="submit" name="showDoctors" value="showDoctors" class="shortcut"
+                                        formaction="/web/doctor_list">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы врачей</span>
                                 </button>
-                                <button type="submit" name="showSchedule" value="showSchedule" class="shortcut" formaction="/web/doctor_schedule">
+                                <button type="submit" name="showSchedule" value="showSchedule" class="shortcut"
+                                        formaction="/web/doctor_schedule">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр графика работы врачей</span>
                                 </button>
-
-                                <a href="javascript:;" class="shortcut"> <i
-                                        class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр МедЦентров</span>
-                                </a>
-                                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span
-                                        class="shortcut-label">Список талонов</span> </a>
+                                <button type="submit" name="showMedcenters" value="showMedcenters" class="shortcut"
+                                        formaction="/web/medcenters">
+                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр МедЦентров</span>
+                                </button>
+                                <button type="submit" name="showTickets" value="showTickets" class="shortcut"
+                                        formaction="/web/ticket_list">
+                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Список талонов</span>
+                                </button>
                             </div>
                             <!-- /shortcuts -->
                         </div>

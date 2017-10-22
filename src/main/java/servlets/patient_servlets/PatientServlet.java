@@ -1,4 +1,4 @@
-package servlets;
+package servlets.patient_servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -32,17 +32,27 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
         try {
             statement = manager.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT tk.*" +
-                    "FROM ticket tk LEFT JOIN patient pt ON pt.id_patient = tk.patient_id");
+//            ResultSet resultSet = statement.executeQuery("SELECT tk.*" +
+//                    "FROM ticket tk LEFT JOIN patient pt ON pt.id_patient = tk.patient_id");
+            ResultSet resultSet = statement.executeQuery("SELECT tk.id_ticket, pt.first_name, pt.family_name, pt.patronymic, \n" +
+                    "concat(dc.family_name,' ',left(dc.first_name, 1),'. ',left(dc.patronymic, 1),'.') as DoctorFIO, dc.office, dc.specialization,\n" +
+                    "tk.time_patient, tk.day_patient, tk.date_patient, md.medcenter_name \n" +
+                    "FROM ticket tk LEFT JOIN patient pt ON pt.id_patient = tk.patient_id LEFT JOIN doctor dc ON dc.id_doctor = tk.doctor_id\n" +
+                    "LEFT JOIN medcenter md ON md.id_medcenter = tk.medcenter_id;");
+
             while (resultSet.next()) {
                 Ticket ticket = new Ticket(
                         resultSet.getInt("id_ticket"),
-                        resultSet.getInt("patient_id"),
-                        resultSet.getInt("doctor_id"),
-                        resultSet.getInt("medcenter_id"),
-                        resultSet.getString("day_patient"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("family_name"),
+                        resultSet.getString("patronymic"),
+                        resultSet.getString("DoctorFIO"),
+                        resultSet.getString("office"),
+                        resultSet.getString("specialization"),
                         resultSet.getString("time_patient"),
-                        resultSet.getString("date_patient"));
+                        resultSet.getString("day_patient"),
+                        resultSet.getString("date_patient"),
+                        resultSet.getString("medcenter_name"));
                 ticketList.add(ticket);
             }
             System.out.println(ticketList);

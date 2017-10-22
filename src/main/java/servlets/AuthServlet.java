@@ -27,7 +27,7 @@ public class AuthServlet extends HttpServlet{
     private void sortUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Boolean isAuth = (Boolean) ((HttpServletRequest)request).getSession().getAttribute("isAuth");
         String role;
-        if (isAuth==null) isAuth = false;
+        if (isAuth == null) isAuth = false;
         if (isAuth) {
             role = (String) ((HttpServletRequest)request).getSession().getAttribute("role");
         } else {

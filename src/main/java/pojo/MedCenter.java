@@ -21,12 +21,12 @@ public class MedCenter implements Serializable{
         this.locationName = locationName;
     }
 
-    public MedCenter(String centerName, String regionName, String locationName) {
-        this.idMedCenter = 0;
-        this.centerName = centerName;
-        this.regionName = regionName;
-        this.locationName = locationName;
-    }
+//    public MedCenter(String centerName, String regionName, String locationName) {
+//        this.idMedCenter = 0;
+//        this.centerName = centerName;
+//        this.regionName = regionName;
+//        this.locationName = locationName;
+//    }
 
     public int getIdMedCenter() {
         return idMedCenter;
@@ -37,12 +37,12 @@ public class MedCenter implements Serializable{
         this.idMedCenter = idMedCenter;
     }
 
-    public String getMedCenterName() {
+    public String getCenterName() {
         return centerName;
     }
 
     @XmlElement
-    public void setMedCenterName(String centerName) {
+    public void setCenterName(String centerName) {
         this.centerName = centerName;
     }
 

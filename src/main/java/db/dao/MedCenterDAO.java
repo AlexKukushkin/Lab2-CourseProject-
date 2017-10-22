@@ -78,7 +78,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
         try {
             statement = getUpdateStatement();
             statement.setInt(1, medCenter.getIdMedCenter());
-            statement.setString(2, medCenter.getMedCenterName());
+            statement.setString(2, medCenter.getCenterName());
             statement.setString(3, medCenter.getRegionName());
             statement.setString(4, medCenter.getLocationName());
             statement.executeUpdate();
@@ -95,7 +95,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
             statement = getUpdateStatement();
             for (MedCenter medCenter : medCenterList) {
                 statement.setInt(1, medCenter.getIdMedCenter());
-                statement.setString(2, medCenter.getMedCenterName());
+                statement.setString(2, medCenter.getCenterName());
                 statement.setString(3, medCenter.getRegionName());
                 statement.setString(4, medCenter.getLocationName());
                 statement.addBatch();
@@ -132,7 +132,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
         try {
             statement = getInsertStatement();
             statement.setInt(1, medCenter.getIdMedCenter());
-            statement.setString(2, medCenter.getMedCenterName());
+            statement.setString(2, medCenter.getCenterName());
             statement.setString(3, medCenter.getRegionName());
             statement.setString(4, medCenter.getLocationName());
             statement.executeUpdate();
@@ -149,7 +149,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
             statement = getInsertStatement();
             for (MedCenter medCenter : medCenterList) {
                 statement.setInt(1, medCenter.getIdMedCenter());
-                statement.setString(2, medCenter.getMedCenterName());
+                statement.setString(2, medCenter.getCenterName());
                 statement.setString(3, medCenter.getRegionName());
                 statement.setString(4, medCenter.getLocationName());
                 statement.addBatch();

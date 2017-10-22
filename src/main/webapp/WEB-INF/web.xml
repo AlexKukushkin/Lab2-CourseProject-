@@ -3,14 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <servlet>
-        <servlet-name>PatientServlet</servlet-name>
-        <servlet-class>servlets.PatientServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>PatientServlet</servlet-name>
-        <url-pattern>/patient_main</url-pattern>
-    </servlet-mapping>
+
     <filter>
         <filter-name>login</filter-name>
         <filter-class>servlets.filters.LoginFilter</filter-class>
@@ -20,15 +13,6 @@
         <url-pattern>/index.jsp</url-pattern>
     </filter-mapping>
 
-    <servlet>
-        <servlet-name>AuthServlet</servlet-name>
-        <servlet-class>servlets.AuthServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>AuthServlet</servlet-name>
-        <url-pattern>/auth</url-pattern>
-    </servlet-mapping>
     <filter>
         <filter-name>patient_page</filter-name>
         <filter-class>servlets.filters.PatientFilter</filter-class>
@@ -83,12 +67,30 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>servlets.AuthServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>AdminServlet</servlet-name>
-        <servlet-class>servlets.AdminServlet</servlet-class>
+        <servlet-class>servlets.admin_servlets.AdminServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminServlet</servlet-name>
         <url-pattern>/admin_main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientServlet</servlet-name>
+        <url-pattern>/patient_main</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -105,7 +107,7 @@
             AdminGetAllPatientsServlet
         </servlet-name>
         <servlet-class>
-            servlets.AdminGetAllPatientsServlet
+            servlets.admin_servlets.AdminGetAllPatientsServlet
         </servlet-class>
     </servlet>
     <servlet-mapping>
@@ -118,7 +120,7 @@
             AdminGetAllUsersServlet
         </servlet-name>
         <servlet-class>
-            servlets.AdminGetAllUsersServlet
+            servlets.admin_servlets.AdminGetAllUsersServlet
         </servlet-class>
     </servlet>
     <servlet-mapping>
@@ -131,7 +133,7 @@
             AdminGetAllDoctorsServlet
         </servlet-name>
         <servlet-class>
-            servlets.AdminGetAllDoctorsServlet
+            servlets.admin_servlets.AdminGetAllDoctorsServlet
         </servlet-class>
     </servlet>
     <servlet-mapping>
@@ -144,12 +146,30 @@
             AdminGetScheduleServlet
         </servlet-name>
         <servlet-class>
-            servlets.AdminGetScheduleServlet
+            servlets.admin_servlets.AdminGetScheduleServlet
         </servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminGetScheduleServlet</servlet-name>
         <url-pattern>/doctor_schedule</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminGetMedcentersServlet</servlet-name>
+        <servlet-class>servlets.admin_servlets.AdminGetMedcentersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminGetMedcentersServlet</servlet-name>
+        <url-pattern>/medcenters</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminGetTicketsServlet</servlet-name>
+        <servlet-class>servlets.admin_servlets.AdminGetTicketsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminGetTicketsServlet</servlet-name>
+        <url-pattern>/ticket_list</url-pattern>
     </servlet-mapping>
 
     <jsp-config>

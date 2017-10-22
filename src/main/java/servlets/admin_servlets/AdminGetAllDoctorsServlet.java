@@ -1,4 +1,4 @@
-package servlets;
+package servlets.admin_servlets;
 
 import db.dao.DoctorDAO;
 import db.dao.UserDAOImpl;
@@ -28,7 +28,7 @@ public class AdminGetAllDoctorsServlet extends HttpServlet {
             e.printStackTrace();
         }
         req.setAttribute("list", doctors);
-        ((HttpServletResponse)resp).sendRedirect("/web/doctor_list");
-//        req.getRequestDispatcher("/doctor_list.jsp").forward(req, resp);
+        //((HttpServletResponse)resp).sendRedirect("/web/doctor_list");
+        req.getRequestDispatcher("/doctor_list.jsp").forward(req, resp);
     }
 }
