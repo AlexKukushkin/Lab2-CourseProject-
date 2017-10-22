@@ -39,9 +39,6 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             while (resultSet.next()) {
                 Doctor doctor = new Doctor(
                         resultSet.getInt("id_doctor"),
-                        resultSet.getString("login"),
-                        resultSet.getString("password"),
-                        resultSet.getString("role"),
                         resultSet.getString("first_name"),
                         resultSet.getString("family_name"),
                         resultSet.getString("patronymic"),
@@ -70,9 +67,6 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             resultSet.next();
             return new Doctor(
                     resultSet.getInt("id_doctor"),
-                    resultSet.getString("login"),
-                    resultSet.getString("password"),
-                    resultSet.getString("role"),
                     resultSet.getString("first_name"),
                     resultSet.getString("family_name"),
                     resultSet.getString("patronymic"),

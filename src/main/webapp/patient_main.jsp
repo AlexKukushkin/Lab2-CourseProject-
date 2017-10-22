@@ -42,7 +42,7 @@
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
                 <li class="active-link">
-                    <a href="index.html" ><i class="fa fa-desktop "></i>Просмотр всех врачей</a>
+                    <a href="registration3.jsp" ><i class="fa fa-desktop "></i>Просмотр всех врачей</a>
                 </li>
                 <li>
                     <a href="ui.html"><i class="fa fa-table "></i>Выбор населённого пункта</a>

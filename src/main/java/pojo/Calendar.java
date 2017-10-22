@@ -6,13 +6,38 @@ public class Calendar implements Serializable {
 
     private int idCalendar;
     private int idDoctor;
-    private String MonDay;
-    private String TuesDay;
-    private String WednesDay;
-    private String ThursDay;
-    private String FriDay;
-    private String SaturDay;
-    private String SunDay;
+    private String monDay;
+    private String tuesDay;
+    private String wednesDay;
+    private String thursDay;
+    private String friDay;
+    private String saturDay;
+    private String sunDay;
+
+    private String firstName;
+    private String familyName;
+    private String patronymic;
+    private String specialization;
+    private String office;
+
+    public Calendar(int idCalendar, int idDoctor, String monDay, String tuesDay,
+                    String wednesDay, String thursDay, String friDay, String saturDay, String sunDay,
+                    String firstName, String familyName, String patronymic, String specialization, String office) {
+        this.idCalendar = idCalendar;
+        this.idDoctor = idDoctor;
+        this.monDay = monDay;
+        this.tuesDay = tuesDay;
+        this.wednesDay = wednesDay;
+        this.thursDay = thursDay;
+        this.friDay = friDay;
+        this.saturDay = saturDay;
+        this.sunDay = sunDay;
+        this.firstName = firstName;
+        this.familyName = familyName;
+        this.patronymic = patronymic;
+        this.specialization = specialization;
+        this.office = office;
+    }
 
     public Calendar() {
     }
@@ -22,13 +47,13 @@ public class Calendar implements Serializable {
                     String saturDay, String sunDay) {
         this.idCalendar = 0;
         this.idDoctor = idDoctor;
-        MonDay = monDay;
-        TuesDay = tuesDay;
-        WednesDay = wednesDay;
-        ThursDay = thursDay;
-        FriDay = friDay;
-        SaturDay = saturDay;
-        SunDay = sunDay;
+        this.monDay = monDay;
+        this.tuesDay = tuesDay;
+        this.wednesDay = wednesDay;
+        this.thursDay = thursDay;
+        this.friDay = friDay;
+        this.saturDay = saturDay;
+        this.sunDay = sunDay;
     }
 
     public Calendar(int idCalendar, int idDoctor, String monDay, String tuesDay,
@@ -36,13 +61,13 @@ public class Calendar implements Serializable {
                     String saturDay, String sunDay) {
         this.idCalendar = idCalendar;
         this.idDoctor = idDoctor;
-        MonDay = monDay;
-        TuesDay = tuesDay;
-        WednesDay = wednesDay;
-        ThursDay = thursDay;
-        FriDay = friDay;
-        SaturDay = saturDay;
-        SunDay = sunDay;
+        this.monDay = monDay;
+        this.tuesDay = tuesDay;
+        this.wednesDay = wednesDay;
+        this.thursDay = thursDay;
+        this.friDay = friDay;
+        this.saturDay = saturDay;
+        this.sunDay = sunDay;
     }
 
     public int getIdCalendar() {
@@ -62,76 +87,115 @@ public class Calendar implements Serializable {
     }
 
     public String getMonDay() {
-        return MonDay;
+        return monDay;
     }
 
     public void setMonDay(String monDay) {
-        MonDay = monDay;
+        this.monDay = monDay;
     }
 
     public String getTuesDay() {
-        return TuesDay;
+        return tuesDay;
     }
 
     public void setTuesDay(String tuesDay) {
-        TuesDay = tuesDay;
+        this.tuesDay = tuesDay;
     }
 
     public String getWednesDay() {
-        return WednesDay;
+        return wednesDay;
     }
 
     public void setWednesDay(String wednesDay) {
-        WednesDay = wednesDay;
+        this.wednesDay = wednesDay;
     }
 
     public String getThursDay() {
-        return ThursDay;
+        return thursDay;
     }
 
     public void setThursDay(String thursDay) {
-        ThursDay = thursDay;
+        this.thursDay = thursDay;
     }
 
     public String getFriDay() {
-        return FriDay;
+        return friDay;
     }
 
     public void setFriDay(String friDay) {
-        FriDay = friDay;
+        this.friDay = friDay;
     }
 
     public String getSaturDay() {
-        return SaturDay;
+        return saturDay;
     }
 
     public void setSaturDay(String saturDay) {
-        SaturDay = saturDay;
+        this.saturDay = saturDay;
     }
 
     public String getSunDay() {
-        return SunDay;
+        return sunDay;
     }
 
     public void setSunDay(String sunDay) {
-        SunDay = sunDay;
+        this.sunDay = sunDay;
     }
 
-    public static void sheduleTime() {
-        int SIZE = 7;
-        String[][] schedule = new String[SIZE][SIZE];
+    //    public static void sheduleTime() {
+//        int SIZE = 7;
+//        String[][] schedule = new String[SIZE][SIZE];
+//
+//        for (int i = 0; i < SIZE; i++) {
+//            for (int j = 0; j < SIZE; j++) {
+//                schedule[i][j] = "8.30 - 9.30";
+//            }
+//        }
+//
+//        for (int i = 0; i < SIZE; i++) {
+//            for (int j = 0; j < SIZE; j++) {
+//                System.out.print(schedule[i][j]);
+//            }
+//            System.out.println();
+//        }
+//    }
+    public String getFirstName() {
+        return firstName;
+    }
 
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                schedule[i][j] = "8.30 - 9.30";
-            }
-        }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                System.out.print(schedule[i][j]);
-            }
-            System.out.println();
-        }
+    public String getFamilyName() {
+        return familyName;
+    }
+
+    public void setFamilyName(String familyName) {
+        this.familyName = familyName;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    public String getOffice() {
+        return office;
+    }
+
+    public void setOffice(String office) {
+        this.office = office;
     }
 }

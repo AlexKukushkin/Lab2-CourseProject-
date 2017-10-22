@@ -27,13 +27,16 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     @Override
     public List<Calendar> getAll() throws CalendarDAOException {
         List<Calendar> calendarList = new ArrayList<>();
-        logger.info("Log for getAll Doctors' schedules");
+        logger.info("Log for getAll Doctors schedules");
 
         Statement statement = null;
 
         try {
             statement = manager.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM calendar");
+            ResultSet resultSet = statement.executeQuery("SELECT calend.*, doc.first_name, doc.family_name, doc.patronymic, " +
+                    "doc.specialization, doc.office\n" +
+                    "FROM public.\"calendar\" calend LEFT JOIN public.\"doctor\" doc ON calend.\"doctor_id\" = doc.id_doctor;");
+
             while (resultSet.next()) {
                 Calendar calendar = new Calendar(
                         resultSet.getInt("id_calendar"),
@@ -44,7 +47,12 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
                         resultSet.getString("thursday"),
                         resultSet.getString("friday"),
                         resultSet.getString("saturday"),
-                        resultSet.getString("sunday"));
+                        resultSet.getString("sunday"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("family_name"),
+                        resultSet.getString("patronymic"),
+                        resultSet.getString("specialization"),
+                        resultSet.getString("office"));
                         calendarList.add(calendar);
             }
         } catch (SQLException e) {

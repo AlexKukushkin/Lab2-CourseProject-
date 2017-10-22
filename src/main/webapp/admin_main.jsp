@@ -25,43 +25,47 @@
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="index.html">ADMIN DASHBOARD </a>
-            <div class="nav-collapse">
-                <ul class="nav pull-right">
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-cog"></i> Аккаунт <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:;">Настройки</a></li>
-                            <li><a href="javascript:;">Помощь</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-user"></i>Личный кабинет<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:;">Профиль</a></li>
-                            <li><a href="javascript:;">Выход</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-search pull-right">
-                    <input type="text" class="search-query" placeholder="Search">
-                </form>
+    <form class="navbar-inner" method="post">
+        <div class="navbar-inner">
+            <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a
+                    class="brand" href="registration3.jsp">ADMIN DASHBOARD </a>
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                class="icon-cog"></i> Аккаунт <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;">Настройки</a></li>
+                                <li><a href="javascript:;">Помощь</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                class="icon-user"></i>Личный кабинет<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;">Профиль</a></li>
+                                <button name="exit" class="btn btn-sm btn-success btn-block" formaction="/web/admin_main" value="exit" type="submit">
+                                    Выход
+                                </button>
+                            </ul>
+                        </li>
+                    </ul>
+                    <%--<form class="navbar-search pull-right">--%>
+                    <%--</form>--%>
+                </div>
+                <!--/.nav-collapse -->
             </div>
-            <!--/.nav-collapse -->
+            <!-- /container -->
         </div>
-        <!-- /container -->
-    </div>
-    <!-- /navbar-inner -->
+        <!-- /navbar-inner -->
 </div>
 <!-- /navbar -->
 <div class="subnavbar">
     <div class="subnavbar-inner">
         <div class="container">
             <ul class="mainnav">
-                <li class="active"><a href="index.html"><i class="icon-dashboard"></i><span>База пользователей</span> </a> </li>
-                <li><a href="reports.html"><i class="icon-list-alt"></i><span>Отчёты</span> </a> </li>
+                <li class="active"><a href="registration3.jsp"><i
+                        class="icon-dashboard"></i><span>База пользователей</span> </a></li>
+                <li><a href="reports.html"><i class="icon-list-alt"></i><span>Отчёты</span> </a></li>
             </ul>
         </div>
         <!-- /container -->
@@ -76,7 +80,7 @@
                 <div class="span6">
                     <!-- /widget -->
                     <div class="widget widget-nopad">
-                        <div class="widget-header"> <i class="icon-list-alt"></i>
+                        <div class="widget-header"><i class="icon-list-alt"></i>
                             <h3> Календарь</h3>
                         </div>
                         <!-- /widget-header -->
@@ -91,19 +95,30 @@
                 <!-- /span6 -->
                 <div class="span6">
                     <div class="widget">
-                        <div class="widget-header"> <i class="icon-bookmark"></i>
+                        <div class="widget-header"><i class="icon-bookmark"></i>
                             <h3>Выполнить операции :</h3>
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
                             <div class="shortcuts">
-                                <a href="javascript:;" class="shortcut">
-                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр всех пользователей</span></a>
-                                <a href="javascript:;" class="shortcut">
-                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы врачей</span></a>
-                                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр графика работы врачей</span> </a>
-                                <a href="javascript:;" class="shortcut"> <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр МедЦентров</span> </a>
-                                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Список талонов</span> </a>
+                                <button type="submit" name="showPatients" value="showPatients" class="shortcut" formaction="/web/patient_list">
+                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы пациентов</span>
+                                </button>
+                                <button type="submit" name="showUsers" value="showUsers" class="shortcut" formaction="/web/user_list">
+                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы пользователей</span>
+                                </button>
+                                <button type="submit" name="showDoctors" value="showDoctors" class="shortcut" formaction="/web/doctor_list">
+                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы врачей</span>
+                                </button>
+                                <button type="submit" name="showSchedule" value="showSchedule" class="shortcut" formaction="/web/doctor_schedule">
+                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр графика работы врачей</span>
+                                </button>
+
+                                <a href="javascript:;" class="shortcut"> <i
+                                        class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр МедЦентров</span>
+                                </a>
+                                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span
+                                        class="shortcut-label">Список талонов</span> </a>
                             </div>
                             <!-- /shortcuts -->
                         </div>
@@ -132,6 +147,7 @@
         <!-- /container -->
     </div>
     <!-- /footer-inner -->
+    </form>
 </div>
 <!-- /footer -->
 <!-- Le javascript
@@ -166,7 +182,7 @@
 
     }
 
-//    var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
+    //    var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
 
 
     var barChartData = {
@@ -186,7 +202,7 @@
 
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -199,7 +215,7 @@
             },
             selectable: true,
             selectHelper: true,
-            select: function(start, end, allDay) {
+            select: function (start, end, allDay) {
                 var title = prompt('Event Title:');
                 if (title) {
                     calendar.fullCalendar('renderEvent',

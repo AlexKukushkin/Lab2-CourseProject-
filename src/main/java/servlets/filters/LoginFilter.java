@@ -13,14 +13,18 @@ public class LoginFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        Boolean isAuth = (Boolean)((HttpServletRequest)request)
+
+        Boolean isAuth = (Boolean) ((HttpServletRequest) request)
                 .getSession().getAttribute("isAuth");
-        if(isAuth != null && isAuth){
+        if (isAuth==null) isAuth=false;
+        if (!isAuth) {
             chain.doFilter(request, response);
-        }else{
-            ((HttpServletResponse)response).sendRedirect("/web");
+        } else {
+            ((HttpServletResponse)response).sendRedirect("/web/auth");
         }
+
     }
+
 
     @Override
     public void destroy() {

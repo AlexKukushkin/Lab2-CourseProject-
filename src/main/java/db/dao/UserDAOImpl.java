@@ -3,11 +3,15 @@ package db.dao;
 import db.ConnectionManagerPostgreSQL;
 import db.IConnectionManager;
 import org.apache.log4j.Logger;
+import pojo.Patient;
 import pojo.User;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAOImpl implements IUserDAO {
     public static class UserDAOException extends Exception {
@@ -19,6 +23,30 @@ public class UserDAOImpl implements IUserDAO {
 
     static {
         manager = ConnectionManagerPostgreSQL.getInstance();
+    }
+
+    @Override
+    public List<User> getAllUsers(){
+        List<User> userList = new ArrayList<>();
+        logger.info("Log for getAll Users");
+
+        Statement statement = null;
+
+        try {
+            statement = manager.getConnection().createStatement();
+
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
+            while (resultSet.next()) {
+                User user = new User(
+                        resultSet.getString("login"),
+                        resultSet.getString("password"),
+                        resultSet.getString("role"));
+                userList.add(user);
+            }
+        } catch (SQLException e) {
+            logger.error("This is Error : " + e.getMessage());
+        }
+        return userList;
     }
 
     @Override

@@ -9,7 +9,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientServlet</servlet-name>
-        <url-pattern>/patient</url-pattern>
+        <url-pattern>/patient_main</url-pattern>
     </servlet-mapping>
     <filter>
         <filter-name>login</filter-name>
@@ -17,7 +17,43 @@
     </filter>
     <filter-mapping>
         <filter-name>login</filter-name>
-        <url-pattern>/patient</url-pattern>
+        <url-pattern>/index.jsp</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>servlets.AuthServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+    <filter>
+        <filter-name>patient_page</filter-name>
+        <filter-class>servlets.filters.PatientFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>patient_page</filter-name>
+        <url-pattern>/patient_main</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>admin_page</filter-name>
+        <filter-class>servlets.filters.AdminFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>admin_page</filter-name>
+        <url-pattern>/admin_main</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>doctor_page</filter-name>
+        <filter-class>servlets.filters.DoctorFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>doctor_page</filter-name>
+        <url-pattern>/doctor_main</url-pattern>
     </filter-mapping>
 
     <servlet>
@@ -30,7 +66,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/auth</url-pattern>
+        <url-pattern>/index.jsp</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -46,18 +82,75 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet>-->
-        <!--<servlet-name>-->
-            <!--PatientMainServlet-->
-        <!--</servlet-name>-->
-        <!--<servlet-class>-->
-            <!--servlets.PatientMainServlet-->
-        <!--</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>PatientMainServlet</servlet-name>-->
-        <!--<url-pattern>/patient_main</url-pattern>-->
-    <!--</servlet-mapping>-->
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>servlets.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/admin_main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DoctorServlet</servlet-name>
+        <servlet-class>servlets.DoctorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DoctorServlet</servlet-name>
+        <url-pattern>/doctor_main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>
+            AdminGetAllPatientsServlet
+        </servlet-name>
+        <servlet-class>
+            servlets.AdminGetAllPatientsServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminGetAllPatientsServlet</servlet-name>
+        <url-pattern>/patient_list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>
+            AdminGetAllUsersServlet
+        </servlet-name>
+        <servlet-class>
+            servlets.AdminGetAllUsersServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminGetAllUsersServlet</servlet-name>
+        <url-pattern>/user_list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>
+            AdminGetAllDoctorsServlet
+        </servlet-name>
+        <servlet-class>
+            servlets.AdminGetAllDoctorsServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminGetAllDoctorsServlet</servlet-name>
+        <url-pattern>/doctor_list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>
+            AdminGetScheduleServlet
+        </servlet-name>
+        <servlet-class>
+            servlets.AdminGetScheduleServlet
+        </servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminGetScheduleServlet</servlet-name>
+        <url-pattern>/doctor_schedule</url-pattern>
+    </servlet-mapping>
 
     <jsp-config>
         <jsp-property-group>

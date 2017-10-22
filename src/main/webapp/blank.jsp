@@ -44,7 +44,7 @@
                  
 
  <li >
-                        <a href="index.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
+                        <a href="registration3.jsp" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
                     </li>
                    
 
