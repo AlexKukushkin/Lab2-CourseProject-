@@ -1,4 +1,4 @@
-package services;
+package services.registration_services;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

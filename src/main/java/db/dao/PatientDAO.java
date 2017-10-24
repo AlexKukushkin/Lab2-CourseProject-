@@ -1,5 +1,6 @@
 package db.dao;
 
+import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
 import pojo.Patient;
 import db.ConnectionManagerPostgreSQL;
@@ -18,7 +19,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     private static final Logger logger = Logger.getLogger(PatientDAO.class);
 
     static {
-        manager = ConnectionManagerPostgreSQL.getInstance();
+        manager = TomcatConnectionPool.getInstance();
     }
 
     @Override
@@ -79,6 +80,25 @@ public class PatientDAO implements IAbstractDAO <Patient>{
                     resultSet.getString("home_location"),
                     resultSet.getString("sextype"),
                     resultSet.getInt("user_id"));
+        } catch (SQLException e) {
+            logger.error("This is Error : " + e.getMessage());
+            throw new PatientDAOException();
+        }
+    }
+
+
+    public int getPatientID(int id) throws PatientDAOException {
+        PreparedStatement statement = null;
+
+        logger.info("Log for get Patient by ID");
+
+        try {
+            statement = manager.getConnection().prepareStatement("SELECT pt.id_patient FROM patient pt JOIN users usr " +
+                    "ON pt.user_id = usr.id AND usr.id = ?");
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            return resultSet.getInt("id_patient");
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
             throw new PatientDAOException();

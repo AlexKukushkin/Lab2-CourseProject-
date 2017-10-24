@@ -1,11 +1,8 @@
-package servlets;
+package servlets.registration_servlet;
 
-import db.dao.PatientDAO;
-import db.dao.UserDAOImpl;
 import dto.UserDTO;
-import pojo.Patient;
-import services.RegistrationService;
-import services.RegistrationServiceImpl;
+import services.registration_services.RegistrationService;
+import services.registration_services.RegistrationServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +23,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         System.out.println("POST");
-        UserDAOImpl userDAO = new UserDAOImpl();
+//        UserDAOImpl userDAO = new UserDAOImpl();
 
         String login = req.getParameter("inputLogin");
         String password = req.getParameter("inputPassword");
@@ -38,12 +35,10 @@ public class RegisterServlet extends HttpServlet {
                         req.getParameter("registerLocation"), req.getParameter("address"),
                         req.getParameter("sexType"));
 
-
         if (registrationService.regUser(login, password)) {
             registrationService.insertUser(login, password, userDTO);
-           // req.getSession().setAttribute("isSignUp", true);
             req.getSession().setAttribute("isAuth", true);
-//            req.getRequestDispatcher("/patient_main.jsp").forward(req, resp);
+            req.getSession().setAttribute("role", "patient");
             ((HttpServletResponse)resp).sendRedirect("/web/patient_main");
         } else {
             getServletContext().getRequestDispatcher("/").forward(req, resp);

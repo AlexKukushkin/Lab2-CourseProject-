@@ -1,7 +1,8 @@
-package services;
+package services.authorization_services;
 
 import db.dao.IUserDAO;
 import db.dao.UserDAOImpl;
+import services.registration_services.PasswordEncoder;
 
 public class AuthorizationServiceImpl implements AuthorizationService {
     private static IUserDAO userDAO = new UserDAOImpl();
@@ -11,6 +12,7 @@ public class AuthorizationServiceImpl implements AuthorizationService {
         if (login == null || password == null) {
             return "false";
         }
+
         if (userDAO.getUserByLoginAndPassword(login, PasswordEncoder.encode(password)) != null
                 && "admin".equals(userDAO.getUserRole(login, PasswordEncoder.encode(password)))){
             return "admin";
@@ -21,8 +23,15 @@ public class AuthorizationServiceImpl implements AuthorizationService {
         }
         else if(userDAO.getUserByLoginAndPassword(login, PasswordEncoder.encode(password)) != null
                 && "patient".equals(userDAO.getUserRole(login, PasswordEncoder.encode(password)))){
-                return "patient";
+            return "patient";
         }
         return "false";
+    }
+
+    @Override
+    public int getUserID(String login, String password){
+        int userId = 0;
+        userId = userDAO.getUserId(login, PasswordEncoder.encode(password));
+        return userId;
     }
 }

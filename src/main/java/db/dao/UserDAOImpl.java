@@ -2,6 +2,7 @@ package db.dao;
 
 import db.ConnectionManagerPostgreSQL;
 import db.IConnectionManager;
+import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
 import pojo.Patient;
 import pojo.User;
@@ -22,7 +23,7 @@ public class UserDAOImpl implements IUserDAO {
     private static final Logger logger = Logger.getLogger(UserDAOImpl.class);
 
     static {
-        manager = ConnectionManagerPostgreSQL.getInstance();
+        manager = TomcatConnectionPool.getInstance();
     }
 
     @Override

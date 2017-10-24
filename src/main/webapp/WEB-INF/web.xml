@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-
+    <!--filters-->
     <filter>
         <filter-name>login</filter-name>
         <filter-class>servlets.filters.LoginFilter</filter-class>
@@ -40,12 +40,13 @@
         <url-pattern>/doctor_main</url-pattern>
     </filter-mapping>
 
+    <!--servlets-->
     <servlet>
         <servlet-name>
             LoginServlet
         </servlet-name>
         <servlet-class>
-            servlets.LoginServlet
+            servlets.authorization_servlets.LoginServlet
         </servlet-class>
     </servlet>
     <servlet-mapping>
@@ -58,7 +59,7 @@
             RegisterServlet
         </servlet-name>
         <servlet-class>
-            servlets.RegisterServlet
+            servlets.registration_servlet.RegisterServlet
         </servlet-class>
     </servlet>
     <servlet-mapping>
@@ -68,13 +69,14 @@
 
     <servlet>
         <servlet-name>AuthServlet</servlet-name>
-        <servlet-class>servlets.AuthServlet</servlet-class>
+        <servlet-class>servlets.authorization_servlets.AuthServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AuthServlet</servlet-name>
         <url-pattern>/auth</url-pattern>
     </servlet-mapping>
 
+    <!--Admin servlets-->
     <servlet>
         <servlet-name>AdminServlet</servlet-name>
         <servlet-class>servlets.admin_servlets.AdminServlet</servlet-class>
@@ -82,24 +84,6 @@
     <servlet-mapping>
         <servlet-name>AdminServlet</servlet-name>
         <url-pattern>/admin_main</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>PatientServlet</servlet-name>
-        <servlet-class>servlets.patient_servlets.PatientServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>PatientServlet</servlet-name>
-        <url-pattern>/patient_main</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DoctorServlet</servlet-name>
-        <servlet-class>servlets.DoctorServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DoctorServlet</servlet-name>
-        <url-pattern>/doctor_main</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -170,6 +154,89 @@
     <servlet-mapping>
         <servlet-name>AdminGetTicketsServlet</servlet-name>
         <url-pattern>/ticket_list</url-pattern>
+    </servlet-mapping>
+
+    <!--Doctor servlets-->
+    <servlet>
+        <servlet-name>DoctorServlet</servlet-name>
+        <servlet-class>servlets.doctor_servlets.DoctorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DoctorServlet</servlet-name>
+        <url-pattern>/doctor_main</url-pattern>
+    </servlet-mapping>
+
+    <!--Patient servlets-->
+    <servlet>
+        <servlet-name>PatientServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientServlet</servlet-name>
+        <url-pattern>/patient_main</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientGetDoctorListServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientGetDoctorListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientGetDoctorListServlet</servlet-name>
+        <url-pattern>/patient_doctor_list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientGetTicketServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientGetTicketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientGetTicketServlet</servlet-name>
+        <url-pattern>/patient_new_ticket</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientGetDoctorScheduleServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientGetDoctorScheduleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientGetDoctorScheduleServlet</servlet-name>
+        <url-pattern>/patient_doctor_schedule_2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientDoctorScheduleServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientDoctorScheduleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientDoctorScheduleServlet</servlet-name>
+        <url-pattern>/patient_doctor_schedule</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientTicketListServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientTicketListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientTicketListServlet</servlet-name>
+        <url-pattern>/patient_ticket</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientMedCenterServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientMedCenterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientMedCenterServlet</servlet-name>
+        <url-pattern>/patient_medcenter</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientInfoServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientInfoServlet</servlet-name>
+        <url-pattern>/patient_info</url-pattern>
     </servlet-mapping>
 
     <jsp-config>

@@ -1,4 +1,4 @@
-package services;
+package services.registration_services;
 
 import db.dao.IUserDAO;
 import db.dao.PatientDAO;
@@ -7,7 +7,7 @@ import dto.UserDTO;
 import pojo.Patient;
 import pojo.User;
 
-import static services.PasswordEncoder.encode;
+import static services.registration_services.PasswordEncoder.encode;
 
 public class RegistrationServiceImpl implements RegistrationService {
 

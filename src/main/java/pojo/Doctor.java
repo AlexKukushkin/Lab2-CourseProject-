@@ -13,7 +13,7 @@ public class Doctor extends User implements Serializable {
     private String birthDate;
     private String office;
     private String specialization;
-    private int idUser;
+    private int medCenterID;
 
     public Doctor(String login, String password, String role, String firstName, String patronymic,
                   String familyName, String birthDate, String office, String specialization) {
@@ -28,7 +28,7 @@ public class Doctor extends User implements Serializable {
     }
 
     public Doctor(int idDoctor, String login, String password, String role, String firstName, String patronymic,
-                  String familyName, String birthDate, String office, String specialization, int idUser) {
+                  String familyName, String birthDate, String office, String specialization, int medCenterID) {
         super(login, password, role);
         this.idDoctor = idDoctor;
         this.firstName = firstName;
@@ -37,10 +37,10 @@ public class Doctor extends User implements Serializable {
         this.birthDate = birthDate;
         this.office = office;
         this.specialization = specialization;
-        this.idUser = idUser;
+        this.medCenterID = medCenterID;
     }
     public Doctor(int idDoctor, String firstName, String patronymic, String familyName, String birthDate,
-                  String office, String specialization, int idUser) {
+                  String office, String specialization, int medCenterID) {
         this.idDoctor = idDoctor;
         this.firstName = firstName;
         this.patronymic = patronymic;
@@ -48,7 +48,7 @@ public class Doctor extends User implements Serializable {
         this.birthDate = birthDate;
         this.office = office;
         this.specialization = specialization;
-        this.idUser = idUser;
+        this.medCenterID = medCenterID;
     }
 
     public Doctor() {
@@ -127,12 +127,12 @@ public class Doctor extends User implements Serializable {
         this.birthDate = birthDate;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public int getMedCenterID() {
+        return medCenterID;
     }
 
     @XmlElement
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setMedCenterID(int medCenterID) {
+        this.medCenterID = medCenterID;
     }
 }

@@ -1,5 +1,6 @@
 package db.dao;
 
+import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
 import pojo.MedCenter;
 import db.ConnectionManagerPostgreSQL;
@@ -18,7 +19,7 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     private static final Logger logger = Logger.getLogger(MedCenterDAO.class);
 
     static {
-        manager = ConnectionManagerPostgreSQL.getInstance();
+        manager = TomcatConnectionPool.getInstance();
     }
 
     @Override

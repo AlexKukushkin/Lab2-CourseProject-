@@ -1,6 +1,7 @@
 package db.dao;
 
 import db.ConnectionManagerPostgreSQL;
+import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
 import pojo.Doctor;
 import db.IConnectionManager;
@@ -17,7 +18,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
     private static final Logger logger = Logger.getLogger(DoctorDAO.class);
 
     static {
-        manager = ConnectionManagerPostgreSQL.getInstance();
+        manager = TomcatConnectionPool.getInstance();
     }
 
     /**
@@ -45,7 +46,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
                         resultSet.getString("birth_date"),
                         resultSet.getString("specialization"),
                         resultSet.getString("office"),
-                        resultSet.getInt("user_id"));
+                        resultSet.getInt("medcenter_id"));
                 doctorList.add(doctor);
             }
         } catch (SQLException e) {
@@ -73,7 +74,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
                     resultSet.getString("birth_date"),
                     resultSet.getString("specialization"),
                     resultSet.getString("office"),
-                    resultSet.getInt("user_id"));
+                    resultSet.getInt("medcenter_id"));
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
             throw new DoctorDAOException();
@@ -83,7 +84,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
     private PreparedStatement getUpdateStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
                 "UPDATE doctor" +
-                        "SET  first_name = ?, family_name = ?, patronymic = ?, birth_date = ?, specialization = ?, office = ?, user_id = ? " +
+                        "SET  first_name = ?, family_name = ?, patronymic = ?, birth_date = ?, specialization = ?, office = ?, medcenter_id = ? " +
                         "WHERE id_doctor = ? ");
     }
 
@@ -98,7 +99,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             statement.setDate(4, Date.valueOf(doctor.getBirthDate()));
             statement.setString(5, doctor.getSpecialization());
             statement.setString(6, doctor.getOffice());
-            statement.setInt(7, doctor.getIdUser());
+            statement.setInt(7, doctor.getMedCenterID());
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
@@ -119,7 +120,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
                 statement.setDate(4, Date.valueOf(doctor.getBirthDate()));
                 statement.setString(5, doctor.getSpecialization());
                 statement.setString(6, doctor.getOffice());
-                statement.setInt(7, doctor.getIdUser());
+                statement.setInt(7, doctor.getMedCenterID());
                 statement.addBatch();
             }
             statement.executeBatch();
@@ -146,7 +147,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
     private PreparedStatement getInsertStatement() throws SQLException {
         return manager.getConnection().prepareStatement(
                 "INSERT INTO doctor (id_doctor, first_name, family_name, patronymic, birth_date, specialization," +
-                        "office, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                        "office, medcenter_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     }
 
     @Override
@@ -160,7 +161,7 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
             statement.setDate(4, Date.valueOf(doctor.getBirthDate()));
             statement.setString(5, doctor.getSpecialization());
             statement.setString(6, doctor.getOffice());
-            statement.setInt(7, doctor.getIdUser());
+            statement.setInt(7, doctor.getMedCenterID());
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());

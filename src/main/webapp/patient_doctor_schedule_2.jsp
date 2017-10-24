@@ -28,7 +28,7 @@
             <th>Суббота</th>
             <th>Воскресенье</th>
         </tr>
-        <c:forEach items="${list}" var="item">
+        <c item ="${item}" var="item">
             <tr>
                 <td><p><c:out value="${item.idCalendar}"></c:out></p></td>
                 <td><p><c:out value="${item.idDoctor}"></c:out></p></td>
@@ -44,14 +44,17 @@
                 <td><p><c:out value="${item.friDay}"></c:out></p></td>
                 <td><p><c:out value="${item.saturDay}"></c:out></p></td>
                 <td><p><c:out value="${item.sunDay}"></c:out></p></td>
-
             </tr>
-        </c:forEach>
+        </c>
     </table>
     <div>
         </br>
-        <button class="button button1" type="returnBack" name="return" formaction="/web/admin_main"
-                style="margin: auto; display: block">Вернуться на главную страницу
+        <button class="button button1" type="returnBack" name="return" formaction="/web/patient_doctor_schedule"
+                style="margin: auto; display: block">Вернуться назад
+        </button>
+        <br>
+        <button class="button button1" type="returnBack" name="return" formaction="/web/patient_main"
+                style="margin: auto; display: block">Перейти на главную страницу
         </button>
     </div>
 </form>

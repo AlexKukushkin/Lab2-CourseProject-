@@ -31,4 +31,9 @@ public class ConnectionManagerPostgreSQL implements IConnectionManager {
     public Connection getConnection() {
         return connection;
     }
+
+    @Override
+    public void closeConnection(Connection connection) throws SQLException {
+        connection.close();
+    }
 }
