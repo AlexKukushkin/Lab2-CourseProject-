@@ -1,15 +1,12 @@
 package servlets.patient_servlets;
 
-        import services.patient_services.PatientService;
-
-        import javax.servlet.ServletException;
-        import javax.servlet.http.HttpServlet;
-        import javax.servlet.http.HttpServletRequest;
-        import javax.servlet.http.HttpServletResponse;
-        import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class PatientServlet extends HttpServlet {
-    private static PatientService patientService = new PatientService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -18,6 +15,13 @@ public class PatientServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        patientService.checkIfExit(req, resp);
+        String exit = req.getParameter("exit");
+        if ("exit".equals(exit)) {
+            req.getSession().setAttribute("isAuth", false);
+            req.getSession().setAttribute("role", null);
+            ((HttpServletResponse) resp).sendRedirect("/web");
+        } else {
+            ((HttpServletResponse) resp).sendRedirect("/web/patient_main");
+        }
     }
 }

@@ -1,5 +1,7 @@
 package servlets.patient_servlets;
 
+import db.dao.CalendarDAO;
+import pojo.Calendar;
 import services.patient_services.PatientGetDoctorScheduleService;
 
 import javax.servlet.ServletException;
@@ -18,6 +20,11 @@ public class PatientGetDoctorScheduleServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-          patientGetDoctorScheduleService.patientGetDoctorSchedule(req, resp);
+        Calendar calendar;
+        req.setCharacterEncoding("UTF-8");
+
+        calendar = patientGetDoctorScheduleService.patientGetDoctorSchedule(req.getParameter("familyName"));
+        req.setAttribute("item", calendar);
+        req.getRequestDispatcher("/patient_doctor_schedule_2.jsp").forward(req, resp);
     }
 }

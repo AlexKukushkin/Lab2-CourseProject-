@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class AdminGetAllDoctorsService {
-    public void doAdminGetAllDoctorList(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public List<Doctor> doAdminGetAllDoctorList() throws IOException {
         List<Doctor> doctors = null;
 
         try {
@@ -18,7 +18,7 @@ public class AdminGetAllDoctorsService {
         } catch (DoctorDAO.DoctorDAOException e) {
             e.printStackTrace();
         }
-        req.setAttribute("list", doctors);
-        req.getRequestDispatcher("/doctor_list.jsp").forward(req, resp);
+        return doctors;
+
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Context>
-    <Resource name="jdbc/medcenter"
+    <Resource name="jdbc/MD"
               auth="Container"
               type="javax.sql.DataSource"
               factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
@@ -12,10 +12,16 @@
               validationInterval="30000"
               timeBetweenEvictionRunsMillis="30000"
               maxActive="1"
-              maxPoolSize="10"
-              minPoolSize="1"
               minIdle="1"
               maxWait="10"
+              initialSize="10"
+              removeAbandonedTimeout="60"
+              removeAbandoned="true"
+              logAbandoned="true"
+              minEvictableIdleTimeMillis="30000"
+              jmxEnabled="true"
+              jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;
+            org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer"
               username="postgres"
               password="admin"
               driverClassName="org.postgresql.Driver"

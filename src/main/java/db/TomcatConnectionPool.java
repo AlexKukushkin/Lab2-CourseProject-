@@ -22,7 +22,7 @@ public class TomcatConnectionPool implements IConnectionManager {
         try {
             Context initCtx = new InitialContext();
             Context envCtx = (Context) initCtx.lookup("java:comp/env");
-            dataSource = (DataSource) envCtx.lookup("jdbc/MD");
+            dataSource = (DataSource) envCtx.lookup("jdbc/medcenter");
         } catch (NamingException e) {
             logger.error(e.getMessage());
             logger.getLogger(TomcatConnectionPool.class).debug(e.fillInStackTrace());

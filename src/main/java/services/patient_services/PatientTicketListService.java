@@ -1,35 +1,29 @@
 package services.patient_services;
 
-import db.dao.IUserDAO;
-import db.dao.PatientDAO;
-import db.dao.TicketDAO;
-import db.dao.UserDAOImpl;
+import db.dao.*;
+import org.apache.log4j.Logger;
 import pojo.Ticket;
+
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
 public class PatientTicketListService {
     private static IUserDAO userDAO = new UserDAOImpl();
     private static PatientDAO patientDAO = new PatientDAO();
+    private static final Logger logger = Logger.getLogger(PatientTicketListService.class);
 
-    public void getPatientTicketistService(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
+
+    public List<Ticket> getPatientTicketistService(int userId) throws ServletException, IOException {
         List<Ticket> tickets = null;
-        int userId = 0;
 
         try {
-            userId = (Integer)req.getSession().getAttribute("userID");
             tickets = new TicketDAO().getTicketsById(patientDAO.getPatientID(userId));
         } catch (TicketDAO.TicketDAOException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         } catch (PatientDAO.PatientDAOException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
-
-        req.setAttribute("ticket_list", tickets);
-        req.getRequestDispatcher("/patient_ticket.jsp").forward(req, resp);
+        return tickets;
     }
 }

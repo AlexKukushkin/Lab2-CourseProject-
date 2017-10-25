@@ -4,6 +4,7 @@ import db.dao.IUserDAO;
 import db.dao.PatientDAO;
 import db.dao.UserDAOImpl;
 import dto.UserDTO;
+import org.apache.log4j.Logger;
 import pojo.Patient;
 import pojo.User;
 
@@ -14,6 +15,8 @@ public class RegistrationServiceImpl implements RegistrationService {
     private static IUserDAO userDAO = new UserDAOImpl();
     private static PatientDAO patientDAO = new PatientDAO();
     private static RegistrationService registrationService = new RegistrationServiceImpl();
+    private static final Logger logger = Logger.getLogger(RegistrationServiceImpl.class);
+
 
     @Override
     public Boolean regUser(String login, String password) {
@@ -39,7 +42,7 @@ public class RegistrationServiceImpl implements RegistrationService {
                     userDTO.getBirthDate(), userDTO.getPassport(), userDTO.getSNILS(), userDTO.getMedPolis(),
                     userDTO.getRegisterLocation(), userDTO.getAddress(), userDTO.getSexType(), idUser));
         } catch (PatientDAO.PatientDAOException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
     }
 }

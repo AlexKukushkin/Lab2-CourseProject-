@@ -1,9 +1,14 @@
 package services.registration_services;
 
+import org.apache.log4j.Logger;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class PasswordEncoder {
+
+    private static final Logger logger = Logger.getLogger(PasswordEncoder.class);
+
     public static String md5(String password) {
         String result = null;
         try {
@@ -12,7 +17,7 @@ public class PasswordEncoder {
             byte[] arraySecond = md.digest(array);
             result = new String(arraySecond);
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
         return result;
     }

@@ -1,24 +1,23 @@
 package services.patient_services;
 
+import db.dao.DoctorDAO;
 import db.dao.MedCenterDAO;
+import org.apache.log4j.Logger;
 import pojo.MedCenter;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
 public class PatientMedCenterService {
-    public void getPatientMedCenter(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private static final Logger logger = Logger.getLogger(DoctorDAO.class);
+
+    public List<MedCenter> getPatientMedCenter() throws IOException {
         List<MedCenter> medcenters = null;
 
         try {
             medcenters = new MedCenterDAO().getAll();
         } catch (MedCenterDAO.MedCenterDAOException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
-        req.setAttribute("list", medcenters);
-        req.getRequestDispatcher("/patient_medcenter.jsp").forward(req, resp);
+        return medcenters;
     }
 }

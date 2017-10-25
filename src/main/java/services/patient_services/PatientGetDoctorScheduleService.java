@@ -1,24 +1,24 @@
 package services.patient_services;
 
 import db.dao.CalendarDAO;
+import db.dao.DoctorDAO;
+import org.apache.log4j.Logger;
 import pojo.Calendar;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class PatientGetDoctorScheduleService {
-    public void patientGetDoctorSchedule(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    private static final Logger logger = Logger.getLogger(PatientGetDoctorScheduleService.class);
+
+    public Calendar patientGetDoctorSchedule(String familyName) throws IOException, ServletException {
         Calendar calendar = null;
-        req.setCharacterEncoding("UTF-8");
 
         try {
-            calendar = new CalendarDAO().getByFamilyName(req.getParameter("familyName"));
+            calendar = new CalendarDAO().getByFamilyName(familyName);
         } catch (CalendarDAO.CalendarDAOException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
-        req.setAttribute("item", calendar);
-        req.getRequestDispatcher("/patient_doctor_schedule_2.jsp").forward(req, resp);
+        return calendar;
     }
 }

@@ -3,7 +3,7 @@ package db.dao;
 import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
 import pojo.Patient;
-import db.ConnectionManagerPostgreSQL;
+import db.TomcatConnectionPool;
 import db.IConnectionManager;
 
 import java.sql.*;
@@ -29,8 +29,8 @@ public class PatientDAO implements IAbstractDAO <Patient>{
 
         Statement statement = null;
 
-        try {
-            statement = manager.getConnection().createStatement();
+        try (Connection connection = manager.getConnection()){
+            statement = connection.createStatement();
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM patient");
             while (resultSet.next()) {
@@ -62,8 +62,8 @@ public class PatientDAO implements IAbstractDAO <Patient>{
 
         logger.info("Log for get Patient by ID");
 
-        try {
-            statement = manager.getConnection().prepareStatement("SELECT * FROM patient WHERE id_patient = ? ");
+        try (Connection connection = manager.getConnection()){
+            statement = connection.prepareStatement("SELECT * FROM patient WHERE id_patient = ? ");
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
@@ -92,8 +92,8 @@ public class PatientDAO implements IAbstractDAO <Patient>{
 
         logger.info("Log for get Patient by ID");
 
-        try {
-            statement = manager.getConnection().prepareStatement("SELECT pt.id_patient FROM patient pt JOIN users usr " +
+        try (Connection connection = manager.getConnection()){
+            statement = connection.prepareStatement("SELECT pt.id_patient FROM patient pt JOIN users usr " +
                     "ON pt.user_id = usr.id AND usr.id = ?");
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
@@ -106,7 +106,8 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     }
 
     private PreparedStatement getUpdateStatement() throws SQLException {
-        return manager.getConnection().prepareStatement(
+        Connection connection = manager.getConnection();
+        return connection.prepareStatement(
                 "UPDATE patient" +
                         "SET first_name = ?, family_name = ?, patronymic = ?, birth_date = ?, " +
                         "passport = ?, SNILS = ?, medpolis = ?, registration = ?, home_location = ?, sextype = ?" +
@@ -116,7 +117,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     @Override
     public void update(Patient patient) throws PatientDAOException {
         PreparedStatement statement = null;
-        try {
+        try (Connection connection = manager.getConnection()) {
             statement = getUpdateStatement();
             statement.setInt(1, patient.getIdPatient());
             statement.setString(2, patient.getFirstName());
@@ -140,7 +141,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     @Override
     public void updateAll(List<Patient> patientList) throws PatientDAOException {
         PreparedStatement statement = null;
-        try {
+        try (Connection connection = manager.getConnection()) {
             statement = getUpdateStatement();
             for (Patient patient : patientList) {
                 statement.setInt(1, patient.getIdPatient());
@@ -167,8 +168,8 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     @Override
     public void deleteByID(int id) throws PatientDAOException {
         PreparedStatement statement = null;
-        try {
-            statement = manager.getConnection().prepareStatement(
+        try (Connection connection = manager.getConnection()){
+            statement = connection.prepareStatement(
                     "DELETE patient WHERE id_patient = ? ");
             statement.setInt(1, id);
             statement.executeUpdate();
@@ -179,7 +180,8 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     }
 
     private PreparedStatement getInsertStatement() throws SQLException {
-        return manager.getConnection().prepareStatement(
+        Connection connection = manager.getConnection();
+        return connection.prepareStatement(
                 "INSERT INTO patient(first_name, family_name, patronymic, birth_date," +
                         " passport, \"SNILS\", medpolis, registration, home_location, sextype, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     }
@@ -187,7 +189,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     @Override
     public void insertOne(Patient patient) throws PatientDAOException {
         PreparedStatement statement = null;
-        try {
+        try (Connection connection = manager.getConnection()){
             statement = getInsertStatement();
             statement.setString(1, patient.getFirstName());
             statement.setString(2, patient.getFamilyName());
@@ -211,7 +213,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     @Override
     public void insertAll(List<Patient> patientList) throws PatientDAOException {
         PreparedStatement statement = null;
-        try {
+        try (Connection connection = manager.getConnection()){
             statement = getInsertStatement();
             for (Patient patient : patientList) {
                 statement.setString(1, patient.getFirstName());

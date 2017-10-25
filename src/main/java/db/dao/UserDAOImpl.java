@@ -1,16 +1,11 @@
 package db.dao;
 
-import db.ConnectionManagerPostgreSQL;
-import db.IConnectionManager;
 import db.TomcatConnectionPool;
+import db.IConnectionManager;
 import org.apache.log4j.Logger;
-import pojo.Patient;
 import pojo.User;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,14 +22,14 @@ public class UserDAOImpl implements IUserDAO {
     }
 
     @Override
-    public List<User> getAllUsers(){
+    public List<User> getAllUsers() throws SQLException {
         List<User> userList = new ArrayList<>();
         logger.info("Log for getAll Users");
 
         Statement statement = null;
 
-        try {
-            statement = manager.getConnection().createStatement();
+        try (Connection connection = manager.getConnection()){
+            statement = connection.createStatement();
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
             while (resultSet.next()) {
@@ -56,9 +51,8 @@ public class UserDAOImpl implements IUserDAO {
         logger.info("Log for get User identifier by login and password");
 
         PreparedStatement statement = null;
-        try {
-            statement = manager.getConnection()
-                                            .prepareStatement("SELECT id FROM users WHERE login = ? AND password = ?");
+        try (Connection connection = manager.getConnection()){
+            statement = connection.prepareStatement("SELECT id FROM users WHERE login = ? AND password = ?");
 
             statement.setString(1, login);
             statement.setString(2, password);
@@ -79,8 +73,8 @@ public class UserDAOImpl implements IUserDAO {
         logger.info("Log for get User Role by login and password");
 
         PreparedStatement statement = null;
-        try {
-            statement = manager.getConnection()
+        try (Connection connection = manager.getConnection()){
+            statement = connection
                     .prepareStatement("SELECT role FROM users WHERE login = ? AND password = ?");
 
             statement.setString(1, login);
@@ -101,8 +95,8 @@ public class UserDAOImpl implements IUserDAO {
 
         logger.info("Log for get User object by login and password");
 
-        try {
-            PreparedStatement statement = manager.getConnection().
+        try(Connection connection = manager.getConnection()) {
+            PreparedStatement statement = connection.
                 prepareStatement("SELECT * FROM users WHERE login = ? AND  password = ?");
             statement.setString(1, login);
             statement.setString(2, password);
@@ -121,8 +115,8 @@ public class UserDAOImpl implements IUserDAO {
     public Boolean createUser(User user) {
         logger.info("Log for create User");
         
-        try {
-            PreparedStatement statement = manager.getConnection().prepareStatement
+        try(Connection connection = manager.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement
                 ("INSERT INTO users (login, password, role) VALUES(?, ?, 'patient')");
             statement.setString(1, user.getLogin());
             statement.setString(2, user.getPassword());

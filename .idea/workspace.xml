@@ -7,8 +7,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ed270bb-a29e-436c-86e8-381469eb0e4c" name="Default" comment="serialization&#10;deserialization&#10;JDBC&#10;DAO classes&#10;DatabaseManager&#10;JSP + Servlet API&#10;Registration form&#10;Autorization form&#10;HTML validation&#10;log4j library&#10;Admin main page (with exit and filter)&#10;Patient main page&#10;Services Admin + Patient&#10;ConnectionPool added">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context2.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/services/authorization_services/SortUserService.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/TomcatConnectionPool.java" afterPath="$PROJECT_DIR$/src/main/java/db/TomcatConnectionPool.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/IUserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/IUserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllDoctorsService.java" afterPath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllDoctorsService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllPatientsService.java" afterPath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllPatientsService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllUsersService.java" afterPath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllUsersService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetMedcentersService.java" afterPath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetMedcentersService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetScheduleService.java" afterPath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetScheduleService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetTicketsService.java" afterPath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetTicketsService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminService.java" afterPath="$PROJECT_DIR$/src/main/java/services/admin_services/AdminService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorListService.java" afterPath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorListService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorScheduleService.java" afterPath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorScheduleService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientMedCenterService.java" afterPath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientMedCenterService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientService.java" afterPath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientTicketListService.java" afterPath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientTicketListService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/registration_services/PasswordEncoder.java" afterPath="$PROJECT_DIR$/src/main/java/services/registration_services/PasswordEncoder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllDoctorsServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllDoctorsServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllUsersServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllUsersServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetMedcentersServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetMedcentersServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetScheduleServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetScheduleServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetTicketsServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetTicketsServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/AuthServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/AuthServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorListServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorListServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorScheduleServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorScheduleServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetTicketServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetTicketServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientMedCenterServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientMedCenterServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientTicketListServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientTicketListServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/patient_doctor_schedule.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/patient_doctor_schedule.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -76,12 +114,42 @@
     <favorites_list name="CourseProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IConnectionManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/db/IConnectionManager.java">
+    <leaf>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="68">
+              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PatientDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding>
+                <marker date="1508848107799" expanded="true" signature="960:981" ph="SELECT * FRO... patient" />
+                <marker date="1508848107799" expanded="true" signature="2299:2341" ph="SELECT * FRO... patient" />
+                <marker date="1508848107799" expanded="true" signature="3589:3640" ph="SELECT pt.id... patient" />
+                <marker date="1508848107799" expanded="true" signature="3589:3641" ph="SELECT pt.id... patient" />
+                <marker date="1508848107799" expanded="true" signature="3589:3682" ph="SELECT pt.id... patient" />
+                <marker date="1508848107799" expanded="true" signature="3589:3685" ph="SELECT pt.id... patient" />
+                <marker date="1508848107799" expanded="true" signature="3589:3703" ph="SELECT pt.id... patient" />
+                <marker date="1508848107799" expanded="true" signature="4236:4525" ph="UPDATE patie... " />
+                <marker date="1508848107799" expanded="true" signature="7747:7963" ph="INSERT INTO patient... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminGetScheduleService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetScheduleService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,105 +157,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TomcatConnectionPool.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/db/TomcatConnectionPool.java">
+      <file leaf-file-name="AdminGetAllPatientsService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllPatientsService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConnectionManagerPostgreSQL.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/db/ConnectionManagerPostgreSQL.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="16" column="71" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="82" column="31" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1508825797462" expanded="true" signature="1000:1019" ph="SELECT * FRO... users" />
-                <marker date="1508825797462" expanded="true" signature="1794:1847" ph="SELECT id FR... users" />
-                <marker date="1508825797462" expanded="true" signature="2553:2608" ph="SELECT role users" />
-                <marker date="1508825797462" expanded="true" signature="3301:3354" ph="SELECT * FRO... users" />
-                <marker date="1508825797462" expanded="true" signature="4063:4128" ph="INSERT INTO users... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="context.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="27" column="61" lean-forward="false" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/AuthServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SortUserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/authorization_services/SortUserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthorizationServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/authorization_services/AuthorizationServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminGetAllDoctorsServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllDoctorsServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="67" lean-forward="false" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminGetAllDoctorsService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllDoctorsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -205,11 +182,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Admin</find>
-      <find>ConnectionManagerPostresSQL</find>
-      <find>getAdmins</find>
-      <find>btn</find>
-      <find>form</find>
       <find>btn btn-lg</find>
       <find>PatientInsertServlet</find>
       <find>auth</find>
@@ -235,9 +207,13 @@
       <find>doctors</find>
       <find>Medcenter</find>
       <find>idUser</find>
+      <find>TomcatConnectionPool</find>
+      <find>ConnectionManagerPostgreSQL</find>
+      <find>please</find>
+      <find>Please fill out</find>
+      <find>Please</find>
     </findStrings>
     <replaceStrings>
-      <replace>patronymic</replace>
       <replace>Admin</replace>
       <replace>PatientDAOException</replace>
       <replace>Patient</replace>
@@ -246,7 +222,6 @@
       <replace>Ticket</replace>
       <replace>Calendar</replace>
       <replace>Admins</replace>
-      <replace>ConnectionManagerPostgreSQL</replace>
       <replace>getUsers</replace>
       <replace>PatientMainServlet</replace>
       <replace>blank.jsp</replace>
@@ -267,6 +242,8 @@
       <replace>medcenters</replace>
       <replace>MedCenter</replace>
       <replace>medCenterID</replace>
+      <replace>ConnectionManagerPostgreSQL</replace>
+      <replace>TomcatConnectionPool</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -564,57 +541,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/services/AuthorizationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/SortUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/AuthServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientDoctorScheduleServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/PatientGetDoctorListService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorListServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/PatientGetDoctorScheduleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorScheduleServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientInsertServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientLocationServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientMedCenterServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/PatientService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/PatientMedCenterService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/PatientTicketListService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/PatientTicketListServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/AdminGetAllDoctorsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllDoctorsServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/AdminGetAllPatientsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllPatientsServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/AdminGetAllUsersService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllUsersServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/AdminGetMedcentersService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetMedcentersServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/AdminGetScheduleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetScheduleServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/AdminGetTicketsService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetTicketsServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/AdminService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/admin_services/AdminService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/patient_services/PatientTicketListService.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/registration_service/PasswordEncoder.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/autorization_services/SortUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/services/authorization_services/SortUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/registration_servlet/RegisterServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/servlets/doctor_servlets/DoctorServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientTicketListServlet.java" />
         <option value="$PROJECT_DIR$/src/main/resources/dbsettings.properties" />
         <option value="$PROJECT_DIR$/src/main/java/db/IConnectionManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/TomcatConnectionPool.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/ConnectionManagerPostgreSQL.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/TomcatConnectionPool.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/custom.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/patient_doctor_schedule.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllDoctorsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllPatientsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllPatientsServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllDoctorsServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetMedcentersServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetScheduleServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetTicketsServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/admin_services/AdminService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/authorization_services/SortUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/authorization_services/AuthService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/AuthServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorListServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorScheduleServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetTicketServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientTicketListServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/patient_services/PatientService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientMedCenterServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllUsersService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/registration_services/PasswordEncoder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllUsersServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/patient_services/PatientTicketListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/patient_services/PatientMedCenterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorScheduleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetTicketsService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetScheduleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetMedcentersService.java" />
       </list>
     </option>
   </component>
@@ -639,8 +616,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="38" />
-    <option name="y" value="16" />
+    <option name="x" value="48" />
+    <option name="y" value="85" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
@@ -699,6 +676,103 @@
               <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="admin_services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="authorization_services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="patient_services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="registration_services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="admin_servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="authorization_servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="doctor_servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="registration_servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -711,22 +785,38 @@
             </path>
             <path>
               <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="scss" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="last_opened_file_path" value="D:/Innopolis/Второй Семестр - Иннополис/24.10.2017/WebStudents" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -734,17 +824,17 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/webapp/assets" />
+    <property name="SearchEverywhereHistoryKey" value="Please fill out this field&#9;null&#9;null&#10;please fill out&#9;null&#9;null&#10;Please fill out&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp" />
+      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\WEB-INF" />
+      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\assets" />
+      <recent name="D:\Курсовая (Innopolis)\CourseProject\xmlFiles" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp" />
-      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\assets\css" />
-      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\java\servlets\example" />
-      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\assets\js" />
-      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\assets" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="db" />
@@ -753,11 +843,12 @@
       <recent name="classes" />
       <recent name="db.dao" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\META-INF" />
       <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp" />
-      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\WEB-INF" />
-      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\assets" />
-      <recent name="D:\Курсовая (Innopolis)\CourseProject\xmlFiles" />
+      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\assets\css" />
+      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\java\servlets\example" />
+      <recent name="D:\Курсовая (Innopolis)\CourseProject\src\main\webapp\assets\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1097,7 +1188,11 @@
       <workItem from="1508504460960" duration="84535000" />
       <workItem from="1508742676750" duration="8639000" />
       <workItem from="1508759947526" duration="45153000" />
-      <workItem from="1508828704122" duration="2962000" />
+      <workItem from="1508828704122" duration="10402000" />
+      <workItem from="1508845189210" duration="3870000" />
+      <workItem from="1508849295753" duration="1518000" />
+      <workItem from="1508868960748" duration="2091000" />
+      <workItem from="1508936639136" duration="16898000" />
     </task>
     <task id="LOCAL-00001" summary="serialization&#10;deserialization">
       <created>1507044674744</created>
@@ -1190,11 +1285,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508829628005</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="serialization&#10;deserialization&#10;JDBC&#10;DAO classes&#10;DatabaseManager&#10;JSP + Servlet API&#10;Registration form&#10;Autorization form&#10;HTML validation&#10;log4j library&#10;Admin main page (with exit and filter)&#10;Patient main page&#10;Services Admin + Patient&#10;ConnectionPool added">
+      <created>1508832042060</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1508832042076</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402732000" />
+    <option name="totallyTimeSpent" value="434549000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1219,18 +1321,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1603928" sideWeight="0.47579426" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.47579426" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13420622" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36393443" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19312602" sideWeight="0.7655068" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11677632" sideWeight="0.7655068" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290469" sideWeight="0.89858013" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290469" sideWeight="0.10141988" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2987897" sideWeight="0.8696462" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2987897" sideWeight="0.13035382" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1297,25 +1399,25 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java</url>
-          <line>228</line>
+          <line>230</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java</url>
-          <line>221</line>
+          <line>223</line>
           <properties />
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java</url>
-          <line>120</line>
+          <line>121</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationServiceImpl.java</url>
-          <line>19</line>
+          <line>22</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
@@ -1327,7 +1429,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java</url>
-          <line>57</line>
+          <line>54</line>
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
@@ -1339,7 +1441,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java</url>
-          <line>164</line>
+          <line>166</line>
           <properties />
           <option name="timeStamp" value="77" />
         </line-breakpoint>
@@ -1360,12 +1462,6 @@
           <line>38</line>
           <properties />
           <option name="timeStamp" value="126" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/AuthServlet.java</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/servlets/filters/PatientFilter.java</url>
@@ -1398,27 +1494,45 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java</url>
-          <line>117</line>
+          <line>114</line>
           <properties />
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java</url>
-          <line>118</line>
+          <line>115</line>
           <properties />
           <option name="timeStamp" value="142" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java</url>
-          <line>119</line>
+          <line>116</line>
           <properties />
           <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllPatientsService.java</url>
+          <line>14</line>
+          <properties />
+          <option name="timeStamp" value="157" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="152" />
+      <option name="time" value="158" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1427,39 +1541,118 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetTicketServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="114" lean-forward="false" selection-start-line="20" selection-start-column="114" selection-end-line="20" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientInfoServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientInsertServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/CalendarDatabaseManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="14" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/PatientDatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/MedCenterDatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="136" column="45" lean-forward="true" selection-start-line="136" selection-start-column="45" selection-end-line="136" selection-end-column="45" />
+          <folding>
+            <marker date="1508847290118" expanded="true" signature="997:1241" ph="SELECT calen... " />
+            <marker date="1508847290118" expanded="true" signature="997:1248" ph="SELECT calen... calendar" />
+            <marker date="1508847290118" expanded="true" signature="2693:2695" ph="SELECT * FRO... calendar" />
+            <marker date="1508847290118" expanded="true" signature="2693:2969" ph="SELECT calen... calendar" />
+            <marker date="1508847290118" expanded="true" signature="2693:2973" ph="SELECT calen... calendar" />
+            <marker date="1508847290118" expanded="true" signature="2693:2978" ph="SELECT calen... calendar" />
+            <marker date="1508847290118" expanded="true" signature="2693:2993" ph="SELECT calen... calendar" />
+            <marker date="1508847290118" expanded="true" signature="4093:4100" ph="SELECT * FRO... calendar" />
+            <marker date="1508847290118" expanded="true" signature="4093:4388" ph="SELECT calen... calendar" />
+            <marker date="1508847290118" expanded="true" signature="5674:5850" ph="UPDATE calen... " />
+            <marker date="1508847290118" expanded="true" signature="8592:8765" ph="INSERT INTO calendar... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1462">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientLocationServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllDoctorsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="12" column="56" lean-forward="false" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientMedCenterServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/authorization_services/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#757#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/registration_servlet/RegisterServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientTicketListServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1468,197 +1661,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="6">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllPatientsServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientMedCenterServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="43" lean-forward="false" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllUsersServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetMedcentersServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="66" lean-forward="true" selection-start-line="23" selection-start-column="66" selection-end-line="23" selection-end-column="66" />
+        <state relative-caret-position="68">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetScheduleServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientInfoServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+        <state relative-caret-position="68">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetTicketsServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetTicketServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorScheduleServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="75" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetDoctorListServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientDoctorScheduleServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/patient_new_ticket.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="82" column="41" lean-forward="false" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllPatientsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllUsersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetMedcentersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetScheduleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetTicketsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorListService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorScheduleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientMedCenterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientTicketListService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/registration_services/PasswordEncoder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/filters/AdminFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/LoginServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/filters/DoctorFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="-85">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/registration_servlet/RegisterServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/filters/LoginFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-85">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/filters/PatientFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/filters/RegisterFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1670,141 +1767,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientTicketListServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/MedCenterDatabaseManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/authorization_services/AuthorizationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/dbsettings.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/IConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllPatientsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <marker date="1508825797392" expanded="true" signature="1159:1705" ph="SELECT tk.id... ticket" />
-            <marker date="1508825797392" expanded="true" signature="2983:3023" ph="SELECT * FRO... ticket" />
-            <marker date="1508825797392" expanded="true" signature="4053:4606" ph="SELECT tk.id... ticket" />
-            <marker date="1508825797392" expanded="true" signature="5877:6044" ph="UPDATE ticke... " />
-            <marker date="1508825797392" expanded="true" signature="8413:8571" ph="INSERT INTO ticket... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <marker date="1508825797064" expanded="true" signature="931:952" ph="SELECT * FRO... patient" />
-            <marker date="1508825797064" expanded="true" signature="2234:2276" ph="SELECT * FRO... patient" />
-            <marker date="1508825797064" expanded="true" signature="3488:3539" ph="SELECT pt.id... patient" />
-            <marker date="1508825797064" expanded="true" signature="3488:3540" ph="SELECT pt.id... patient" />
-            <marker date="1508825797064" expanded="true" signature="3488:3581" ph="SELECT pt.id... patient" />
-            <marker date="1508825797064" expanded="true" signature="3488:3584" ph="SELECT pt.id... patient" />
-            <marker date="1508825797064" expanded="true" signature="3488:3602" ph="SELECT pt.id... patient" />
-            <marker date="1508825797064" expanded="true" signature="4091:4380" ph="UPDATE patie... " />
-            <marker date="1508825797064" expanded="true" signature="7422:7638" ph="INSERT INTO patient... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <marker date="1508825797524" expanded="true" signature="950:973" ph="SELECT * FRO... medcenter" />
-            <marker date="1508825797524" expanded="true" signature="1824:1870" ph="SELECT * FRO... medcenter" />
-            <marker date="1508825797524" expanded="true" signature="2573:2671" ph="UPDATE medce... " />
-            <marker date="1508825797524" expanded="true" signature="4748:4869" ph="INSERT INTO medcenter... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/IUserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/IAbstractDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1508825797267" expanded="true" signature="1056:1162" ph="SELECT dc.*,... doctor" />
-            <marker date="1508825797267" expanded="true" signature="2218:2258" ph="SELECT * FRO... doctor" />
-            <marker date="1508825797267" expanded="true" signature="3164:3373" ph="UPDATE docto... " />
-            <marker date="1508825797267" expanded="true" signature="5836:6013" ph="INSERT INTO doctor... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-          <folding>
-            <marker date="1508825797189" expanded="true" signature="1068:1312" ph="SELECT calen... " />
-            <marker date="1508825797189" expanded="true" signature="1068:1319" ph="SELECT calen... calendar" />
-            <marker date="1508825797189" expanded="true" signature="2728:2730" ph="SELECT * FRO... calendar" />
-            <marker date="1508825797189" expanded="true" signature="2728:3004" ph="SELECT calen... calendar" />
-            <marker date="1508825797189" expanded="true" signature="2728:3008" ph="SELECT calen... calendar" />
-            <marker date="1508825797189" expanded="true" signature="2728:3013" ph="SELECT calen... calendar" />
-            <marker date="1508825797189" expanded="true" signature="2728:3028" ph="SELECT calen... calendar" />
-            <marker date="1508825797189" expanded="true" signature="4092:4099" ph="SELECT * FRO... calendar" />
-            <marker date="1508825797189" expanded="true" signature="4092:4387" ph="SELECT calen... calendar" />
-            <marker date="1508825797189" expanded="true" signature="5629:5805" ph="UPDATE calen... " />
-            <marker date="1508825797189" expanded="true" signature="8369:8542" ph="INSERT INTO calendar... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllDoctorsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1812,77 +1786,211 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllDoctorsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="22" column="67" lean-forward="false" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="67" />
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/AuthServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="-442">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/authorization_services/SortUserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetTicketsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetScheduleServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="76" lean-forward="true" selection-start-line="27" selection-start-column="76" selection-end-line="27" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetMedcentersServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="22" column="34" lean-forward="false" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/servlets/admin_servlets/AdminGetAllUsersServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="81" lean-forward="false" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/registration_services/PasswordEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="44" column="62" lean-forward="false" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientTicketListService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="82" lean-forward="false" selection-start-line="13" selection-start-column="82" selection-end-line="13" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientMedCenterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" column="62" lean-forward="false" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorScheduleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="89" lean-forward="false" selection-start-line="11" selection-start-column="89" selection-end-line="11" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/services/authorization_services/AuthorizationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="-187">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/patient_services/PatientGetDoctorListService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="82" column="31" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1508825797462" expanded="true" signature="1000:1019" ph="SELECT * FRO... users" />
-            <marker date="1508825797462" expanded="true" signature="1794:1847" ph="SELECT id FR... users" />
-            <marker date="1508825797462" expanded="true" signature="2553:2608" ph="SELECT role users" />
-            <marker date="1508825797462" expanded="true" signature="3301:3354" ph="SELECT * FRO... users" />
-            <marker date="1508825797462" expanded="true" signature="4063:4128" ph="INSERT INTO users... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/TomcatConnectionPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/db/ConnectionManagerPostgreSQL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="16" column="71" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="61" lean-forward="false" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+        <state relative-caret-position="221">
+          <caret line="21" column="62" lean-forward="false" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetTicketsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <marker date="1508848107877" expanded="true" signature="1085:1191" ph="SELECT dc.*,... doctor" />
+            <marker date="1508848107877" expanded="true" signature="2283:2323" ph="SELECT * FRO... doctor" />
+            <marker date="1508848107877" expanded="true" signature="3273:3482" ph="UPDATE docto... " />
+            <marker date="1508848107877" expanded="true" signature="6123:6300" ph="INSERT INTO doctor... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <marker date="1508848107799" expanded="true" signature="960:981" ph="SELECT * FRO... patient" />
+            <marker date="1508848107799" expanded="true" signature="2299:2341" ph="SELECT * FRO... patient" />
+            <marker date="1508848107799" expanded="true" signature="3589:3640" ph="SELECT pt.id... patient" />
+            <marker date="1508848107799" expanded="true" signature="3589:3641" ph="SELECT pt.id... patient" />
+            <marker date="1508848107799" expanded="true" signature="3589:3682" ph="SELECT pt.id... patient" />
+            <marker date="1508848107799" expanded="true" signature="3589:3685" ph="SELECT pt.id... patient" />
+            <marker date="1508848107799" expanded="true" signature="3589:3703" ph="SELECT pt.id... patient" />
+            <marker date="1508848107799" expanded="true" signature="4236:4525" ph="UPDATE patie... " />
+            <marker date="1508848107799" expanded="true" signature="7747:7963" ph="INSERT INTO patient... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllUsersService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetMedcentersService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="62" lean-forward="false" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetScheduleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/admin_services/AdminGetAllPatientsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

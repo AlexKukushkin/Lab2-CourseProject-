@@ -3,14 +3,11 @@ package db.dao;
 import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
 import pojo.Calendar;
-import db.ConnectionManagerPostgreSQL;
+import db.TomcatConnectionPool;
 import db.IConnectionManager;
 import pojo.Doctor;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,8 +30,8 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
 
         Statement statement = null;
 
-        try {
-            statement = manager.getConnection().createStatement();
+        try (Connection connection = manager.getConnection()){
+            statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT calend.*, doc.first_name, doc.family_name, doc.patronymic, " +
                     "doc.specialization, doc.office\n" +
                     "FROM public.\"calendar\" calend LEFT JOIN public.\"doctor\" doc ON calend.\"doctor_id\" = doc.id_doctor;");
@@ -69,8 +66,8 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
         PreparedStatement statement = null;
         logger.info("Log for get Calendar by id");
 
-        try {
-            statement = manager.getConnection().prepareStatement("SELECT calend.*, doc.first_name, doc.family_name, " +
+        try (Connection connection = manager.getConnection()){
+            statement = connection.prepareStatement("SELECT calend.*, doc.first_name, doc.family_name, " +
                     "doc.patronymic, doc.specialization, doc.office\n" +
                     "FROM public.\"calendar\" calend LEFT JOIN public.\"doctor\" doc " +
                     "ON calend.\"doctor_id\" = doc.id_doctor AND doc.family_name = ?;");
@@ -97,8 +94,8 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
         PreparedStatement statement = null;
         logger.debug("Log for get certain Doctor by ID");
 
-        try {
-            statement = manager.getConnection().prepareStatement("SELECT calend.*, doc.first_name, doc.family_name, " +
+        try(Connection connection = manager.getConnection()) {
+            statement = connection.prepareStatement("SELECT calend.*, doc.first_name, doc.family_name, " +
                     "doc.patronymic, doc.specialization, doc.office\n" +
                     "FROM public.\"calendar\" calend JOIN public.\"doctor\" doc " +
                     "ON calend.\"doctor_id\" = doc.id_doctor AND doc.family_name = ?;");
@@ -127,7 +124,8 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     }
 
     private PreparedStatement getUpdateStatement() throws SQLException {
-        return manager.getConnection().prepareStatement(
+        Connection connection = manager.getConnection();
+        return connection.prepareStatement(
                 "UPDATE calendar SET doctor_id = ?, monday = ?, tuesday = ?, " +
                         "wednesday = ?, thursday = ?, friday = ?, saturday = ?, sunday = ? WHERE id_calendar = ?");
     }
@@ -135,7 +133,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     @Override
     public void update(Calendar calendar) throws CalendarDAOException {
         PreparedStatement statement = null;
-        try {
+        try (Connection connection = manager.getConnection()){
             statement = getUpdateStatement();
             statement.setInt(1, calendar.getIdCalendar());
             statement.setInt(2, calendar.getIdDoctor());
@@ -156,7 +154,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     @Override
     public void updateAll(List<Calendar> calendarList) throws CalendarDAOException {
         PreparedStatement statement = null;
-        try {
+        try (Connection connection = manager.getConnection()){
             statement = getUpdateStatement();
             for (Calendar calendar : calendarList) {
                 statement.setInt(1, calendar.getIdCalendar());
@@ -180,8 +178,8 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     @Override
     public void deleteByID(int id) throws CalendarDAOException {
         PreparedStatement statement = null;
-        try {
-            statement = manager.getConnection().prepareStatement(
+        try (Connection connection = manager.getConnection()){
+            statement = connection.prepareStatement(
                     "DELETE calendar WHERE id_calendar = ? ");
             statement.setInt(1, id);
             statement.executeUpdate();
@@ -192,7 +190,8 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     }
 
     private PreparedStatement getInsertStatement() throws SQLException {
-        return manager.getConnection().prepareStatement(
+        Connection connection = manager.getConnection();
+        return connection.prepareStatement(
                 "INSERT INTO calendar (id_calendar, doctor_id, monday, tuesday, wednesday, " +
                         "thursday, friday, saturday, sunday) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     }
@@ -200,7 +199,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     @Override
     public void insertOne(Calendar calendar) throws CalendarDAOException {
         PreparedStatement statement = null;
-        try {
+        try (Connection connection = manager.getConnection()){
             statement = getInsertStatement();
             statement.setInt(1, calendar.getIdCalendar());
             statement.setInt(2, calendar.getIdDoctor());
@@ -222,7 +221,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
     @Override
     public void insertAll(List<Calendar> calendarList) throws CalendarDAOException {
         PreparedStatement statement = null;
-        try {
+        try (Connection connection = manager.getConnection()){
             statement = getInsertStatement();
             for (Calendar calendar : calendarList) {
                 statement.setInt(1, calendar.getIdCalendar());

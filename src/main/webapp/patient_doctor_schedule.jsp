@@ -6,7 +6,7 @@
     <link type="text/css" rel="stylesheet" href="${context}/css/style_2.css"/>
     <%--<link rel="stylesheet" href="${context}/css/bootstrap.min.css">--%>
     <title>График работы врачей</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--%>
 </head>
 <body>
 
@@ -17,8 +17,7 @@
         </tr>
         <tr>
             <td>
-                <p><input type="text" id="familyName" name="familyName" size="50" class="form-control" placeholder="Фамилия врача"
-                          required autofocus>
+                <p><input type="text" id="familyName" name="familyName" size="50"  placeholder="Фамилия врача">
             </td>
         </tr>
     </table>
