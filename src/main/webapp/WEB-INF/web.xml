@@ -231,6 +231,33 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>PatientEditServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientEditServlet</servlet-name>
+        <url-pattern>/patient_edit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientSaveServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientSaveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientSaveServlet</servlet-name>
+        <url-pattern>/patient_save</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientDataServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientDataServlet</servlet-name>
+        <url-pattern>/patient_data</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>PatientInfoServlet</servlet-name>
         <servlet-class>servlets.patient_servlets.PatientInfoServlet</servlet-class>
     </servlet>

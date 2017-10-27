@@ -1,5 +1,7 @@
 package db;
 
+import org.apache.log4j.Logger;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -8,6 +10,7 @@ public class ConnectionManagerPostgreSQL implements IConnectionManager {
 
     private static final ConnectionManagerPostgreSQL INSTANCE = new ConnectionManagerPostgreSQL();
     private Connection connection;
+    private static final Logger logger = Logger.getLogger(ConnectionManagerPostgreSQL.class);
 
     private ConnectionManagerPostgreSQL() {
         try {
@@ -18,9 +21,9 @@ public class ConnectionManagerPostgreSQL implements IConnectionManager {
                             "postgres",
                             "admin");
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
     }
 

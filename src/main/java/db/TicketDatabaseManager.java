@@ -1,9 +1,9 @@
 package db;
 
+import org.apache.log4j.Logger;
 import pojo.Ticket;
 import db.dao.TicketDAO;
 import serialization.JAXBSerialization;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -11,6 +11,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 public class TicketDatabaseManager {
+    private static final Logger logger = Logger.getLogger(TicketDatabaseManager.class);
+
     public static void main(String[] args) {
         try {
             @XmlRootElement(name = "tickets")
@@ -39,7 +41,7 @@ public class TicketDatabaseManager {
         } catch (
                 TicketDAO.TicketDAOException e)
         {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
     }
 }

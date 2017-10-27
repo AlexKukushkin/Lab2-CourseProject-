@@ -24,7 +24,7 @@
 
         /* Remove the jumbotron's default bottom margin */
         .jumbotron {
-            margin-bottom: 0;
+            margin-bottom: 0px;
         }
 
         /* Add a gray background color and some padding to the footer */
@@ -65,7 +65,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <button name="edit" class="btn btn-lg btn-success" formaction="/web/patient_edit"
-                        value="edit" type="submit" style="width: 330px">
+                        value="edit"  type="submit" style="width: 330px">
                     <b>Изменить личные данные</b>
                 </button>
             </div>
@@ -112,51 +112,20 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
                 <button name="location" class="btn btn-lg btn-success" formaction="/web/patient_new_ticket"
                         value="location" type="submit" style="width: 330px">
-                    <b>Выбор населённого пункта</b>
+                    <b>Записаться на приём</b>
                 </button>
             </div>
             <div class="col-sm-4">
-                <button name="medCenter" class="btn btn-lg btn-success" formaction="/web/patient_medcenter"
-                        value="medCenter" type="submit" style="width: 330px">
-                    <b>Выбор Мед Учреждения</b>
-                </button>
-            </div>
-            <div class="col-sm-4">
-                <button name="specialization" class="btn btn-lg btn-success" formaction="/web/patient_special"
-                        value="specialization" type="submit" style="width: 330px">
-                    <b>Выбор специализации</b>
-                </button>
             </div>
         </div>
     </div>
     <br>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <button name="doctorDate" class="btn btn-lg btn-success" formaction="/web/patient_doctor_date"
-                        value="doctorDate" type="submit" style="width: 330px">
-                    <b>Выбор врача и даты</b>
-                </button>
-            </div>
-            <div class="col-sm-4">
-                <button name="doctorTime" class="btn btn-lg btn-success" formaction="/web/patient_time"
-                        value="doctorTime" type="submit" style="width: 330px">
-                    <b>Выбор времени приёма</b>
-                </button>
-            </div>
-            <div class="col-sm-4">
-                <button name="ticket" class="btn btn-lg btn-success" formaction="/web/patient_ticket"
-                        value="ticket" type="submit" style="width: 330px">
-                    <b>Получение талона</b>
-                </button>
-            </div>
-        </div>
-    </div>
     </br>
-
     </br>
     </br>
     </br>

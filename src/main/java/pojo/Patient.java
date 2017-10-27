@@ -72,6 +72,21 @@ public class Patient extends User implements Serializable{
         this.idUser = idUser;
     }
 
+    public Patient(int idPatient, String firstName, String familyName, String patronymic,
+                   String birthDate, String passport, String SNILS, String medPolis, String registerLocation,
+                   String address, String sexType) {
+        this.idPatient = idPatient;
+        this.firstName = firstName;
+        this.familyName = familyName;
+        this.patronymic = patronymic;
+        this.birthDate = birthDate;
+        this.passport = passport;
+        this.SNILS = SNILS;
+        this.medPolis = medPolis;
+        this.registerLocation = registerLocation;
+        this.address = address;
+        this.sexType = sexType;
+    }
 
     public Patient(String firstName, String familyName, String patronymic,
                    String birthDate, String passport, String SNILS, String medPolis, String registerLocation,

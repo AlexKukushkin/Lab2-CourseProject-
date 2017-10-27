@@ -108,29 +108,27 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     private PreparedStatement getUpdateStatement() throws SQLException {
         Connection connection = manager.getConnection();
         return connection.prepareStatement(
-                "UPDATE patient" +
-                        "SET first_name = ?, family_name = ?, patronymic = ?, birth_date = ?, " +
-                        "passport = ?, SNILS = ?, medpolis = ?, registration = ?, home_location = ?, sextype = ?" +
-                        "user_id = ? WHERE id_patient = ? ");
+                "UPDATE patient SET first_name = ?, family_name = ?, patronymic = ?, birth_date = ?, " +
+                        "passport = ?, \"SNILS\" = ?, medpolis = ?, registration = ?, home_location = ?, sextype = ? " +
+                        "WHERE id_patient = ?");
     }
 
     @Override
     public void update(Patient patient) throws PatientDAOException {
         PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()) {
+        try {
             statement = getUpdateStatement();
-            statement.setInt(1, patient.getIdPatient());
-            statement.setString(2, patient.getFirstName());
-            statement.setString(3, patient.getFamilyName());
-            statement.setString(4, patient.getPatronymic());
-            statement.setDate(5, Date.valueOf(patient.getBirthDate()));
-            statement.setString(6, patient.getPassport());
-            statement.setString(7, patient.getSNILS());
-            statement.setString(8, patient.getMedPolis());
-            statement.setString(9, patient.getRegisterLocation());
-            statement.setString(10, patient.getAddress());
-            statement.setString(11, patient.getSexType());
-            statement.setInt(12, patient.getIdUser());
+            statement.setString(1, patient.getFirstName());
+            statement.setString(2, patient.getFamilyName());
+            statement.setString(3, patient.getPatronymic());
+            statement.setDate(4, Date.valueOf(patient.getBirthDate()));
+            statement.setString(5, patient.getPassport());
+            statement.setString(6, patient.getSNILS());
+            statement.setString(7, patient.getMedPolis());
+            statement.setString(8, patient.getRegisterLocation());
+            statement.setString(9, patient.getAddress());
+            statement.setString(10, patient.getSexType());
+            statement.setInt(11, patient.getIdPatient());
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
@@ -141,7 +139,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     @Override
     public void updateAll(List<Patient> patientList) throws PatientDAOException {
         PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()) {
+        try {
             statement = getUpdateStatement();
             for (Patient patient : patientList) {
                 statement.setInt(1, patient.getIdPatient());
@@ -189,7 +187,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     @Override
     public void insertOne(Patient patient) throws PatientDAOException {
         PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
+        try {
             statement = getInsertStatement();
             statement.setString(1, patient.getFirstName());
             statement.setString(2, patient.getFamilyName());
@@ -213,7 +211,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
     @Override
     public void insertAll(List<Patient> patientList) throws PatientDAOException {
         PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
+        try {
             statement = getInsertStatement();
             for (Patient patient : patientList) {
                 statement.setString(1, patient.getFirstName());
