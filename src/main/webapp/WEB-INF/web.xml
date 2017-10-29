@@ -231,12 +231,75 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>PatientEditServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientEditServlet</servlet-name>
+        <url-pattern>/patient_edit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientSaveServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientSaveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientSaveServlet</servlet-name>
+        <url-pattern>/patient_save</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PatientDataServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.PatientDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PatientDataServlet</servlet-name>
+        <url-pattern>/patient_data</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>PatientInfoServlet</servlet-name>
         <servlet-class>servlets.patient_servlets.PatientInfoServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientInfoServlet</servlet-name>
         <url-pattern>/patient_info</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TicketSpecializationServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.patient_ticket_servlets.TicketSpecializationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TicketSpecializationServlet</servlet-name>
+        <url-pattern>/ticket_specialization</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TicketDoctorServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.patient_ticket_servlets.TicketDoctorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TicketDoctorServlet</servlet-name>
+        <url-pattern>/ticket_doctor</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TicketDateTimeServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.patient_ticket_servlets.TicketDateTimeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TicketDateTimeServlet</servlet-name>
+        <url-pattern>/ticket_date_time</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TicketServlet</servlet-name>
+        <servlet-class>servlets.patient_servlets.patient_ticket_servlets.TicketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TicketServlet</servlet-name>
+        <url-pattern>/get_ticket</url-pattern>
     </servlet-mapping>
 
     <jsp-config>

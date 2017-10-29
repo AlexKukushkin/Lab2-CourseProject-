@@ -18,7 +18,7 @@ public class AdminGetAllUsersServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/user_list.jsp").forward(req, resp);
+        req.getRequestDispatcher("/admin_user_list.jsp").forward(req, resp);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class AdminGetAllUsersServlet extends HttpServlet {
         try {
             users = adminGetAllUsersService.doAdminGetAllUsers();
             req.setAttribute("list", users);
-            req.getRequestDispatcher("/user_list.jsp").forward(req, resp);
+            req.getRequestDispatcher("/admin_user_list.jsp").forward(req, resp);
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
         }

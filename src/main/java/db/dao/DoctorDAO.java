@@ -1,10 +1,11 @@
 package db.dao;
 
+import db.IConnectionManager;
 import db.TomcatConnectionPool;
-import db.TomcatConnectionPool;
+import dto.DoctorDTO;
 import org.apache.log4j.Logger;
 import pojo.Doctor;
-import db.IConnectionManager;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -194,6 +195,76 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
             throw new DoctorDAOException();
+        }
+    }
+
+    public List<String> getDoctorSpecialization(int idMedCenter) throws DoctorDAOException {
+        List<String> specializationList = new ArrayList<>();
+        String specialization;
+
+        PreparedStatement statement = null;
+        logger.debug("Log for get certain specialization");
+
+        try (Connection connection = manager.getConnection()) {
+            statement = connection.prepareStatement("SELECT DISTINCT(specialization) FROM doctor dc JOIN medcenter md " +
+                    "ON dc.medcenter_id = md.id_medcenter AND md.id_medcenter = ?");
+            statement.setInt(1, idMedCenter);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                specialization = resultSet.getString("specialization");
+                specializationList.add(specialization);
+            }
+        } catch (SQLException e) {
+            logger.error("This is Error : " + e.getMessage());
+            throw new DoctorDAOException();
+        }
+        return specializationList;
+    }
+
+    public List<DoctorDTO> getDoctor(int idMedCenter, String specialization) throws DoctorDAOException {
+        List<DoctorDTO> doctorDTOList = new ArrayList<>();
+        logger.debug("Log for get certain Doctor by specialization and medcenter");
+
+        try (Connection connection = manager.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement("SELECT dc.id_doctor, dc.first_name, dc.family_name, dc.patronymic, " +
+                    "dc.specialization, dc.office, md.medcenter_name FROM doctor dc\n" +
+                    "JOIN medcenter md ON dc.medcenter_id = md.id_medcenter AND dc.specialization = ? " +
+                    "AND md.id_medcenter = ? ");
+            statement.setString(1, specialization);
+            statement.setInt(2, idMedCenter);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                DoctorDTO doctorDTO = new DoctorDTO(
+                        resultSet.getInt("id_doctor"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("patronymic"),
+                        resultSet.getString("family_name"),
+                        resultSet.getString("specialization"),
+                        resultSet.getString("office"),
+                        resultSet.getString("medcenter_name"));
+                doctorDTOList.add(doctorDTO);
+            }
+        } catch (SQLException e) {
+            logger.error("This is Error : " + e.getMessage());
+            throw new DoctorDAOException();
+        }
+        return doctorDTOList;
+    }
+
+    public int getDoctorID(int id) throws DoctorDAO.DoctorDAOException {
+        logger.info("Log for get Patient by ID");
+
+        try (Connection connection = manager.getConnection()){
+            PreparedStatement statement = connection.prepareStatement("SELECT dc.id_doctor FROM doctor dc JOIN medcenter md " +
+                    "ON dc.medcenter_id = md.id_medcenter AND md.id_medcenter = ?");
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            return resultSet.getInt("id_doctor");
+        } catch (SQLException e) {
+            logger.error("This is Error : " + e.getMessage());
+            throw new DoctorDAO.DoctorDAOException();
         }
     }
 }

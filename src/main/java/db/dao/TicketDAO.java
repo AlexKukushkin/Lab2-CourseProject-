@@ -1,10 +1,9 @@
 package db.dao;
 
+import db.IConnectionManager;
 import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
 import pojo.Ticket;
-import db.TomcatConnectionPool;
-import db.IConnectionManager;
 
 import java.sql.*;
 import java.text.ParseException;
@@ -125,6 +124,38 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         return ticketList;
     }
 
+    public Ticket getTicket(int id) throws TicketDAOException {
+        Ticket ticketList;
+        logger.info("Log for getAll Tickets");
+
+        try (Connection connection = manager.getConnection()){
+            PreparedStatement statement = connection.prepareStatement("SELECT tk.id_ticket, pt.first_name, pt.family_name, pt.patronymic, \n" +
+                    "concat(dc.family_name,' ',left(dc.first_name, 1),'. ',left(dc.patronymic, 1),'.') as DoctorFIO, dc.office, dc.specialization,\n" +
+                    "tk.time_patient, tk.day_patient, tk.date_patient, md.medcenter_name \n" +
+                    "FROM ticket tk JOIN patient pt ON pt.id_patient = tk.patient_id AND pt.id_patient = ? JOIN doctor dc ON dc.id_doctor = tk.doctor_id\n" +
+                    "JOIN medcenter md ON md.id_medcenter = tk.medcenter_id;");
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+                return new Ticket(
+                        resultSet.getInt("id_ticket"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("family_name"),
+                        resultSet.getString("patronymic"),
+                        resultSet.getString("DoctorFIO"),
+                        resultSet.getString("office"),
+                        resultSet.getString("specialization"),
+                        resultSet.getString("time_patient"),
+                        resultSet.getString("day_patient"),
+                        resultSet.getString("date_patient"),
+                        resultSet.getString("medcenter_name"));
+
+        } catch (SQLException e) {
+            logger.error("This is Error : " + e.getMessage());
+            throw new TicketDAOException();
+        }
+    }
+
     private PreparedStatement getUpdateStatement() throws SQLException {
         Connection connection = manager.getConnection();
         return connection.prepareStatement(
@@ -236,6 +267,20 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             throw new TicketDAOException();
         } catch (ParseException e) {
             logger.error("This is Error : " + e.getMessage());
+        }
+    }
+
+    public void insertMedCenterID(int idMedCenter) throws TicketDAOException {
+        PreparedStatement statement = null;
+
+        try (Connection connection = manager.getConnection()) {
+            statement = connection.prepareStatement("INSERT INTO ticket (medcenter_id)" +
+                    " VALUES (?) ");
+            statement.setInt(1, idMedCenter);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.error("This is Error : " + e.getMessage());
+            throw new TicketDAOException();
         }
     }
 }

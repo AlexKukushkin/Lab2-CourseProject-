@@ -17,7 +17,7 @@ public class AdminGetAllDoctorsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/doctor_list.jsp").forward(req, resp);
+        req.getRequestDispatcher("/admin_doctor_list.jsp").forward(req, resp);
     }
 
     @Override
@@ -27,6 +27,6 @@ public class AdminGetAllDoctorsServlet extends HttpServlet {
         doctors = adminGetAllDoctorsService.doAdminGetAllDoctorList();
 
         req.setAttribute("list", doctors);
-        req.getRequestDispatcher("/doctor_list.jsp").forward(req, resp);
+        req.getRequestDispatcher("/admin_doctor_list.jsp").forward(req, resp);
     }
 }

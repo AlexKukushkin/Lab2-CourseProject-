@@ -60,6 +60,7 @@ public class Ticket implements Serializable {
         this.patientDate = patientDate;
     }
 
+
     public int getIdTicket() {
         return idTicket;
     }

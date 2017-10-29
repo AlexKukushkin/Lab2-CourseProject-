@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Личный кабинет врача</title>
+    <title>Управление системой</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href="admin_css/css/bootstrap.min.css" rel="stylesheet">
@@ -25,48 +25,26 @@
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="registration3.jsp">DOCTOR DASHBOARD </a>
-            <div class="nav-collapse">
-                <ul class="nav pull-right">
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-cog"></i> Аккаунт <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:;">Настройки</a></li>
-                            <li><a href="javascript:;">Помощь</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-user"></i>Личный кабинет<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:;">Профиль</a></li>
-                            <li><a href="javascript:;">Выход</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-search pull-right">
-                    <input type="text" class="search-query" placeholder="Search">
-                </form>
+    <form class="navbar-inner" method="post">
+        <div class="navbar-inner">
+            <div class="container"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a
+                    class="brand">DOCTOR DASHBOARD </a>
+                <div class="nav-collapse">
+                    <ul class="nav pull-right">
+                        <button name="exit" class="btn btn-md btn-success btn-block"
+                                value="exit" type="submit">
+                            Выход
+                        </button>
+                    </ul>
+                    <%--<form class="navbar-search pull-right">--%>
+                    <%--</form>--%>
+                </div>
+                <!--/.nav-collapse -->
             </div>
-            <!--/.nav-collapse -->
+            <!-- /container -->
         </div>
-        <!-- /container -->
-    </div>
-    <!-- /navbar-inner -->
-</div>
-<!-- /navbar -->
-<div class="subnavbar">
-    <div class="subnavbar-inner">
-        <div class="container">
-            <ul class="mainnav">
-                <li class="active"><a href="registration3.jsp"><i class="icon-dashboard"></i><span>Список пациентов</span> </a> </li>
-                <li><a href="reports.html"><i class="icon-list-alt"></i><span>Отчёты</span> </a> </li>
-            </ul>
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /subnavbar-inner -->
+        <!-- /navbar-inner -->
 </div>
 <!-- /subnavbar -->
 <div class="main">
@@ -76,7 +54,7 @@
                 <div class="span6">
                     <!-- /widget -->
                     <div class="widget widget-nopad">
-                        <div class="widget-header"> <i class="icon-list-alt"></i>
+                        <div class="widget-header"><i class="icon-list-alt"></i>
                             <h3> Календарь</h3>
                         </div>
                         <!-- /widget-header -->
@@ -91,17 +69,20 @@
                 <!-- /span6 -->
                 <div class="span6">
                     <div class="widget">
-                        <div class="widget-header"> <i class="icon-bookmark"></i>
+                        <div class="widget-header"><i class="icon-bookmark"></i>
                             <h3>Выполнить операции :</h3>
                         </div>
                         <!-- /widget-header -->
                         <div class="widget-content">
                             <div class="shortcuts">
-                                <a href="javascript:;" class="shortcut">
-                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр всех записанных на приём пациентов</span></a>
-                                <a href="javascript:;" class="shortcut">
-                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">График рабочего времени</span></a>
-                                <a href="javascript:;" class="shortcut"><i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Список талонов</span> </a>
+                                <button type="submit" name="showScheduleDoc" value="showScheduleDoc" class="shortcut"
+                                        style="height:115px; width:120px" formaction="/web/doctor_schedule">
+                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">График рабочего времени</span>
+                                </button>
+                                <button type="submit" name="showPatientList" value="showPatientList" class="shortcut"
+                                        style="height:115px; width:120px" formaction="/web/ticket_list">
+                                    <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр списка записей</span>
+                                </button>
                             </div>
                             <!-- /shortcuts -->
                         </div>
@@ -130,6 +111,7 @@
         <!-- /container -->
     </div>
     <!-- /footer-inner -->
+    </form>
 </div>
 <!-- /footer -->
 <!-- Le javascript
@@ -184,7 +166,7 @@
 
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -197,7 +179,7 @@
             },
             selectable: true,
             selectHelper: true,
-            select: function(start, end, allDay) {
+            select: function (start, end, allDay) {
                 var title = prompt('Event Title:');
                 if (title) {
                     calendar.fullCalendar('renderEvent',

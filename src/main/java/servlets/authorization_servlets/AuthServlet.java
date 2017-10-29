@@ -1,11 +1,14 @@
 package servlets.authorization_servlets;
 
+import db.dao.PatientDAO;
 import services.authorization_services.AuthorizationService;
 import services.authorization_services.AuthorizationServiceImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class AuthServlet extends HttpServlet{
@@ -23,10 +26,13 @@ public class AuthServlet extends HttpServlet{
 
     public void sortUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Boolean isAuth = (Boolean) ((HttpServletRequest)request).getSession().getAttribute("isAuth");
+        PatientDAO patientDAO = new PatientDAO();
         String role;
         int userId;
 
-        if (isAuth == null) isAuth = false;
+        if (isAuth == null) {
+            isAuth = false;
+        }
         if (isAuth) {
             role = (String) ((HttpServletRequest)request).getSession().getAttribute("role");
         } else {
@@ -37,6 +43,15 @@ public class AuthServlet extends HttpServlet{
 
             userId = authorizationService.getUserID(login, password);
             request.getSession().setAttribute("userID", userId);
+
+            int patientId = 0;
+            try {
+                patientId = patientDAO.getPatientID(Integer.valueOf(userId));
+            } catch (PatientDAO.PatientDAOException e) {
+                e.printStackTrace();
+            }
+            HttpSession session = request.getSession();
+            session.setAttribute("patientID", patientId);
         }
 
         if (!"false".equals(role)){

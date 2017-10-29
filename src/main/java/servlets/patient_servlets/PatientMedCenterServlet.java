@@ -15,6 +15,11 @@ public class PatientMedCenterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<MedCenter> medcenters;
+
+        medcenters = patientMedCenterService.getPatientMedCenter();
+
+        req.setAttribute("list", medcenters);
         req.getRequestDispatcher("/patient_medcenter.jsp").forward(req, resp);
     }
 

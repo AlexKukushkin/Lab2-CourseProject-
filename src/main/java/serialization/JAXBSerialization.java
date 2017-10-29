@@ -1,16 +1,16 @@
 package serialization;
 
-import pojo.*;
+import db.dao.CalendarDAO;
+import org.apache.log4j.Logger;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 public class JAXBSerialization {
+    private static final Logger logger = Logger.getLogger(JAXBSerialization.class);
 
     public static void jaxbSerializeObject(String fileName, Object object) {
         try {
@@ -23,7 +23,7 @@ public class JAXBSerialization {
             jaxbMarshaller.marshal(object, file);
 
         } catch (JAXBException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
     }
 
@@ -34,7 +34,7 @@ public class JAXBSerialization {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             return tClass.cast(unmarshaller.unmarshal(file));
         } catch (JAXBException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
         return null;
     }

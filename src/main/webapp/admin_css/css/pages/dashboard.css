@@ -9,7 +9,7 @@ Bootstrap Admin Template by EGrappler.com
 */
 
 .shortcuts {
-	text-align: center;	
+	text-align: center;
 }
 
 .shortcuts .shortcut { 
@@ -48,11 +48,10 @@ Bootstrap Admin Template by EGrappler.com
 
 .shortcuts .shortcut-label {
 	display: block;
-	
 	font-weight: 400;
 	color: #545454;
-}
 
+}
 
 
 /*------------------------------------------------------------------

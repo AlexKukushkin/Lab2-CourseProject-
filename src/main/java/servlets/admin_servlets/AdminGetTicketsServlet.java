@@ -15,7 +15,7 @@ public class AdminGetTicketsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         fillCommon(req);
-        req.getRequestDispatcher("/ticket_list.jsp").forward(req, resp);
+        req.getRequestDispatcher("/admin_ticket_list.jsp").forward(req, resp);
     }
 
     protected void fillCommon(HttpServletRequest req) throws IOException {
@@ -28,7 +28,7 @@ public class AdminGetTicketsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         fillCommon(req);
-//        req.getRequestDispatcher("/ticket_list.jsp").forward(req, resp);
+//        req.getRequestDispatcher("/admin_ticket_list.jsp").forward(req, resp);
         ((HttpServletResponse) resp).sendRedirect("/web/ticket_list");
     }
 }
