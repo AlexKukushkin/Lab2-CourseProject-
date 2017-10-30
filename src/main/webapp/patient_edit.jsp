@@ -87,7 +87,7 @@
         </td>
         <td>
             <p>
-                <button type="submit" name="save" formaction="/web/patient_save">Сохранить
+                <button type="submit" name="save" formaction="/web/patient_main/patient_save">Сохранить
                 </button>
             </p>
         </td>

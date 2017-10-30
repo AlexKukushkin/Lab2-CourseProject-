@@ -21,7 +21,7 @@
             <tr>
                 <td><p><c:out value="${specialization}"></c:out></p></td>
                 <td>
-                    <button class="button button1" type="addButton" name="specialization" value="${specialization}" formaction="/web/ticket_doctor"
+                    <button class="button button1" type="addButton" name="specialization" value="${specialization}" formaction="/web/patient_main/ticket_doctor"
                             style="margin: auto; display: block">Выбрать специализацию и перейти на следующую страницу
                     </button>
                 </td>

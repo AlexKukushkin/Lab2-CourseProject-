@@ -23,7 +23,7 @@
     </table>
     <div>
         </br>
-        <button class="button button1" type="addButton" formaction="/web/patient_doctor_schedule_2"
+        <button class="button button1" type="addButton" formaction="/web/patient_main/patient_doctor_schedule_2"
                 style="margin: auto; display: block">Посмотреть расписание
         </button>
         </br>

@@ -1,8 +1,7 @@
 package servlets.patient_servlets;
 
 import pojo.MedCenter;
-import services.patient_services.PatientMedCenterService;
-
+import services.patient_services.PatientService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,13 +11,13 @@ import java.util.List;
 
 
 public class PatientGetTicketServlet extends HttpServlet {
-    private static PatientMedCenterService patientMedCenterService = new PatientMedCenterService();
+    private static PatientService patientService = new PatientService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<MedCenter> medcenters;
 
-        medcenters = patientMedCenterService.getPatientMedCenter();
+        medcenters = patientService.getPatientMedCenter();
         req.setAttribute("list", medcenters);
         req.getRequestDispatcher("/patient_new_ticket.jsp").forward(req, resp);
     }
@@ -27,7 +26,7 @@ public class PatientGetTicketServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<MedCenter> medcenters;
 
-        medcenters = patientMedCenterService.getPatientMedCenter();
+        medcenters = patientService.getPatientMedCenter();
         req.setAttribute("list", medcenters);
         req.getRequestDispatcher("/patient_new_ticket.jsp").forward(req, resp);
     }

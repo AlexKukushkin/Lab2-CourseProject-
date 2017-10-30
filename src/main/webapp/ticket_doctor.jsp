@@ -32,7 +32,7 @@
                 <td><p><c:out value="${doctor.office}"></c:out></p></td>
                 <td><p><c:out value="${doctor.medcenterName}"></c:out></p></td>
                 <td>
-                    <button class="button button1" type="addButton" name="idDoctor" value="${doctor.idDoctor}" formaction="/web/ticket_date_time"
+                    <button class="button button1" type="addButton" name="idDoctor" value="${doctor.idDoctor}" formaction="/web/patient_main/ticket_date_time"
                             style="margin: auto; display: block">Выбрать время/дату записи и перейти на следующую страницу
                     </button>
                 </td>

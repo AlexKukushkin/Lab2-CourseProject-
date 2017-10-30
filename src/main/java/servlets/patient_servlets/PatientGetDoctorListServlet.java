@@ -1,8 +1,7 @@
 package servlets.patient_servlets;
 
 import pojo.Doctor;
-import services.patient_services.PatientGetDoctorListService;
-
+import services.patient_services.PatientService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,13 +10,13 @@ import java.io.IOException;
 import java.util.List;
 
 public class PatientGetDoctorListServlet extends HttpServlet {
-    private static PatientGetDoctorListService patientGetDoctorListService = new PatientGetDoctorListService();
+    private static PatientService patientService = new PatientService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Doctor> doctors;
 
-        doctors = patientGetDoctorListService.patientGetDoctorList();
+        doctors = patientService.patientGetDoctorList();
         req.setAttribute("list", doctors);
         req.getRequestDispatcher("/patient_doctor_list.jsp").forward(req, resp);
     }
@@ -26,7 +25,7 @@ public class PatientGetDoctorListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Doctor> doctors;
 
-        doctors = patientGetDoctorListService.patientGetDoctorList();
+        doctors = patientService.patientGetDoctorList();
         req.setAttribute("list", doctors);
         req.getRequestDispatcher("/patient_doctor_list.jsp").forward(req, resp);
     }

@@ -1,8 +1,7 @@
 package servlets.admin_servlets;
 
 import pojo.MedCenter;
-import services.admin_services.AdminGetMedcentersService;
-
+import services.admin_services.AdminService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class AdminGetMedcentersServlet extends HttpServlet {
-    private static AdminGetMedcentersService adminGetMedcentersService = new AdminGetMedcentersService();
+    private static AdminService adminService = new AdminService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,7 +21,7 @@ public class AdminGetMedcentersServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<MedCenter> medCenters;
 
-        medCenters = adminGetMedcentersService.doAdminGetMedcenters();
+        medCenters = adminService.doAdminGetMedcenters();
         req.setAttribute("list", medCenters);
         req.getRequestDispatcher("/admin_medcenters.jsp").forward(req, resp);
     }

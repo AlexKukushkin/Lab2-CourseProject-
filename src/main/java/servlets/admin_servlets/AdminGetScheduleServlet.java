@@ -1,8 +1,7 @@
 package servlets.admin_servlets;
 
 import pojo.Calendar;
-import services.admin_services.AdminGetScheduleService;
-
+import services.admin_services.AdminService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class AdminGetScheduleServlet extends HttpServlet {
-    private static AdminGetScheduleService adminGetScheduleService = new AdminGetScheduleService();
+    private static AdminService adminService = new AdminService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,7 +21,7 @@ public class AdminGetScheduleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Calendar> calendarList;
 
-        calendarList = adminGetScheduleService.doAdminGetSchedule();
+        calendarList = adminService.doAdminGetSchedule();
 
         req.setAttribute("list", calendarList);
         req.getRequestDispatcher("/admin_doctor_schedule.jsp").forward(req, resp);

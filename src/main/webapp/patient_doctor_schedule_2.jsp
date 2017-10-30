@@ -49,7 +49,7 @@
     </table>
     <div>
         </br>
-        <button class="button button1" type="returnBack" name="return" formaction="/web/patient_doctor_schedule"
+        <button class="button button1" type="returnBack" name="return" formaction="/web/patient_main/patient_doctor_schedule"
                 style="margin: auto; display: block">Вернуться назад
         </button>
         <br>

@@ -16,11 +16,15 @@ public class LoginFilter implements Filter {
 
         Boolean isAuth = (Boolean) ((HttpServletRequest) request)
                 .getSession().getAttribute("isAuth");
-        if (isAuth == null) isAuth=false;
-        if (!isAuth) {
+
+        if (isAuth == null) {
+            isAuth = false;
+        }
+        if (!isAuth) {                              //todo true or false?
             chain.doFilter(request, response);
         } else {
-            ((HttpServletResponse)response).sendRedirect("/web/auth");
+            ((HttpServletResponse) response).sendRedirect("/web/auth");
+//            request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
     }
 

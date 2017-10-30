@@ -23,7 +23,6 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
         System.out.println("POST");
-//        UserDAOImpl userDAO = new UserDAOImpl();
 
         String login = req.getParameter("inputLogin");
         String password = req.getParameter("inputPassword");
@@ -34,12 +33,12 @@ public class RegisterServlet extends HttpServlet {
                         req.getParameter("SNILS"), req.getParameter("medPolis"),
                         req.getParameter("registerLocation"), req.getParameter("address"),
                         req.getParameter("sexType"));
-
-        if (registrationService.regUser(login, password)) {
-            registrationService.insertUser(login, password, userDTO);
-            req.getSession().setAttribute("isAuth", true);
+        Boolean registrationResult = registrationService.regUser(login, password);
+        if (registrationResult) {
+            registrationService.insertUser(login, password, userDTO);//todo этот функционал должен быть в рег юзер
+            req.getSession().setAttribute("isAuth", true);//todo добавить в сессию юзер айди или юзер или что то подоюное (и пациегта)
             req.getSession().setAttribute("role", "patient");
-            ((HttpServletResponse)resp).sendRedirect("/web/patient_main");
+            resp.sendRedirect("/web/patient_main");
         } else {
             getServletContext().getRequestDispatcher("/").forward(req, resp);
         }

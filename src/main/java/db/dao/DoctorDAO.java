@@ -22,21 +22,15 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
         manager = TomcatConnectionPool.getInstance();
     }
 
-    /**
-     * Метод возвращает список врачей из БД
-     * @return List<Doctor> список врачей
-     * @throws DoctorDAOException
-     */
+
     @Override
     public List<Doctor> getAll() throws DoctorDAOException {
         List<Doctor> doctorList = new ArrayList<>();
         logger.info("Log for getAll Doctors");
 
-        Statement statement = null;
-
         try (Connection connection = manager.getConnection()){
-            statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT dc.*, c.*" +
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT dc.*, c.*" + //todo remove calendar
                     "FROM doctor dc LEFT JOIN calendar c ON dc.id_doctor = c.doctor_id;");
             while (resultSet.next()) {
                 Doctor doctor = new Doctor(
@@ -59,11 +53,10 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
 
     @Override
     public Doctor getByID(int id) throws DoctorDAOException {
-        PreparedStatement statement = null;
         logger.debug("Log for get certain Doctor by ID");
 
         try (Connection connection = manager.getConnection()){
-            statement = connection.prepareStatement("SELECT * FROM doctor WHERE id_doctor = ? ");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM doctor WHERE id_doctor = ? ");
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
@@ -92,9 +85,9 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
 
     @Override
     public void update(Doctor doctor) throws DoctorDAOException {
-        PreparedStatement statement = null;
-        try(Connection connection = manager.getConnection()) {
-            statement = getUpdateStatement();
+
+        try {
+            PreparedStatement statement = getUpdateStatement();
             statement.setString(1, doctor.getFirstName());
             statement.setString(2, doctor.getFamilyName());
             statement.setString(3, doctor.getPatronymic());
@@ -111,9 +104,8 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
 
     @Override
     public void updateAll(List<Doctor> doctorList) throws DoctorDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
-            statement = getUpdateStatement();
+        try {
+            PreparedStatement statement = getUpdateStatement();
             for (Doctor doctor : doctorList) {
                 statement = getUpdateStatement();
                 statement.setString(1, doctor.getFirstName());
@@ -134,9 +126,9 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
 
     @Override
     public void deleteByID(int id) throws DoctorDAOException {
-        PreparedStatement statement = null;
+
         try (Connection connection = manager.getConnection()){
-            statement = connection.prepareStatement(
+            PreparedStatement statement = connection.prepareStatement(
                     "DELETE doctor WHERE id_doctor = ? ");
             statement.setInt(1, id);
             statement.executeUpdate();
@@ -155,9 +147,9 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
 
     @Override
     public void insertOne(Doctor doctor) throws DoctorDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
-            statement = getInsertStatement();
+
+        try {
+            PreparedStatement statement = getInsertStatement();
             statement.setString(1, doctor.getFirstName());
             statement.setString(2, doctor.getFamilyName());
             statement.setString(3, doctor.getPatronymic());
@@ -175,9 +167,9 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
 
     @Override
     public void insertAll(List<Doctor> doctorList) throws DoctorDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
-            statement = getInsertStatement();
+
+        try {
+            PreparedStatement statement = getInsertStatement();
             for (Doctor doctor : doctorList) {
                 statement.setInt(1, doctor.getIdDoctor());
                 statement.setString(2, doctor.getFirstName());

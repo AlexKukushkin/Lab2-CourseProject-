@@ -1,10 +1,9 @@
 package db.dao;
 
+import db.IConnectionManager;
 import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
 import pojo.MedCenter;
-import db.TomcatConnectionPool;
-import db.IConnectionManager;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -27,10 +26,8 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
         List<MedCenter> medCenterList = new ArrayList<>();
         logger.info("Log for getAll MedCenters");
 
-        Statement statement = null;
-
         try (Connection connection = manager.getConnection()){
-            statement = connection.createStatement();
+            Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM medcenter");
             while (resultSet.next()) {
                 MedCenter medCenter = new MedCenter(
@@ -49,11 +46,10 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
 
     @Override
     public MedCenter getByID(int id) throws MedCenterDAOException {
-        PreparedStatement statement = null;
         logger.info("Log for get MedCenter by ID");
 
         try (Connection connection = manager.getConnection()){
-            statement = connection.prepareStatement("SELECT * FROM medcenter WHERE id_medcenter = ? ");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM medcenter WHERE id_medcenter = ? ");
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
@@ -76,9 +72,9 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
 
     @Override
     public void update(MedCenter medCenter) throws MedCenterDAOException {
-        PreparedStatement statement = null;
-        try(Connection connection = manager.getConnection()) {
-            statement = getUpdateStatement();
+
+        try {
+            PreparedStatement statement = getUpdateStatement();
             statement.setInt(1, medCenter.getIdMedCenter());
             statement.setString(2, medCenter.getCenterName());
             statement.setString(3, medCenter.getRegionName());
@@ -92,9 +88,9 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
 
     @Override
     public void updateAll(List<MedCenter> medCenterList) throws MedCenterDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
-            statement = getUpdateStatement();
+
+        try {
+            PreparedStatement statement = getUpdateStatement();
             for (MedCenter medCenter : medCenterList) {
                 statement.setInt(1, medCenter.getIdMedCenter());
                 statement.setString(2, medCenter.getCenterName());
@@ -111,9 +107,9 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
 
     @Override
     public void deleteByID(int id) throws MedCenterDAOException {
-        PreparedStatement statement = null;
+
         try (Connection connection = manager.getConnection()) {
-            statement = connection.prepareStatement(
+            PreparedStatement statement = connection.prepareStatement(
                     "DELETE medcenter WHERE id_medcenter = ? ");
             statement.setInt(1, id);
             statement.executeUpdate();
@@ -131,9 +127,9 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
 
     @Override
     public void insertOne(MedCenter medCenter) throws MedCenterDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()) {
-            statement = getInsertStatement();
+
+        try {
+            PreparedStatement statement = getInsertStatement();
             statement.setInt(1, medCenter.getIdMedCenter());
             statement.setString(2, medCenter.getCenterName());
             statement.setString(3, medCenter.getRegionName());
@@ -147,9 +143,9 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
 
     @Override
     public void insertAll(List<MedCenter> medCenterList) throws MedCenterDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
-            statement = getInsertStatement();
+
+        try {
+            PreparedStatement statement = getInsertStatement();
             for (MedCenter medCenter : medCenterList) {
                 statement.setInt(1, medCenter.getIdMedCenter());
                 statement.setString(2, medCenter.getCenterName());

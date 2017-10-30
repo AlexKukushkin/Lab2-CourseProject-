@@ -1,9 +1,7 @@
 package servlets.admin_servlets;
 
-
 import pojo.Doctor;
-import services.admin_services.AdminGetAllDoctorsService;
-
+import services.admin_services.AdminService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,9 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
 public class AdminGetAllDoctorsServlet extends HttpServlet {
-    private static AdminGetAllDoctorsService adminGetAllDoctorsService = new AdminGetAllDoctorsService();
+    private static AdminService adminService = new AdminService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,9 +21,9 @@ public class AdminGetAllDoctorsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Doctor> doctors;
 
-        doctors = adminGetAllDoctorsService.doAdminGetAllDoctorList();
+        doctors = adminService.doAdminGetAllDoctorList();
 
-        req.setAttribute("list", doctors);
+        req.setAttribute("doctirList", doctors);
         req.getRequestDispatcher("/admin_doctor_list.jsp").forward(req, resp);
     }
 }

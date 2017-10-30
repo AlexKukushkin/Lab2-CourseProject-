@@ -1,7 +1,7 @@
 package servlets.patient_servlets;
 
-import db.dao.PatientDAO;
 import pojo.Patient;
+import services.patient_services.PatientService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,27 +10,23 @@ import java.io.IOException;
 import java.util.List;
 
 public class PatientDataServlet extends HttpServlet {
+    PatientService patientService = new PatientService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Patient> patients = null;
+        List<Patient> patients;
 
-        try {
-            patients = new PatientDAO().getAll();
-        } catch (PatientDAO.PatientDAOException e) {
-            e.printStackTrace();
-        }
+        patients = patientService.getPatients();
+
         req.setAttribute("list", patients);
-        req.getRequestDispatcher("/patient_data.jsp").forward(req, resp);
-    }
+        req.getRequestDispatcher("/patient_data.jsp").forward(req, resp);    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Patient> patients = null;
-        try {
-            patients = new PatientDAO().getAll();
-        } catch (PatientDAO.PatientDAOException e) {
-            e.printStackTrace();
-        }
+        List<Patient> patients;
+
+        patients = patientService.getPatients();
+
         req.setAttribute("list", patients);
         req.getRequestDispatcher("/patient_data.jsp").forward(req, resp);
     }

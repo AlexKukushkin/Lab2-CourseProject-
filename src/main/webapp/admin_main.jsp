@@ -76,27 +76,27 @@
                         <div class="widget-content">
                             <div class="shortcuts">
                                 <button type="submit" name="showPatients" value="showPatients" class="shortcut" style="height:115px; width:120px"
-                                        formaction="/web/patient_list">
+                                        formaction="/web/admin_main/admin_patient_list">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы пациентов</span>
                                 </button>
                                 <button type="submit" name="showUsers" value="showUsers" class="shortcut" style="height:115px; width:120px"
-                                        formaction="/web/user_list">
+                                        formaction="/web/admin_main/admin_user_list">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы пользователей</span>
                                 </button>
                                 <button type="submit" name="showDoctors" value="showDoctors" class="shortcut" style="height:115px; width:120px"
-                                        formaction="/web/doctor_list">
+                                        formaction="/web/admin_main/admin_doctor_list">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр базы врачей</span>
                                 </button>
                                 <button type="submit" name="showSchedule" value="showSchedule" class="shortcut" style="height:115px; width:120px"
-                                        formaction="/web/doctor_schedule">
+                                        formaction="/web/admin_main/admin_doctor_schedule">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр графика работы врачей</span>
                                 </button>
                                 <button type="submit" name="showMedcenters" value="showMedcenters" class="shortcut" style="height:115px; width:120px"
-                                        formaction="/web/medcenters">
+                                        formaction="/web/admin_main/admin_medcenters">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Просмотр МедЦентров</span>
                                 </button>
                                 <button type="submit" name="showTickets" value="showTickets" class="shortcut" style="height:115px; width:120px"
-                                        formaction="/web/ticket_list">
+                                        formaction="/web/admin_main/admin_ticket_list">
                                     <i class="shortcut-icon icon-list-alt"></i><span class="shortcut-label">Список талонов</span>
                                 </button>
                             </div>

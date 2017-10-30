@@ -1,9 +1,7 @@
 package servlets.patient_servlets.patient_ticket_servlets;
 
-import db.dao.DoctorDAO;
-import db.dao.TicketDAO;
 import pojo.Ticket;
-import services.patient_services.PatientMedCenterService;
+import services.patient_services.PatientService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class TicketServlet extends HttpServlet {
-    private static PatientMedCenterService patientMedCenterService = new PatientMedCenterService();
+    PatientService patientService = new PatientService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,27 +20,17 @@ public class TicketServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        TicketDAO ticketDAO = new TicketDAO();
-        DoctorDAO doctorDAO = new DoctorDAO();
         Ticket ticket;
 
-        try {
-            String time = req.getParameter("patientTime");
-            String date = req.getParameter("patientDate");
-            String day = req.getParameter("patientDay");
-            int idPatient = (Integer)req.getSession().getAttribute("patientID");
-            int idMedCenter = (Integer)req.getSession().getAttribute("idMedCenter");
-            int idDoctor = doctorDAO.getDoctorID(idMedCenter);
+        String time = req.getParameter("patientTime");
+        String date = req.getParameter("patientDate");
+        String day = req.getParameter("patientDay");
+        int idPatient = (Integer)req.getSession().getAttribute("patientID");
+        int idMedCenter = (Integer)req.getSession().getAttribute("idMedCenter");
 
-            ticketDAO.insertOne(new Ticket(idPatient, idDoctor, idMedCenter, day, time, date));
+        ticket = patientService.getTicket(idPatient, idMedCenter, day, time, date);
 
-            ticket = ticketDAO.getTicket(idPatient);
-            req.setAttribute("ticket", ticket);
-        } catch (DoctorDAO.DoctorDAOException e) {
-            e.printStackTrace();
-        } catch (TicketDAO.TicketDAOException e) {
-            e.printStackTrace();
-        }
+        req.setAttribute("ticket", ticket);
         req.getRequestDispatcher("/get_ticket.jsp").forward(req, resp);
     }
 }

@@ -25,7 +25,6 @@ public class TomcatConnectionPool implements IConnectionManager {
             dataSource = (DataSource) envCtx.lookup("jdbc/medcenter");
         } catch (NamingException e) {
             logger.error(e.getMessage());
-            logger.getLogger(TomcatConnectionPool.class).debug(e.fillInStackTrace());
         }
     }
 

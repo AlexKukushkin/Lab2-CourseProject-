@@ -19,7 +19,7 @@
     </filter>
     <filter-mapping>
         <filter-name>patient_page</filter-name>
-        <url-pattern>/patient_main</url-pattern>
+        <url-pattern>/patient_main/*</url-pattern>
     </filter-mapping>
 
     <filter>
@@ -28,7 +28,7 @@
     </filter>
     <filter-mapping>
         <filter-name>admin_page</filter-name>
-        <url-pattern>/admin_main</url-pattern>
+        <url-pattern>/admin_main/*</url-pattern>
     </filter-mapping>
 
     <filter>
@@ -37,7 +37,7 @@
     </filter>
     <filter-mapping>
         <filter-name>doctor_page</filter-name>
-        <url-pattern>/doctor_main</url-pattern>
+        <url-pattern>/doctor_main/*</url-pattern>
     </filter-mapping>
 
     <!--servlets-->
@@ -96,7 +96,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminGetAllPatientsServlet</servlet-name>
-        <url-pattern>/patient_list</url-pattern>
+        <url-pattern>/admin_main/admin_patient_list</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -109,7 +109,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminGetAllUsersServlet</servlet-name>
-        <url-pattern>/user_list</url-pattern>
+        <url-pattern>/admin_main/admin_user_list</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -122,7 +122,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminGetAllDoctorsServlet</servlet-name>
-        <url-pattern>/doctor_list</url-pattern>
+        <url-pattern>/admin_main/admin_doctor_list</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -135,7 +135,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminGetScheduleServlet</servlet-name>
-        <url-pattern>/doctor_schedule</url-pattern>
+        <url-pattern>/admin_main/admin_doctor_schedule</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -144,7 +144,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminGetMedcentersServlet</servlet-name>
-        <url-pattern>/medcenters</url-pattern>
+        <url-pattern>/admin_main/admin_medcenters</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -153,7 +153,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminGetTicketsServlet</servlet-name>
-        <url-pattern>/ticket_list</url-pattern>
+        <url-pattern>/admin_main/admin_ticket_list</url-pattern>
     </servlet-mapping>
 
     <!--Doctor servlets-->
@@ -182,7 +182,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientGetDoctorListServlet</servlet-name>
-        <url-pattern>/patient_doctor_list</url-pattern>
+        <url-pattern>/patient_main/patient_doctor_list</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -191,7 +191,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientGetTicketServlet</servlet-name>
-        <url-pattern>/patient_new_ticket</url-pattern>
+        <url-pattern>/patient_main/patient_new_ticket</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -200,7 +200,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientGetDoctorScheduleServlet</servlet-name>
-        <url-pattern>/patient_doctor_schedule_2</url-pattern>
+        <url-pattern>/patient_main/patient_doctor_schedule_2</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -209,7 +209,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientDoctorScheduleServlet</servlet-name>
-        <url-pattern>/patient_doctor_schedule</url-pattern>
+        <url-pattern>/patient_main/patient_doctor_schedule</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -218,7 +218,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientTicketListServlet</servlet-name>
-        <url-pattern>/patient_ticket</url-pattern>
+        <url-pattern>/patient_main/patient_ticket</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -227,7 +227,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientMedCenterServlet</servlet-name>
-        <url-pattern>/patient_medcenter</url-pattern>
+        <url-pattern>/patient_main/patient_medcenter</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -236,7 +236,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientEditServlet</servlet-name>
-        <url-pattern>/patient_edit</url-pattern>
+        <url-pattern>/patient_main/patient_edit</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -245,7 +245,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientSaveServlet</servlet-name>
-        <url-pattern>/patient_save</url-pattern>
+        <url-pattern>/patient_main/patient_save</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -254,7 +254,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientDataServlet</servlet-name>
-        <url-pattern>/patient_data</url-pattern>
+        <url-pattern>/patient_main/patient_data</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -263,7 +263,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>PatientInfoServlet</servlet-name>
-        <url-pattern>/patient_info</url-pattern>
+        <url-pattern>/patient_main/patient_info</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -272,7 +272,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>TicketSpecializationServlet</servlet-name>
-        <url-pattern>/ticket_specialization</url-pattern>
+        <url-pattern>/patient_main/ticket_specialization</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -281,7 +281,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>TicketDoctorServlet</servlet-name>
-        <url-pattern>/ticket_doctor</url-pattern>
+        <url-pattern>/patient_main/ticket_doctor</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -290,7 +290,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>TicketDateTimeServlet</servlet-name>
-        <url-pattern>/ticket_date_time</url-pattern>
+        <url-pattern>/patient_main/ticket_date_time</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -299,7 +299,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>TicketServlet</servlet-name>
-        <url-pattern>/get_ticket</url-pattern>
+        <url-pattern>/patient_main/get_ticket</url-pattern>
     </servlet-mapping>
 
     <jsp-config>

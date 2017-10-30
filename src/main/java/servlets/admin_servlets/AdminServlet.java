@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class AdminServlet extends HttpServlet {
-//    private static AdminService adminService = new AdminService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -20,9 +19,9 @@ public class AdminServlet extends HttpServlet {
         if ("exit".equals(exit)) {
             req.getSession().setAttribute("isAuth", false);
             req.getSession().setAttribute("role", null);
-            ((HttpServletResponse) resp).sendRedirect("/web");
+            resp.sendRedirect("/web");
         } else {
-            ((HttpServletResponse) resp).sendRedirect("/web/admin_main");
+            resp.sendRedirect("/web/admin_main");
         }
     }
 }

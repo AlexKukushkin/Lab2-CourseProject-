@@ -39,7 +39,7 @@
                           required autofocus></p>
             </td>
             <td>
-                <button class="button button1" type="returnBack" name="return" formaction="/web/get_ticket"
+                <button class="button button1" type="returnBack" name="return" formaction="/web/patient_main/get_ticket"
                         style="margin: auto; display: block">Получить талон
                 </button>
             </td>
@@ -47,7 +47,7 @@
     </table>
     <div>
         </br>
-        <button class="button button1" type="returnBack" name="return" formaction="/web/patient_doctor"
+        <button class="button button1" type="returnBack" name="return" formaction="/web/patient_main/patient_doctor"
                 style="margin: auto; display: block">Вернуться назад
         </button>
         </br>

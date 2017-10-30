@@ -1,7 +1,7 @@
 package db.dao;
 
-import db.TomcatConnectionPool;
 import db.IConnectionManager;
+import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
 import pojo.User;
 
@@ -10,9 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAOImpl implements IUserDAO {
-    public static class UserDAOException extends Exception {
-
-    }
 
     private static IConnectionManager manager;
     private static final Logger logger = Logger.getLogger(UserDAOImpl.class);
@@ -26,10 +23,9 @@ public class UserDAOImpl implements IUserDAO {
         List<User> userList = new ArrayList<>();
         logger.info("Log for getAll Users");
 
-        Statement statement = null;
 
         try (Connection connection = manager.getConnection()){
-            statement = connection.createStatement();
+            Statement statement = connection.createStatement();
 
             ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
             while (resultSet.next()) {
@@ -50,9 +46,9 @@ public class UserDAOImpl implements IUserDAO {
         int index = 0;
         logger.info("Log for get User identifier by login and password");
 
-        PreparedStatement statement = null;
+
         try (Connection connection = manager.getConnection()){
-            statement = connection.prepareStatement("SELECT id FROM users WHERE login = ? AND password = ?");
+            PreparedStatement statement = connection.prepareStatement("SELECT id FROM users WHERE login = ? AND password = ?");
 
             statement.setString(1, login);
             statement.setString(2, password);
@@ -72,9 +68,8 @@ public class UserDAOImpl implements IUserDAO {
 
         logger.info("Log for get User Role by login and password");
 
-        PreparedStatement statement = null;
         try (Connection connection = manager.getConnection()){
-            statement = connection
+            PreparedStatement statement = connection
                     .prepareStatement("SELECT role FROM users WHERE login = ? AND password = ?");
 
             statement.setString(1, login);

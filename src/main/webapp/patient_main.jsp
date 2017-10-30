@@ -64,19 +64,19 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <button name="edit" class="btn btn-lg btn-success" formaction="/web/patient_edit"
+                <button name="edit" class="btn btn-lg btn-success" formaction="/web/patient_main/patient_edit"
                         value="edit"  type="submit" style="width: 330px">
                     <b>Изменить личные данные</b>
                 </button>
             </div>
             <div class="col-sm-4">
-                <button name="viewDoctor" class="btn btn-lg btn-success" formaction="/web/patient_doctor_list"
+                <button name="viewDoctor" class="btn btn-lg btn-success" formaction="/web/patient_main/patient_doctor_list"
                         value="viewDoctor" type="submit" style="width: 330px">
                     <b>Просмотр врачей</b>
                 </button>
             </div>
             <div class="col-sm-4">
-                <button name="viewSchedule" class="btn btn-lg btn-success" formaction="/web/patient_doctor_schedule"
+                <button name="viewSchedule" class="btn btn-lg btn-success" formaction="/web/patient_main/patient_doctor_schedule"
                         value="viewSchedule" type="submit" style="width: 330px">
                     <b>Просмотр графика работы врачей</b>
                 </button>
@@ -88,19 +88,19 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <button name="viewTicket" class="btn btn-lg btn-success" formaction="/web/patient_ticket"
+                <button name="viewTicket" class="btn btn-lg btn-success" formaction="/web/patient_main/patient_ticket"
                         value="viewTicket" type="submit" style="width: 330px">
                     <b>Просмотр талонов</b>
                 </button>
             </div>
             <div class="col-sm-4">
-                <button name="viewMedCenter" class="btn btn-lg btn-success" formaction="/web/patient_medcenter"
+                <button name="viewMedCenter" class="btn btn-lg btn-success" formaction="/web/patient_main/patient_medcenter"
                         value="viewMedCenter" type="submit" style="width: 330px">
                     <b>Просмотр Мед Учреждений</b>
                 </button>
             </div>
             <div class="col-sm-4">
-                <button name="info" class="btn btn-lg btn-success" formaction="/web/patient_info"
+                <button name="info" class="btn btn-lg btn-success" formaction="/web/patient_main/patient_info"
                         value="info" type="submit" style="width: 330px">
                     <b>Справочная информация</b>
                 </button>
@@ -114,7 +114,7 @@
             <div class="col-sm-4">
             </div>
             <div class="col-sm-4">
-                <button name="location" class="btn btn-lg btn-success" formaction="/web/patient_new_ticket"
+                <button name="location" class="btn btn-lg btn-success" formaction="/web/patient_main/patient_new_ticket"
                         value="location" type="submit" style="width: 330px">
                     <b>Записаться на приём</b>
                 </button>

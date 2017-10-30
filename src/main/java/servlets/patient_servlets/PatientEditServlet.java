@@ -1,7 +1,9 @@
 package servlets.patient_servlets;
 
 import db.dao.PatientDAO;
+import org.apache.log4j.Logger;
 import pojo.Patient;
+import services.patient_services.PatientService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,26 +15,29 @@ import java.io.IOException;
 
 
 public class PatientEditServlet extends HttpServlet {
+    private static final Logger logger = Logger.getLogger(PatientService.class);
+    PatientService patientService = new PatientService();
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PatientDAO patientDAO = new PatientDAO();
         int userId;
-        int patientId;
+        int patientId = 0;
         Patient patient;
 
-        try {
-            userId = (Integer)req.getSession().getAttribute("userID");
+        userId = (Integer)req.getSession().getAttribute("userID");
 
-            patientId = patientDAO.getPatientID(Integer.valueOf(userId));
+        try {
+            patientId = patientService.getPatientId(userId);
+
             HttpSession session = req.getSession();
             session.setAttribute("patientID", patientId);
-//            req.setAttribute("patientID", patientId);
-
-            patient = patientDAO.getByID(patientId);
-            req.setAttribute("patient", patient);
         } catch (PatientDAO.PatientDAOException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
         }
+
+        patient = patientService.getPatientByID(patientId);
+
+        req.setAttribute("patient", patient);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/patient_edit.jsp");
         dispatcher.forward(req, resp);
     }

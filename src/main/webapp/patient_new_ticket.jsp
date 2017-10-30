@@ -27,7 +27,7 @@
                 <td><p><c:out value="${item.regionName}"></c:out></p></td>
                 <td><p><c:out value="${item.locationName}"></c:out></p></td>
                 <td>
-                    <button class="button button1" type="addButton" name="idMedCenter" value="${item.idMedCenter}" formaction="/web/ticket_specialization"
+                    <button class="button button1" type="addButton" name="idMedCenter" value="${item.idMedCenter}" formaction="/web/patient_main/ticket_specialization"
                             style="margin: auto; display: block">Выбрать медицинский центр и перейти на следующую страницу
                     </button>
                 </td>

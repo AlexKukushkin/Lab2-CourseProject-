@@ -28,12 +28,10 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         List<Ticket> ticketList = new ArrayList<>();
         logger.info("Log for getAll Tickets");
 
-        Statement statement = null;
 
         try (Connection connection = manager.getConnection()){
-            statement = connection.createStatement();
-//            ResultSet resultSet = statement.executeQuery("SELECT tk.*" +
-//                    "FROM ticket tk LEFT JOIN patient pt ON pt.id_patient = tk.patient_id");
+            Statement statement = connection.createStatement();
+
             ResultSet resultSet = statement.executeQuery("SELECT tk.id_ticket, pt.first_name, pt.family_name, pt.patronymic, \n" +
                     "concat(dc.family_name,' ',left(dc.first_name, 1),'. ',left(dc.patronymic, 1),'.') as DoctorFIO, dc.office, dc.specialization,\n" +
                     "tk.time_patient, tk.day_patient, tk.date_patient, md.medcenter_name \n" +
@@ -65,11 +63,11 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
     @Override
     public Ticket getByID(int id) throws TicketDAOException {
-        PreparedStatement statement = null;
+
         logger.info("Log for get Ticket by ID");
 
         try (Connection connection = manager.getConnection()){
-            statement = connection.prepareStatement("SELECT * FROM ticket WHERE id_ticket = ? ");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM ticket WHERE id_ticket = ? ");
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
@@ -91,10 +89,8 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         List<Ticket> ticketList = new ArrayList<>();
         logger.info("Log for getAll Tickets");
 
-        PreparedStatement statement = null;
-
         try (Connection connection = manager.getConnection()){
-            statement = connection.prepareStatement("SELECT tk.id_ticket, pt.first_name, pt.family_name, pt.patronymic, \n" +
+            PreparedStatement statement = connection.prepareStatement("SELECT tk.id_ticket, pt.first_name, pt.family_name, pt.patronymic, \n" +
                     "concat(dc.family_name,' ',left(dc.first_name, 1),'. ',left(dc.patronymic, 1),'.') as DoctorFIO, dc.office, dc.specialization,\n" +
                     "tk.time_patient, tk.day_patient, tk.date_patient, md.medcenter_name \n" +
                     "FROM ticket tk JOIN patient pt ON pt.id_patient = tk.patient_id AND pt.id_patient = ? JOIN doctor dc ON dc.id_doctor = tk.doctor_id\n" +
@@ -125,7 +121,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
     }
 
     public Ticket getTicket(int id) throws TicketDAOException {
-        Ticket ticketList;
         logger.info("Log for getAll Tickets");
 
         try (Connection connection = manager.getConnection()){
@@ -165,9 +160,9 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
     @Override
     public void update(Ticket ticket) throws TicketDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
-            statement = getUpdateStatement();
+
+        try {
+            PreparedStatement statement = getUpdateStatement();
             statement.setInt(1, ticket.getIdTicket());
             statement.setString(2, ticket.getPatientTime());
             statement.setString(3, ticket.getPatientDate());
@@ -184,9 +179,9 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
     @Override
     public void updateAll(List<Ticket> ticketList) throws TicketDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
-            statement = getUpdateStatement();
+
+        try {
+            PreparedStatement statement = getUpdateStatement();
             for (Ticket ticket : ticketList) {
                 statement.setInt(1, ticket.getIdTicket());
                 statement.setString(2, ticket.getPatientTime());
@@ -227,9 +222,9 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
     @Override
     public void insertOne(Ticket ticket) throws TicketDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
-            statement = getInsertStatement();
+
+        try {
+            PreparedStatement statement = getInsertStatement();
             statement.setInt(1, ticket.getIdTicket());
             statement.setString(2, ticket.getPatientTime());
             statement.setString(4, ticket.getPatientDay());
@@ -248,9 +243,9 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
     @Override
     public void insertAll(List<Ticket> ticketList) throws TicketDAOException {
-        PreparedStatement statement = null;
-        try (Connection connection = manager.getConnection()){
-            statement = getInsertStatement();
+
+        try {
+            PreparedStatement statement = getInsertStatement();
             for (Ticket ticket : ticketList) {
                 statement.setInt(1, ticket.getIdTicket());
                 statement.setString(2, ticket.getPatientTime());
@@ -267,20 +262,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             throw new TicketDAOException();
         } catch (ParseException e) {
             logger.error("This is Error : " + e.getMessage());
-        }
-    }
-
-    public void insertMedCenterID(int idMedCenter) throws TicketDAOException {
-        PreparedStatement statement = null;
-
-        try (Connection connection = manager.getConnection()) {
-            statement = connection.prepareStatement("INSERT INTO ticket (medcenter_id)" +
-                    " VALUES (?) ");
-            statement.setInt(1, idMedCenter);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            logger.error("This is Error : " + e.getMessage());
-            throw new TicketDAOException();
         }
     }
 }

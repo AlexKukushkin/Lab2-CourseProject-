@@ -14,7 +14,6 @@ public class RegistrationServiceImpl implements RegistrationService {
 
     private static IUserDAO userDAO = new UserDAOImpl();
     private static PatientDAO patientDAO = new PatientDAO();
-    private static RegistrationService registrationService = new RegistrationServiceImpl();
     private static final Logger logger = Logger.getLogger(RegistrationServiceImpl.class);
 
 
@@ -27,7 +26,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     }
 
     @Override
-    public int getUserID(String login, String password) {
+    public int getUserID(String login, String password) { //todo убрать метод отсюда и вызывать из authServiceImpl
         if(login == null || password == null){
             return 0;
         }
@@ -37,7 +36,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Override
     public void insertUser(String login, String password, UserDTO userDTO) {
         try {
-            int idUser = registrationService.getUserID(login, password);
+            int idUser = getUserID(login, password);
             patientDAO.insertOne(new Patient(userDTO.getFirstName(), userDTO.getFamilyName(), userDTO.getPatronymic(),
                     userDTO.getBirthDate(), userDTO.getPassport(), userDTO.getSNILS(), userDTO.getMedPolis(),
                     userDTO.getRegisterLocation(), userDTO.getAddress(), userDTO.getSexType(), idUser));

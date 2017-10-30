@@ -1,7 +1,7 @@
 package servlets.patient_servlets;
 
 import pojo.Ticket;
-import services.patient_services.PatientTicketListService;
+import services.patient_services.PatientService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class PatientTicketListServlet extends HttpServlet {
-    private static PatientTicketListService patientTicketListService = new PatientTicketListService();
+    private static PatientService patientService = new PatientService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class PatientTicketListServlet extends HttpServlet {
         int userId;
 
         userId = (Integer)req.getSession().getAttribute("userID");
-        tickets = patientTicketListService.getPatientTicketistService(userId);
+        tickets = patientService.getPatientTicketList(userId);
         return tickets;
     }
 
