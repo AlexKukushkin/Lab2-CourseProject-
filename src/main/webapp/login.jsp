@@ -45,7 +45,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="text-center">
-            <a class="btn btn-lg btn-success" style="width: 22%" href="registration.jsp" value="register"
+            <a class="btn btn-lg btn-success" style="width: 22%" href="WEB-INF/pages/registration.jsp" value="register"
                type="submit">Регистрация
             </a>
         </div>
