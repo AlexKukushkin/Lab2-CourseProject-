@@ -5,8 +5,8 @@
   Time: 12:46 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,12 +15,8 @@
     <meta name="author" content="">
     <title>Signin form</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-    <link rel="stylesheet" href="/webapp/WEB-INF/pages/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/webapp/WEB-INF/pages/css/style.css">
-
-    <c:set var="context" value="${pageContext.request.contextPath}"/>
-    <link type="text/css" rel="stylesheet" href="${context}/pages/css/style.css"/>
-    <link rel="stylesheet" href="${context}/pages/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>">
+    <link rel="stylesheet" href="<c:url value='/css/style.css'/>">
 </head>
 <body>
 <div class="container">
