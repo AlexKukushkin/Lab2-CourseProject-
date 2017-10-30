@@ -15,8 +15,11 @@
     <meta name="author" content="">
     <title>Signin form</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-    <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>">
-    <link rel="stylesheet" href="<c:url value='/css/style.css'/>">
+    <%--<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>">--%>
+    <%--<link rel="stylesheet" href="<c:url value='/css/style.css'/>">--%>
+    <link rel="stylesheet" href="../web/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../web/css/style.css">
+
 </head>
 <body>
 <div class="container">
