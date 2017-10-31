@@ -3,6 +3,7 @@ package services.patient_services;
 import db.dao.*;
 import dto.DoctorDTO;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
 import pojo.*;
 
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class PatientService {
     private static final Logger logger = Logger.getLogger(PatientService.class);
     private static PatientDAO patientDAO = new PatientDAO();

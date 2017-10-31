@@ -1,6 +1,6 @@
 package servlets.authorization_servlets;
 
-import services.authorization_services.LoginService;
+import services.login_services.LoginService;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

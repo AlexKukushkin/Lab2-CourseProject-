@@ -216,8 +216,8 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
     private PreparedStatement getInsertStatement() throws SQLException {
         Connection connection = manager.getConnection();
         return connection.
-                prepareStatement("INSERT INTO ticket (id_ticket, time_patient, date_patient, day_patient, patient_id, doctor_id, medcenter_id)" +
-                " VALUES (?, ?, ?, ?, ?, ?, ?) ");
+                prepareStatement("INSERT INTO ticket (time_patient, date_patient, day_patient, patient_id, doctor_id, medcenter_id)" +
+                " VALUES (?, ?, ?, ?, ?, ?) ");
     }
 
     @Override
@@ -225,13 +225,12 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
         try {
             PreparedStatement statement = getInsertStatement();
-            statement.setInt(1, ticket.getIdTicket());
-            statement.setString(2, ticket.getPatientTime());
-            statement.setString(4, ticket.getPatientDay());
-            statement.setDate(3, new java.sql.Date(new SimpleDateFormat("yyyy-mm-dd").parse(ticket.getPatientDate()).getTime()));
-            statement.setInt(5, ticket.getIdPatient());
-            statement.setInt(6, ticket.getIdDoctor());
-            statement.setInt(7, ticket.getIdMedCenter());
+            statement.setString(1, ticket.getPatientTime());
+            statement.setDate(2, new java.sql.Date(new SimpleDateFormat("yyyy-mm-dd").parse(ticket.getPatientDate()).getTime()));
+            statement.setString(3, ticket.getPatientDay());
+            statement.setInt(4, ticket.getIdPatient());
+            statement.setInt(5, ticket.getIdDoctor());
+            statement.setInt(6, ticket.getIdMedCenter());
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());

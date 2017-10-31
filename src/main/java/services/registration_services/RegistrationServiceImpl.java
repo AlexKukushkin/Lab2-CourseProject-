@@ -5,11 +5,13 @@ import db.dao.PatientDAO;
 import db.dao.UserDAOImpl;
 import dto.UserDTO;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
 import pojo.Patient;
 import pojo.User;
 
 import static services.registration_services.PasswordEncoder.encode;
 
+@Service
 public class RegistrationServiceImpl implements RegistrationService {
 
     private static IUserDAO userDAO = new UserDAOImpl();
@@ -26,7 +28,7 @@ public class RegistrationServiceImpl implements RegistrationService {
     }
 
     @Override
-    public int getUserID(String login, String password) { //todo убрать метод отсюда и вызывать из authServiceImpl
+    public int getUserID(String login, String password) {
         if(login == null || password == null){
             return 0;
         }

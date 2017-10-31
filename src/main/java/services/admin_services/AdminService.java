@@ -2,6 +2,7 @@ package services.admin_services;
 
 import db.dao.*;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
 import pojo.*;
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -9,7 +10,8 @@ import java.sql.SQLException;
 import java.util.Collections;
 import java.util.List;
 
-public class AdminService { //todo должен быть 1 сервис AdmingetAll со множеством методов
+@Service
+public class AdminService {
     private static final Logger logger = Logger.getLogger(AdminService.class);
 
     public List<Doctor> doAdminGetAllDoctorList() throws IOException {

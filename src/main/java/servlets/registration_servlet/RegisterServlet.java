@@ -1,6 +1,7 @@
 package servlets.registration_servlet;
 
 import dto.UserDTO;
+import services.login_services.LoginService;
 import services.registration_services.RegistrationService;
 import services.registration_services.RegistrationServiceImpl;
 
@@ -13,6 +14,7 @@ import java.io.IOException;
 public class RegisterServlet extends HttpServlet {
 
     private static RegistrationService registrationService = new RegistrationServiceImpl();
+    private static LoginService loginService = new LoginService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,10 +37,11 @@ public class RegisterServlet extends HttpServlet {
                         req.getParameter("sexType"));
         Boolean registrationResult = registrationService.regUser(login, password);
         if (registrationResult) {
-            registrationService.insertUser(login, password, userDTO);//todo этот функционал должен быть в рег юзер
-            req.getSession().setAttribute("isAuth", true);//todo добавить в сессию юзер айди или юзер или что то подоюное (и пациегта)
+            registrationService.insertUser(login, password, userDTO);
+            req.getSession().setAttribute("isAuth", true);
             req.getSession().setAttribute("role", "patient");
-            resp.sendRedirect("/web/patient_main");
+            loginService.sortUser(req, resp);
+//            resp.sendRedirect("/web/patient_main");
         } else {
             getServletContext().getRequestDispatcher("/").forward(req, resp);
         }
