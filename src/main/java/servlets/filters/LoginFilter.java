@@ -20,7 +20,7 @@ public class LoginFilter implements Filter {
         if (isAuth == null) {
             isAuth = false;
         }
-        if (!isAuth) {                              //todo true or false?
+        if (!isAuth) {
             chain.doFilter(request, response);
         } else {
             ((HttpServletResponse) response).sendRedirect("/web/auth");
