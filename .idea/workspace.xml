@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0ed270bb-a29e-436c-86e8-381469eb0e4c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/PatientController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/PatientController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/filters/LoginFilter.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/filters/LoginFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -88,7 +85,7 @@
       <file leaf-file-name="PatientController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/PatientController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="512">
               <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -1224,7 +1221,7 @@
       <workItem from="1509343462788" duration="2703000" />
       <workItem from="1509347001980" duration="6586000" />
       <workItem from="1509363446397" duration="13423000" />
-      <workItem from="1509433658581" duration="4987000" />
+      <workItem from="1509433658581" duration="5636000" />
     </task>
     <task id="LOCAL-00001" summary="serialization&#10;deserialization">
       <created>1507044674744</created>
@@ -1373,11 +1370,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509431673455</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Spring MVC - Part 2">
+      <created>1509442534065</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1509442534065</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="596894000" />
+    <option name="totallyTimeSpent" value="597543000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1503,7 +1507,8 @@
     <MESSAGE value="serialization&#10;deserialization&#10;JDBC&#10;DAO classes&#10;DatabaseManager&#10;JSP + Servlet API&#10;Registration form&#10;Autorization form&#10;HTML validation&#10;log4j library&#10;Admin main page (with exit and filter)&#10;Patient main page&#10;Services Admin + Patient&#10;ConnectionPool added" />
     <MESSAGE value="before review" />
     <MESSAGE value="before review&#10;--&#10;Spring MVC" />
-    <option name="LAST_COMMIT_MESSAGE" value="before review&#10;--&#10;Spring MVC" />
+    <MESSAGE value="Spring MVC - Part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spring MVC - Part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1996,7 +2001,7 @@
         <state relative-caret-position="221">
           <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2022,7 +2027,7 @@
         <state relative-caret-position="17">
           <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2084,7 +2089,7 @@
         <state relative-caret-position="-102">
           <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2151,7 +2156,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/PatientController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="512">
           <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
