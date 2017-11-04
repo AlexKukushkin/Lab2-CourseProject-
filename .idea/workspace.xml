@@ -6,154 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ed270bb-a29e-436c-86e8-381469eb0e4c" name="Default" comment="Spring MVC - Part 5&#10;Spring IoC&#10;Spring Security">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/glyphicons-halflings-regulard41d.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exceptions/DAOException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/exceptions/PasswordEncodingException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/security/CustomPasswordEncoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/security/CustomUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/security/CustomUserDetailsService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/application-context.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/assets/jquery-1.11.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/assets/jquery.validate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/assets/register.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/assets/signup-form.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/bootstrap/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/css/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/jquery-1.11.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/jquery.validate.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/js/custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/js/jquery-1.10.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/register.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/assets/signup-form.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/bootstrap/js/npm.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/services/authorization_services/LoginService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/services/registration_services/PasswordEncoder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/logo2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/logo_120_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_new_ticket2.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_new_ticket3.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/scss/style.scss" afterPath="" />
+    <list default="true" id="0ed270bb-a29e-436c-86e8-381469eb0e4c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/AdminController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/DoctorController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/DoctorController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/PatientController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/PatientController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/RegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegisterController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/CalendarDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/DoctorDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/IUserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/IUserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/MedCenterDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/PatientDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/TicketDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/db/dao/UserDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dto/DoctorDTO.java" afterPath="$PROJECT_DIR$/src/main/java/dto/DoctorDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dto/ObjectDTO.java" afterPath="$PROJECT_DIR$/src/main/java/dto/ObjectDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/authorization_services/AuthorizationServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/services/authorization_services/AuthorizationServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/login_services/LoginService.java" afterPath="$PROJECT_DIR$/src/main/java/services/login_services/LoginService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientService.java" afterPath="$PROJECT_DIR$/src/main/java/services/patient_services/PatientService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/services/registration_services/RegistrationServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/AuthServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/authorization_servlets/AuthServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientDataServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientDataServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetTicketServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/PatientGetTicketServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/patient_ticket_servlets/TicketDoctorServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/patient_ticket_servlets/TicketDoctorServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/patient_ticket_servlets/TicketServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/patient_ticket_servlets/TicketServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/patient_ticket_servlets/TicketSpecializationServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/patient_servlets/patient_ticket_servlets/TicketSpecializationServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlets/registration_servlet/RegisterServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlets/registration_servlet/RegisterServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin_main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin_main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/doctor_main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/doctor_main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/patient_info.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/patient_info.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/patient_main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/patient_main.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/patient_new_ticket.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/patient_new_ticket.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registration.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/ticket_date_time.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/ticket_date_time.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/ticket_specialization.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/ticket_specialization.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/login.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/patient_new_ticket2.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_new_ticket2.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/patient_new_ticket3.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_new_ticket3.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/admin_doctor_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/admin_doctor_list.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/admin_doctor_schedule.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/admin_doctor_schedule.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/admin_main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/admin_main.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/admin_medcenters.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/admin_medcenters.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/admin_patient_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/admin_patient_list.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/admin_ticket_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/admin_ticket_list.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/admin_user_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/admin_user_list.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/doctor_doctor_schedule.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/doctor_doctor_schedule.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/doctor_main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/doctor_main.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/doctor_ticket_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/doctor_ticket_list.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/get_ticket.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/get_ticket.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_data.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_data.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_doctor_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_doctor_list.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_doctor_schedule.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_doctor_schedule.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_doctor_schedule_2.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_doctor_schedule_2.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_edit.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_edit.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_info.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_info.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_main.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_main.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_medcenter.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_medcenter.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_new_ticket.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_new_ticket.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/patient_ticket.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/patient_ticket.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/registration.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/registration.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/ticket_date_time.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/ticket_date_time.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/ticket_doctor.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/ticket_doctor.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/ticket_specialization.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/files/ticket_specialization.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -748,6 +602,90 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="admin_servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="authorization_servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="doctor_servlets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlets" type="462c0819:PsiDirectoryNode" />
+              <item name="filters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CourseProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CourseProject" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -1153,7 +1091,7 @@
       <workItem from="1509691981273" duration="7171000" />
       <workItem from="1509711385490" duration="40370000" />
       <workItem from="1509833615105" duration="61000" />
-      <workItem from="1509833769456" duration="33000" />
+      <workItem from="1509833769456" duration="625000" />
     </task>
     <task id="LOCAL-00001" summary="serialization&#10;deserialization">
       <created>1507044674744</created>
@@ -1316,11 +1254,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509447326307</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Spring MVC - Part 5&#10;Spring IoC&#10;Spring Security">
+      <created>1509834170996</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1509834170996</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="690708000" />
+    <option name="totallyTimeSpent" value="691300000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
