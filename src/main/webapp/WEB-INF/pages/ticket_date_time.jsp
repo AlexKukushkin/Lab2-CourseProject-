@@ -18,11 +18,6 @@
             <th>Время записи</th>
             <th>Действие :</th>
         </tr>
-        <%--<tr>--%>
-            <%--<td><p><c:out value="${ticket.patientDate}"></c:out></p></td>--%>
-            <%--<td><p><c:out value="${ticket.patientDay}"></c:out></p></td>--%>
-            <%--<td><p><c:out value="${ticket.patientTime}"></c:out></p></td>--%>
-        <%--</tr>--%>
         <tr>
             <td>
                 <p><input type="text" id="patientDate" name="patientDate" size="25" class="form-control"

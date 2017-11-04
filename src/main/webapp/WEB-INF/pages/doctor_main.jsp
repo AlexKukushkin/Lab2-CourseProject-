@@ -32,7 +32,7 @@
                     class="brand">DOCTOR DASHBOARD </a>
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
-                        <button name="exit" class="btn btn-md btn-success btn-block"
+                        <button name="exit" class="btn btn-md btn-success btn-block" formaction="logout"
                                 value="exit" type="submit">
                             Выход
                         </button>
@@ -117,12 +117,12 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../../admin_css/js/jquery-1.7.2.min.js"></script>
-<script src="../../admin_css/js/excanvas.min.js"></script>
-<script src="../../admin_css/js/chart.min.js" type="text/javascript"></script>
-<script src="../../admin_css/js/bootstrap.js"></script>
-<script language="javascript" type="text/javascript" src="../../admin_css/js/full-calendar/fullcalendar.min.js"></script>
-<script src="../../admin_css/js/base.js"></script>
+<script src="../web/admin_css/js/excanvas.min.js"></script>
+<script src="../web/admin_css/js/jquery-1.7.2.min.js"></script>
+<script src="../web/admin_css/js/chart.min.js" type="text/javascript"></script>
+<script src="../web/admin_css/js/bootstrap.js"></script>
+<script language="javascript" type="text/javascript" src="../web/admin_css/js/full-calendar/fullcalendar.min.js"></script>
+<script src="../web/admin_css/js/base.js"></script>
 <script>
 
     var lineChartData = {

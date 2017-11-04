@@ -3,12 +3,14 @@ package db.dao;
 import db.IConnectionManager;
 import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 import pojo.MedCenter;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     public static class MedCenterDAOException extends Exception {
 

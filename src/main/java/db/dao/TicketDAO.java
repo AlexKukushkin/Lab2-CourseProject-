@@ -3,6 +3,7 @@ package db.dao;
 import db.IConnectionManager;
 import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 import pojo.Ticket;
 
 import java.sql.*;
@@ -11,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class TicketDAO implements IAbstractDAO <Ticket> {
     public static class TicketDAOException extends Exception {
 

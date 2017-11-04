@@ -1,6 +1,7 @@
 package servlets.registration_servlet;
 
 import dto.UserDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import services.login_services.LoginService;
 import services.registration_services.RegistrationService;
 import services.registration_services.RegistrationServiceImpl;
@@ -13,8 +14,10 @@ import java.io.IOException;
 
 public class RegisterServlet extends HttpServlet {
 
-    private static RegistrationService registrationService = new RegistrationServiceImpl();
-    private static LoginService loginService = new LoginService();
+    @Autowired
+    private static RegistrationService registrationService ;
+    @Autowired
+    private static LoginService loginService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

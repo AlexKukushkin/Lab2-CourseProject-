@@ -2,6 +2,7 @@ package services.login_services;
 
 import db.dao.PatientDAO;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
 import pojo.User;
 import services.authorization_services.AuthorizationServiceImpl;
 import servlets.authorization_servlets.AuthServlet;
@@ -10,10 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+@Service
 public class LoginService {
     private static final Logger logger = Logger.getLogger(AuthServlet.class);
-    AuthorizationServiceImpl authorizationService = new AuthorizationServiceImpl();
-    PatientDAO patientDAO = new PatientDAO();//todo servuice
+    AuthorizationServiceImpl authorizationService;
+    PatientDAO patientDAO;
+
+    public LoginService(AuthorizationServiceImpl authorizationService, PatientDAO patientDAO) {
+        this.authorizationService = authorizationService;
+        this.patientDAO = patientDAO;
+    }
 
     public void sortUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -30,8 +37,8 @@ public class LoginService {
         if (isAuth) {
             role = (String) currentSession.getAttribute("role");
         } else {
-            String login = request.getParameter("inputLogin");
-            String password = request.getParameter("inputPassword");
+            String login = request.getParameter("login");
+            String password = request.getParameter("password");
             User user = authorizationService.auth(login, password);
             role = user.getRole();
 

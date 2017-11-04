@@ -1,5 +1,6 @@
 package controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,7 +19,12 @@ import java.util.List;
 @Controller
 @Scope("session")
 public class AdminController {
-    private static AdminService adminService = new AdminService();
+    private AdminService adminService;
+
+    @Autowired
+    public AdminController(AdminService adminService) {
+        this.adminService = adminService;
+    }
 
     @RequestMapping(value = "/admin_main", method = RequestMethod.GET)
     public String showAdminMainPage() {

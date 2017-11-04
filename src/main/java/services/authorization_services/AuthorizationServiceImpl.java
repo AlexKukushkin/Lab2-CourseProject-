@@ -1,14 +1,20 @@
 package services.authorization_services;
 
 import db.dao.IUserDAO;
-import db.dao.UserDAOImpl;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pojo.User;
-import services.registration_services.PasswordEncoder;
+
 
 @Service
 public class AuthorizationServiceImpl implements AuthorizationService {
-    private static IUserDAO userDAO = new UserDAOImpl();
+    private IUserDAO userDAO;
+    private PasswordEncoder passwordEncoder;
+
+    public AuthorizationServiceImpl(IUserDAO userDAO, PasswordEncoder passwordEncoder) {
+        this.userDAO = userDAO;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public User auth(String login, String password) {
@@ -16,11 +22,11 @@ public class AuthorizationServiceImpl implements AuthorizationService {
             throw new IllegalArgumentException();
         }
 
-        return userDAO.getUserByLoginAndPassword(login, PasswordEncoder.encode(password));
+        return userDAO.getUserByLoginAndPassword(login, passwordEncoder.encode(password));
     }
 
     @Override
     public int getUserID(String login, String password){
-        return userDAO.getUserId(login, PasswordEncoder.encode(password));
+        return userDAO.getUserId(login, passwordEncoder.encode(password));
     }
 }

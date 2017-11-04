@@ -3,12 +3,14 @@ package db.dao;
 import db.IConnectionManager;
 import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 import pojo.Patient;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class PatientDAO implements IAbstractDAO <Patient>{
     public static class PatientDAOException extends Exception {
 
@@ -104,7 +106,7 @@ public class PatientDAO implements IAbstractDAO <Patient>{
         Connection connection = manager.getConnection();
         return connection.prepareStatement(
                 "UPDATE patient SET first_name = ?, family_name = ?, patronymic = ?, birth_date = ?, " +
-                        "passport = ?, \"SNILS\" = ?, medpolis = ?, registration = ?, home_location = ?, sextype = ? " +
+                        "passport = ?, \"SNILS\" = ?, medpolis = ?, registration = ?, \"home_location\" = ?, sextype = ? " +
                         "WHERE id_patient = ?");
     }
 

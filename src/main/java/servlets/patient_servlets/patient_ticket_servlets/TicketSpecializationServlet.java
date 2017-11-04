@@ -1,8 +1,6 @@
 package servlets.patient_servlets.patient_ticket_servlets;
 
-import db.dao.DoctorDAO;
 import services.patient_services.PatientService;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

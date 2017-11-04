@@ -1,5 +1,6 @@
 package dto;
 
+
 public class DoctorDTO {
 
     private int idDoctor;

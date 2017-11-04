@@ -2,29 +2,36 @@ package services.registration_services;
 
 import db.dao.IUserDAO;
 import db.dao.PatientDAO;
-import db.dao.UserDAOImpl;
 import dto.UserDTO;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pojo.Patient;
 import pojo.User;
 
-import static services.registration_services.PasswordEncoder.encode;
-
 @Service
 public class RegistrationServiceImpl implements RegistrationService {
-
-    private static IUserDAO userDAO = new UserDAOImpl();
-    private static PatientDAO patientDAO = new PatientDAO();
     private static final Logger logger = Logger.getLogger(RegistrationServiceImpl.class);
+    private IUserDAO userDAO;
+    private PatientDAO patientDAO;
+    private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    public RegistrationServiceImpl(IUserDAO userDAO, PatientDAO patientDAO, PasswordEncoder passwordEncoder) {
+        this.userDAO = userDAO;
+        this.patientDAO = patientDAO;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public Boolean regUser(String login, String password) {
         if (login == null || password == null) {
             return false;
+        }else{
+            userDAO.createUser(new User(login, passwordEncoder.encode(password), "patient"));
         }
-        return userDAO.createUser(new User(login, encode(password), "patient"));
+        return true;
     }
 
     @Override
@@ -32,7 +39,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         if(login == null || password == null){
             return 0;
         }
-        return userDAO.getUserId(login, PasswordEncoder.encode(password));
+        return userDAO.getUserId(login, passwordEncoder.encode(password));
     }
 
     @Override

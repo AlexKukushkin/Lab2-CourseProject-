@@ -27,8 +27,9 @@ public class TicketServlet extends HttpServlet {
         String day = req.getParameter("patientDay");
         int idPatient = (Integer)req.getSession().getAttribute("patientID");
         int idMedCenter = (Integer)req.getSession().getAttribute("idMedCenter");
+        String specialization = (String)req.getSession().getAttribute("specialization");
 
-        ticket = patientService.getTicket(idPatient, idMedCenter, day, time, date);
+        ticket = patientService.getTicket(idPatient, idMedCenter, specialization, day, time, date);
 
         req.setAttribute("ticket", ticket);
         req.getRequestDispatcher("/get_ticket.jsp").forward(req, resp);

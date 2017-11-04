@@ -1,5 +1,6 @@
 package dto;
 
+
 public class ObjectDTO {
     public Integer id_user;
     public String role;

@@ -3,12 +3,14 @@ package db.dao;
 import db.IConnectionManager;
 import db.TomcatConnectionPool;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 import pojo.Calendar;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class CalendarDAO implements IAbstractDAO<Calendar> {
     public static class CalendarDAOException extends Exception {
 

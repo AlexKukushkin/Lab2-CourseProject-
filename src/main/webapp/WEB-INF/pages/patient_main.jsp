@@ -130,7 +130,7 @@
     </br>
     </br>
     <span class="logout-spn">
-    <button name="exit" class="btn btn-lg btn-primary btn-block" formaction="/web/patient_main"
+    <button name="exit" class="btn btn-lg btn-primary btn-block" formaction="logout"
             value="exit" type="submit">Выход
     </button>
     </span>

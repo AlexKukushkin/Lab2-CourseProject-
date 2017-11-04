@@ -4,12 +4,14 @@ import db.IConnectionManager;
 import db.TomcatConnectionPool;
 import dto.DoctorDTO;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 import pojo.Doctor;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class DoctorDAO implements IAbstractDAO <Doctor> {
     public static class DoctorDAOException extends Exception {
 
@@ -244,13 +246,14 @@ public class DoctorDAO implements IAbstractDAO <Doctor> {
         return doctorDTOList;
     }
 
-    public int getDoctorID(int id) throws DoctorDAO.DoctorDAOException {
-        logger.info("Log for get Patient by ID");
+    public int getDoctorID(int id, String specialization) throws DoctorDAO.DoctorDAOException {
+        logger.info("Log for get Doctor by ID");
 
         try (Connection connection = manager.getConnection()){
             PreparedStatement statement = connection.prepareStatement("SELECT dc.id_doctor FROM doctor dc JOIN medcenter md " +
-                    "ON dc.medcenter_id = md.id_medcenter AND md.id_medcenter = ?");
+                    "ON dc.medcenter_id = md.id_medcenter AND md.id_medcenter = ? and dc.specialization = ?");
             statement.setInt(1, id);
+            statement.setString(2, specialization);
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
             return resultSet.getInt("id_doctor");

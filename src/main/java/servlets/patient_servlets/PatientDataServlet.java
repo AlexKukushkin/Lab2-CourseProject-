@@ -1,5 +1,6 @@
 package servlets.patient_servlets;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import pojo.Patient;
 import services.patient_services.PatientService;
 import javax.servlet.ServletException;
@@ -10,7 +11,15 @@ import java.io.IOException;
 import java.util.List;
 
 public class PatientDataServlet extends HttpServlet {
-    PatientService patientService = new PatientService();
+
+    private static PatientService patientService = new PatientService();
+
+//PatientService patientService;// = new PatientService();
+//
+//    @Autowired
+//    public PatientDataServlet(PatientService patientService) {
+//        this.patientService = patientService;
+//    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

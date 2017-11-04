@@ -9,11 +9,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <%--<c:set var="context" value="${pageContext.request.contextPath}"/>--%>
     <title>Registration form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" type="text/css"/>
-    <link rel="stylesheet" href="../../assets/signup-form.css" type="text/css"/>
+    <%--<link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" type="text/css"/>--%>
+    <%--<link rel="stylesheet" href="../../assets/signup-form.css" type="text/css"/>--%>
+
+    <link type="text/css" rel="stylesheet" href="../web/bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../web/assets/signup-form.css">
 </head>
 
 <body>
@@ -131,7 +135,7 @@
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></div>
-                        <input id="inputLogin" name="inputLogin" type="text" value="ninja" class="form-control"
+                        <input id="inputLogin" name="inputLogin" type="text" value="alex" class="form-control"
                                placeholder="Логин">
                     </div>
                     <span class="help-block" id="error"></span>
@@ -179,10 +183,14 @@
 
 </div>
 
-<script src="../../assets/jquery-1.11.2.min.js"></script>
-<script src="../../assets/jquery.validate.min.js"></script>
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<script src="../../assets/register.js"></script>
+<%--<script src="../../assets/jquery-1.11.2.min.js"></script>--%>
+<%--<script src="../../assets/jquery.validate.min.js"></script>--%>
+<%--<script src="../../bootstrap/js/bootstrap.min.js"></script>--%>
+<%--<script src="../../assets/register.js"></script>--%>
+<script src="../web/assets/jquery-1.11.2.min.js"></script>
+<script src="../web/assets/jquery.validate.min.js"></script>
+<script src="../web/bootstrap/js/bootstrap.min.js"></script>
+<script src="../web/assets/register.js"></script>
 
 </body>
 </html>

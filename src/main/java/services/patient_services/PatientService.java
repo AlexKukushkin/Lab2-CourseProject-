@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class PatientService {
     private static final Logger logger = Logger.getLogger(PatientService.class);
-    private static PatientDAO patientDAO = new PatientDAO();
+    private PatientDAO patientDAO = new PatientDAO();
 
     public List<Doctor> patientGetDoctorList() throws IOException {
         List<Doctor> doctors = null;
@@ -74,13 +74,13 @@ public class PatientService {
         return doctors;
     }
 
-    public Ticket getTicket(int idPatient, int idMedCenter, String day, String time, String date){
+    public Ticket getTicket(int idPatient, int idMedCenter, String specialization, String day, String time, String date){
         TicketDAO ticketDAO = new TicketDAO();
         DoctorDAO doctorDAO = new DoctorDAO();
         Ticket ticket = new Ticket();
 
         try {
-            int idDoctor = doctorDAO.getDoctorID(idMedCenter);
+            int idDoctor = doctorDAO.getDoctorID(idMedCenter, specialization);
             ticketDAO.insertOne(new Ticket(idPatient, idDoctor, idMedCenter, day, time, date));
             ticket = ticketDAO.getTicket(idPatient);
         } catch (DoctorDAO.DoctorDAOException e) {

@@ -30,4 +30,6 @@ public class PatientGetTicketServlet extends HttpServlet {
         req.setAttribute("list", medcenters);
         req.getRequestDispatcher("/patient_new_ticket.jsp").forward(req, resp);
     }
+
+
 }

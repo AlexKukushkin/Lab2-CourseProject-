@@ -17,34 +17,38 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
     <%--<link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css'/>">--%>
     <%--<link rel="stylesheet" href="<c:url value='/css/style.css'/>">--%>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../web/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../web/css/style.css">
 
 </head>
 <body>
 <div class="container">
     <form class="form-signin" id="myForm" method="post">
         <h2 class="form-signin-heading">Электронная запись к врачу</h2>
-        <label for="inputLogin" class="sr-only">Login</label>
-        <input type="login" id="inputLogin" name="inputLogin" class="form-control" placeholder="Username" required
+        <label for="login" class="sr-only">Login</label>
+        <input type="login" id="login" name="login" class="form-control" placeholder="Username" required
                autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password"
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password"
                required>
         <div class="checkbox">
             <label>
                 <input type="checkbox" value="remember-me"> Запомнить
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" formaction="/web/auth" value="login" type="submit">
+        <button class="btn btn-lg btn-primary btn-block" formaction="login" value="login" type="submit">
             Войти в личный кабинет
         </button>
+        <%--</br>--%>
+        <%--<button class="btn btn-lg btn-success btn-block" formaction="/web/register" value="register" type="submit">--%>
+            <%--Регистрация--%>
+        <%--</button>--%>
     </form>
 </div>
 <div class="row">
     <div class="col-sm-12">
         <div class="text-center">
-            <a class="btn btn-lg btn-success" style="width: 22%" href="registration.jsp" value="register"
+            <a class="btn btn-lg btn-success" style="width: 22%" href="/web/registration" value="register"
                type="submit">Регистрация
             </a>
         </div>

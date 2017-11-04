@@ -6,20 +6,36 @@
  http://www.springframework.org/schema/security
  http://www.springframework.org/schema/security/spring-security-4.2.xsd">
     <http auto-config="true">
-        <intercept-url pattern="/append" access="hasRole('MAIN_USER')"/>
+        <intercept-url pattern="/login.jsp" access="permitAll()"/>
+        <intercept-url pattern="/WEB-INF/pages/registration.jsp" access="permitAll()"/>
+
+        <intercept-url pattern="/css/**/" access="permitAll()"/>
+        <intercept-url pattern="/bootstrap/**/" access="permitAll()"/>
+        <intercept-url pattern="/assets/**/" access="permitAll()"/>
+        <intercept-url pattern="/js/**" access="permitAll()"/>
+        <!--<intercept-url pattern="/auth" access="permitAll()"/>-->
+        <intercept-url pattern="/admin_main/**" access="hasRole('ADMIN')"/>
+        <intercept-url pattern="/doctor_main/**" access="hasRole('DOCTOR')"/>
+        <intercept-url pattern="/patient_main/**" access="hasRole('PATIENT')"/>
+        <intercept-url pattern="/register*" access="permitAll()"/>
+        <intercept-url pattern="/registration" access="permitAll()"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+
         <form-login
                 login-page="/login.jsp"
                 username-parameter="login"
                 password-parameter="password"
-                default-target-url="/append"/>
+                authentication-success-forward-url="/auth"/>
+        <logout logout-url="/logout" logout-success-url="/login.jsp"/>
         <csrf disabled="true"/>
     </http>
+
+    <beans:bean id="passwordEncoder" class="security.CustomPasswordEncoder"/>
+    <beans:bean id="customUserDetailsService" class="security.CustomUserDetailsService" autowire="constructor"/>
     <authentication-manager>
-        <authentication-provider>
-            <user-service>
-                <user name="admin" password="123" authorities="ROLE_MAIN_USER"/>
-                <user name="Vadim" password="321" authorities="ROLE_SECOND_USER"/>
-            </user-service>
+        <authentication-provider user-service-ref="customUserDetailsService">
+            <password-encoder ref="passwordEncoder"/>
         </authentication-provider>
     </authentication-manager>
+
 </beans:beans>

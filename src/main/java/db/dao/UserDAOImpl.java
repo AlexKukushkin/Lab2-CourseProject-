@@ -2,13 +2,20 @@ package db.dao;
 
 import db.IConnectionManager;
 import db.TomcatConnectionPool;
+import exceptions.DAOException;
 import org.apache.log4j.Logger;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Repository;
 import pojo.User;
+import security.CustomUser;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+@Repository
 public class UserDAOImpl implements IUserDAO {
 
     private static IConnectionManager manager;
@@ -62,26 +69,43 @@ public class UserDAOImpl implements IUserDAO {
         return index;
     }
 
+//    public String getUserRole(String login, String password) {
+//        String role = "";
+//
+//        logger.info("Log for get User Role by login and password");
+//
+//        try (Connection connection = manager.getConnection()){
+//            PreparedStatement statement = connection
+//                    .prepareStatement("SELECT role FROM users WHERE login = ? AND password = ?");
+//
+//            statement.setString(1, login);
+//            statement.setString(2, password);
+//            ResultSet resultSet;
+//            resultSet = statement.executeQuery();
+//            resultSet.next();
+//            role = resultSet.getString("role");
+//        } catch (SQLException e) {
+//            logger.error("This is Error : " + e.getMessage());
+//        }
+//        return role;
+//    }
+
     @Override
-    public String getUserRole(String login, String password) {
-        String role = "";
+    public Boolean createUser(User user) {
+        logger.info("Log for create User");
 
-        logger.info("Log for get User Role by login and password");
-
-        try (Connection connection = manager.getConnection()){
-            PreparedStatement statement = connection
-                    .prepareStatement("SELECT role FROM users WHERE login = ? AND password = ?");
-
-            statement.setString(1, login);
-            statement.setString(2, password);
-            ResultSet resultSet;
-            resultSet = statement.executeQuery();
-            resultSet.next();
-            role = resultSet.getString("role");
+        try (Connection connection = manager.getConnection()) {
+            PreparedStatement statement = connection.prepareStatement
+                    ("INSERT INTO users (login, password, role) VALUES(?, ?, 'patient')");
+            statement.setString(1, user.getLogin());
+            statement.setString(2, user.getPassword());
+            if (statement.executeUpdate() == 1) {
+                return true;
+            }
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
         }
-        return role;
+        return false;
     }
 
     @Override
@@ -92,13 +116,13 @@ public class UserDAOImpl implements IUserDAO {
 
         try(Connection connection = manager.getConnection()) {
             PreparedStatement statement = connection.
-                prepareStatement("SELECT * FROM users WHERE login = ? AND  password = ?");
+                    prepareStatement("SELECT * FROM users WHERE login = ? AND  password = ?");
             statement.setString(1, login);
             statement.setString(2, password);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 user = new User(resultSet.getString("login"),
-                    resultSet.getString("password"), resultSet.getString("role"));
+                        resultSet.getString("password"), resultSet.getString("role"));
             }
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
@@ -107,21 +131,29 @@ public class UserDAOImpl implements IUserDAO {
     }
 
     @Override
-    public Boolean createUser(User user) {
-        logger.info("Log for create User");
-        
-        try(Connection connection = manager.getConnection()) {
-            PreparedStatement statement = connection.prepareStatement
-                ("INSERT INTO users (login, password, role) VALUES(?, ?, 'patient')");
-            statement.setString(1, user.getLogin());
-            statement.setString(2, user.getPassword());
-            if (statement.executeUpdate() == 1) {
-                return true;
+    public UserDetails getByUsername(String login) {
+        UserDetails userDetails = null;
+        try (Connection connection = manager.getConnection();
+             PreparedStatement statement =
+                     connection.prepareStatement(
+                             "SELECT id, password, 'ROLE_' || upper(role::text) as role FROM users WHERE login = ?")) {
+            statement.setString(1, login);
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                 userDetails =
+                        new CustomUser(
+                                resultSet.getInt("id"),
+                                login,
+                                resultSet.getString("password"),
+                                Collections.singleton(
+                                        new SimpleGrantedAuthority(
+                                                resultSet.getString("role"))));
             }
         } catch (SQLException e) {
-            logger.error("This is Error : " + e.getMessage());
+            throw new DAOException("DAO Exception : " + login, e);
         }
-        return false;
+        return userDetails;
     }
 }
 
