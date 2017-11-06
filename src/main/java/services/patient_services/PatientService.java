@@ -2,7 +2,9 @@ package services.patient_services;
 
 import db.dao.*;
 import dto.DoctorDTO;
+import dto.TicketDTO;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pojo.*;
 
@@ -10,13 +12,16 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class PatientService {
     private static final Logger logger = Logger.getLogger(PatientService.class);
-    private PatientDAO patientDAO = new PatientDAO();
+    private static PatientDAO patientDAO = new PatientDAO();
+    private static TicketDAO ticketDAO = new TicketDAO();
+    private static DoctorDAO doctorDAO = new DoctorDAO();
 
     public List<Doctor> patientGetDoctorList() throws IOException {
         List<Doctor> doctors = null;
@@ -63,7 +68,7 @@ public class PatientService {
     }
 
     public List<DoctorDTO> getDoctorsForTicket(int idMedCenter, String specialization){
-        DoctorDAO doctorDAO = new DoctorDAO();
+//        DoctorDAO doctorDAO = new DoctorDAO();
         List<DoctorDTO> doctors = new ArrayList<>();
 
         try {
@@ -74,15 +79,13 @@ public class PatientService {
         return doctors;
     }
 
-    public Ticket getTicket(int idPatient, int idMedCenter, String specialization, String day, String time, String date){
-        TicketDAO ticketDAO = new TicketDAO();
-        DoctorDAO doctorDAO = new DoctorDAO();
+    public Ticket getTicket(int idPatient, int idMedCenter, String specialization, String time, String date) throws ParseException {
         Ticket ticket = new Ticket();
 
         try {
             int idDoctor = doctorDAO.getDoctorID(idMedCenter, specialization);
-            ticketDAO.insertOne(new Ticket(idPatient, idDoctor, idMedCenter, day, time, date));
-            ticket = ticketDAO.getTicket(idPatient);
+            ticketDAO.insertOne(new Ticket(idPatient, idDoctor, idMedCenter, time, date));
+            ticket = ticketDAO.getTicket(idPatient, idDoctor, idMedCenter, time, date);
         } catch (DoctorDAO.DoctorDAOException e) {
             logger.error("This is Error : " + e.getMessage());
         } catch (TicketDAO.TicketDAOException e) {
@@ -91,8 +94,16 @@ public class PatientService {
         return ticket;
     }
 
+    public List<TicketDTO> getTicketsByDate(int idMedCenter, String specialization, String date) throws DoctorDAO.DoctorDAOException, TicketDAO.TicketDAOException {
+        List<TicketDTO> ticketList;
+        int idDoctor = doctorDAO.getDoctorID(idMedCenter, specialization);
+
+        ticketList = ticketDAO.getRegisteredTickes(idDoctor, idMedCenter, specialization, date);
+        return ticketList;
+    }
+
     public List<String> getDoctorSpecialization(int idMedCenter){
-        DoctorDAO doctorDAO = new DoctorDAO();
+//        DoctorDAO doctorDAO = new DoctorDAO();
         List<String> specializations = new ArrayList<>();
 
         try {
@@ -114,7 +125,7 @@ public class PatientService {
     }
 
     public int getPatientId(int userId) throws PatientDAO.PatientDAOException {
-        PatientDAO patientDAO = new PatientDAO();
+//        PatientDAO patientDAO = new PatientDAO();
         int patientId;
 
         patientId = patientDAO.getPatientID(Integer.valueOf(userId));
@@ -123,7 +134,7 @@ public class PatientService {
     }
 
     public Patient getPatientByID(int patientId){
-        PatientDAO patientDAO = new PatientDAO();
+//        PatientDAO patientDAO = new PatientDAO();
         Patient patient = new Patient();
 
         try {
@@ -137,7 +148,7 @@ public class PatientService {
     public void savePatient(int idPatient, String firstName, String familyName, String patronymic,
                             String birthDate, String passport, String SNILS, String medPolis,
                             String registerLocation, String homeLocation, String sexType){
-        PatientDAO patientDAO = new PatientDAO();
+//        PatientDAO patientDAO = new PatientDAO();
 
         try {
             patientDAO.update(new Patient(idPatient, firstName, familyName, patronymic, birthDate,

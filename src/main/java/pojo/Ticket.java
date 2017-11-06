@@ -10,7 +10,7 @@ public class Ticket implements Serializable {
     private int idPatient;
     private int idDoctor;
     private int idMedCenter;
-    private String patientDay;
+//    private String patientDay;
     private String patientTime;
     private String patientDate;
 
@@ -23,7 +23,7 @@ public class Ticket implements Serializable {
     private String centerName;
 
     public Ticket(int idTicket, String firstName, String familyName,
-                  String patronymic, String doctorFIO, String office, String specialization, String patientDay,
+                  String patronymic, String doctorFIO, String office, String specialization,
                   String patientTime, String patientDate, String centerName) {
         this.idTicket = idTicket;
         this.firstName = firstName;
@@ -32,7 +32,7 @@ public class Ticket implements Serializable {
         this.doctorFIO = doctorFIO;
         this.office = office;
         this.specialization = specialization;
-        this.patientDay = patientDay;
+//        this.patientDay = patientDay;
         this.patientTime = patientTime;
         this.patientDate = patientDate;
         this.centerName = centerName;
@@ -41,21 +41,21 @@ public class Ticket implements Serializable {
     public Ticket() {
     }
 
-    public Ticket(int idTicket, int idPatient, int idDoctor, int idMedCenter, String patientDay, String patientTime, String patientDate) {
+    public Ticket(int idTicket, int idPatient, int idDoctor, int idMedCenter, String patientTime, String patientDate) {
         this.idTicket = idTicket;
         this.idPatient = idPatient;
         this.idDoctor = idDoctor;
         this.idMedCenter = idMedCenter;
-        this.patientDay = patientDay;
+//        this.patientDay = patientDay;
         this.patientTime = patientTime;
         this.patientDate = patientDate;
     }
-    public Ticket(int idPatient, int idDoctor, int idMedCenter, String patientDay, String patientTime, String patientDate) {
+    public Ticket(int idPatient, int idDoctor, int idMedCenter, String patientTime, String patientDate) {
         this.idTicket = 0;
         this.idPatient = idPatient;
         this.idDoctor = idDoctor;
         this.idMedCenter = idMedCenter;
-        this.patientDay = patientDay;
+//        this.patientDay = patientDay;
         this.patientTime = patientTime;
         this.patientDate = patientDate;
     }
@@ -95,15 +95,6 @@ public class Ticket implements Serializable {
     @XmlElement
     public void setIdMedCenter(int idMedCenter) {
         this.idMedCenter = idMedCenter;
-    }
-
-    public String getPatientDay() {
-        return patientDay;
-    }
-
-    @XmlElement
-    public void setPatientDay(String patientDay) {
-        this.patientDay = patientDay;
     }
 
     public String getPatientTime() {

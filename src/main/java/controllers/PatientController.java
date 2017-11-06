@@ -1,7 +1,10 @@
 package controllers;
 
+import db.dao.DoctorDAO;
 import db.dao.PatientDAO;
+import db.dao.TicketDAO;
 import dto.DoctorDTO;
+import dto.TicketDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -14,11 +17,14 @@ import pojo.MedCenter;
 import pojo.Patient;
 import pojo.Ticket;
 import services.patient_services.PatientService;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -195,27 +201,69 @@ public class PatientController {
     }
 
     @RequestMapping(value = "/patient_main/ticket_date_time", method = RequestMethod.POST)
-    public String showDateTime(HttpServletRequest request){
-        return "ticket_date_time";
+    public ModelAndView showDateTime(HttpServletRequest request) {
+        List<String> timeToDoctor = new ArrayList<>();
+        ModelAndView modelAndView = new ModelAndView("ticket_date_time");
+
+        timeToDoctor.add("8:00");
+        timeToDoctor.add("8:30");
+        timeToDoctor.add("9:00");
+        timeToDoctor.add("9:30");
+        timeToDoctor.add("10:00");
+        timeToDoctor.add("10:30");
+        timeToDoctor.add("11:00");
+        timeToDoctor.add("11:30");
+        timeToDoctor.add("13:00");
+        timeToDoctor.add("13:30");
+        timeToDoctor.add("14:00");
+        timeToDoctor.add("14:30");
+        timeToDoctor.add("15:00");
+        timeToDoctor.add("15:30");
+        timeToDoctor.add("16:00");
+        timeToDoctor.add("16:30");
+        timeToDoctor.add("17:00");
+
+        modelAndView.getModel().put("time_list", timeToDoctor);
+        return modelAndView;
+    }
+
+
+    @RequestMapping(value = "/patient_main/get_ticket", method = RequestMethod.GET)
+    public ModelAndView doGetTicket() {
+        ModelAndView modelAndView = new ModelAndView("get_ticket");
+        return modelAndView;
     }
 
     @RequestMapping(value = "/patient_main/get_ticket", method = RequestMethod.POST)
-    public ModelAndView getTicket(HttpServletRequest request){
+    public ModelAndView doPostTicket(HttpServletRequest request) throws ParseException {
         Ticket ticket;
 
         ModelAndView modelAndView = new ModelAndView("get_ticket");
-        String time = request.getParameter("patientTime");
+        String time = request.getParameter("timevar");
         String date = request.getParameter("patientDate");
-        String day = request.getParameter("patientDay");
-        int idPatient = (Integer)request.getSession().getAttribute("patientID");
-        int idMedCenter = (Integer)request.getSession().getAttribute("idMedCenter");
-        String specialization = (String)request.getSession().getAttribute("specialization");
+//        String day = request.getParameter("patientDay");
+        int idPatient = (Integer) request.getSession().getAttribute("patientID");
+        int idMedCenter = (Integer) request.getSession().getAttribute("idMedCenter");
+        String specialization = (String) request.getSession().getAttribute("specialization");
 
-        ticket = patientService.getTicket(idPatient, idMedCenter, specialization, day, time, date);
+        ticket = patientService.getTicket(idPatient, idMedCenter, specialization, time, date);
         modelAndView.getModel().put("ticket", ticket);
         return modelAndView;
     }
 
+    @RequestMapping(value = "/patient_main/check_date_time", method = RequestMethod.POST)
+    public ModelAndView checkDateTime(HttpServletRequest request) throws DoctorDAO.DoctorDAOException, TicketDAO.TicketDAOException {
+        List<TicketDTO> tickets;
+        ModelAndView modelAndView = new ModelAndView("check_date_time");
+
+        String date = request.getParameter("patientDate");
+        int idMedCenter = (Integer) request.getSession().getAttribute("idMedCenter");
+        String specialization = (String) request.getSession().getAttribute("specialization");
+
+        tickets = patientService.getTicketsByDate(idMedCenter, specialization, date);
+        modelAndView.getModel().put("tickets", tickets);
+        return modelAndView;
+    }
 
 
 }

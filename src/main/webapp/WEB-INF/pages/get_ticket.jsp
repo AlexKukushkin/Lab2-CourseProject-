@@ -22,7 +22,7 @@
             <th>Специализация</th>
             <th>Время записи</th>
             <th>Дата записи</th>
-            <th>День</th>
+            <%--<th>День</th>--%>
             <th>Медицинский центр</th>
         </tr>
         <tr>
@@ -34,7 +34,7 @@
             <td><p><c:out value="${ticket.office}"></c:out></p></td>
             <td><p><c:out value="${ticket.specialization}"></c:out></p></td>
             <td><p><c:out value="${ticket.patientTime}"></c:out></p></td>
-            <td><p><c:out value="${ticket.patientDay}"></c:out></p></td>
+            <%--<td><p><c:out value="${ticket.patientDay}"></c:out></p></td>--%>
             <td><p><c:out value="${ticket.patientDate}"></c:out></p></td>
             <td><p><c:out value="${ticket.centerName}"></c:out></p></td>
         </tr>

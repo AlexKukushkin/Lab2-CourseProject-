@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
 
 public class TicketServlet extends HttpServlet {
     PatientService patientService = new PatientService();
@@ -20,7 +21,7 @@ public class TicketServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
-        Ticket ticket;
+        Ticket ticket = null;
 
         String time = req.getParameter("patientTime");
         String date = req.getParameter("patientDate");
@@ -29,7 +30,11 @@ public class TicketServlet extends HttpServlet {
         int idMedCenter = (Integer)req.getSession().getAttribute("idMedCenter");
         String specialization = (String)req.getSession().getAttribute("specialization");
 
-        ticket = patientService.getTicket(idPatient, idMedCenter, specialization, day, time, date);
+        try {
+            ticket = patientService.getTicket(idPatient, idMedCenter, specialization, time, date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         req.setAttribute("ticket", ticket);
         req.getRequestDispatcher("/get_ticket.jsp").forward(req, resp);
