@@ -14,13 +14,13 @@
     <table style="width:100%">
         <tr>
             <th>Логин</th>
-            <th>Пароль в MD5</th>
+            <%--<th>Пароль в MD5</th>--%>
             <th>Роль</th>
         </tr>
         <c:forEach items="${list}" var="item">
             <tr>
                 <td><p><c:out value="${item.login}"></c:out></p></td>
-                <td><p><c:out value="${item.password}"></c:out></p></td>
+                <%--<td><p><c:out value="${item.password}"></c:out></p></td>--%>
                 <td><p><c:out value="${item.role}"></c:out></p></td>
             </tr>
         </c:forEach>

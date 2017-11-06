@@ -21,13 +21,6 @@ public class MedCenter implements Serializable{
         this.locationName = locationName;
     }
 
-//    public MedCenter(String centerName, String regionName, String locationName) {
-//        this.idMedCenter = 0;
-//        this.centerName = centerName;
-//        this.regionName = regionName;
-//        this.locationName = locationName;
-//    }
-
     public int getIdMedCenter() {
         return idMedCenter;
     }

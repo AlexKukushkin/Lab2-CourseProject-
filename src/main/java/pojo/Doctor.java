@@ -130,9 +130,4 @@ public class Doctor extends User implements Serializable {
     public int getMedCenterID() {
         return medCenterID;
     }
-
-    @XmlElement
-    public void setMedCenterID(int medCenterID) {
-        this.medCenterID = medCenterID;
-    }
 }

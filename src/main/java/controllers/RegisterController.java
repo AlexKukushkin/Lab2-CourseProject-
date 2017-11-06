@@ -49,12 +49,9 @@ public class RegisterController {
         Boolean registrationResult = registrationService.regUser(login, password);
         if (registrationResult) {
             registrationService.insertUser(login, password, userDTO);
-            request.getSession().setAttribute("isAuth", true);
-            request.getSession().setAttribute("role", "patient");
-            loginService.sortUser(request, response);
-            return "patient_main";
-        } else {
             return "redirect:/";
+        } else {
+            return "redirect:/logout";
         }
     }
 }

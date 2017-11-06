@@ -53,7 +53,6 @@ public class UserDAOImpl implements IUserDAO {
         int index = 0;
         logger.info("Log for get User identifier by login and password");
 
-
         try (Connection connection = manager.getConnection()){
             PreparedStatement statement = connection.prepareStatement("SELECT id FROM users WHERE login = ? AND password = ?");
 
@@ -68,27 +67,6 @@ public class UserDAOImpl implements IUserDAO {
         }
         return index;
     }
-
-//    public String getUserRole(String login, String password) {
-//        String role = "";
-//
-//        logger.info("Log for get User Role by login and password");
-//
-//        try (Connection connection = manager.getConnection()){
-//            PreparedStatement statement = connection
-//                    .prepareStatement("SELECT role FROM users WHERE login = ? AND password = ?");
-//
-//            statement.setString(1, login);
-//            statement.setString(2, password);
-//            ResultSet resultSet;
-//            resultSet = statement.executeQuery();
-//            resultSet.next();
-//            role = resultSet.getString("role");
-//        } catch (SQLException e) {
-//            logger.error("This is Error : " + e.getMessage());
-//        }
-//        return role;
-//    }
 
     @Override
     public Boolean createUser(User user) {

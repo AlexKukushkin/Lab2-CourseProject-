@@ -12,12 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import pojo.Doctor;
-import pojo.MedCenter;
-import pojo.Patient;
-import pojo.Ticket;
+import pojo.*;
 import services.patient_services.PatientService;
 
+import javax.jws.WebParam;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -92,9 +90,14 @@ public class PatientController {
         return "patient_doctor_schedule";
     }
 
-    @RequestMapping(value = "/patient_main/patient_doctor_schedule2", method = RequestMethod.POST)
-    public String getDoctorList2() {
-        return "patient_doctor_schedule2";
+    @RequestMapping(value = "/patient_main/patient_doctor_schedule_2", method = RequestMethod.POST)
+    public ModelAndView getDoctorList2(HttpServletRequest request) throws IOException, ServletException {
+        ModelAndView modelAndView = new ModelAndView("patient_doctor_schedule_2");
+        Calendar calendar;
+
+        calendar = patientService.patientGetDoctorSchedule(request.getParameter("familyName"));
+        modelAndView.getModel().put("item", calendar);
+        return modelAndView;
     }
 
     @RequestMapping(value = "/patient_main/patient_info", method = RequestMethod.POST)
@@ -119,7 +122,7 @@ public class PatientController {
         List<Ticket> tickets;
         int userId;
 
-        userId = (Integer)request.getSession().getAttribute("userID");
+        userId = (Integer) request.getSession().getAttribute("userID");
         tickets = patientService.getPatientTicketList(userId);
 
         modelAndView.getModel().put("ticket_list", tickets);
@@ -237,11 +240,10 @@ public class PatientController {
     @RequestMapping(value = "/patient_main/get_ticket", method = RequestMethod.POST)
     public ModelAndView doPostTicket(HttpServletRequest request) throws ParseException {
         Ticket ticket;
-
         ModelAndView modelAndView = new ModelAndView("get_ticket");
+
         String time = request.getParameter("timevar");
         String date = request.getParameter("patientDate");
-//        String day = request.getParameter("patientDay");
         int idPatient = (Integer) request.getSession().getAttribute("patientID");
         int idMedCenter = (Integer) request.getSession().getAttribute("idMedCenter");
         String specialization = (String) request.getSession().getAttribute("specialization");
@@ -264,6 +266,4 @@ public class PatientController {
         modelAndView.getModel().put("tickets", tickets);
         return modelAndView;
     }
-
-
 }

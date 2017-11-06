@@ -22,7 +22,7 @@ public class LoginService {
         this.patientDAO = patientDAO;
     }
 
-    public void sortUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String sortUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         HttpSession currentSession = request.getSession();
         Boolean isAuth = (Boolean) currentSession.getAttribute("isAuth");
@@ -58,20 +58,16 @@ public class LoginService {
             currentSession.setAttribute("role", role);
             switch (role) {
                 case "admin":
-                    response.sendRedirect("/web/admin_main");
-                    break;
+                    return "redirect:/admin_main";
                 case "doctor":
-                    response.sendRedirect("/web/doctor_main");
-                    break;
+                    return "redirect:/doctor_main";
                 case "patient":
-                    response.sendRedirect("/web/patient_main");
-                    break;
+                    return "redirect:/patient_main";
                 default:
-                    response.sendRedirect("/web");
+                    return "redirect:/";
             }
         } else {
-//            currentSession.setAttribute("isAuth", false);
-            response.sendRedirect("/web");
+            return "redirect:/";
         }
     }
 }

@@ -57,7 +57,7 @@
                       value="<c:out value="${patient.patronymic}"></c:out>"/></p>
         </td>
         <td>
-            <p><input type="text" name="birth_date" size="10" value="<c:out value="${patient.birthDate}"></c:out>"/>
+            <p><input type="text" name="birthDate" size="10" value="<c:out value="${patient.birthDate}"></c:out>"/>
             </p>
         </td>
         <td>

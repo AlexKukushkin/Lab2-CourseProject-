@@ -68,7 +68,6 @@ public class PatientService {
     }
 
     public List<DoctorDTO> getDoctorsForTicket(int idMedCenter, String specialization){
-//        DoctorDAO doctorDAO = new DoctorDAO();
         List<DoctorDTO> doctors = new ArrayList<>();
 
         try {
@@ -103,7 +102,6 @@ public class PatientService {
     }
 
     public List<String> getDoctorSpecialization(int idMedCenter){
-//        DoctorDAO doctorDAO = new DoctorDAO();
         List<String> specializations = new ArrayList<>();
 
         try {
@@ -125,7 +123,6 @@ public class PatientService {
     }
 
     public int getPatientId(int userId) throws PatientDAO.PatientDAOException {
-//        PatientDAO patientDAO = new PatientDAO();
         int patientId;
 
         patientId = patientDAO.getPatientID(Integer.valueOf(userId));
@@ -134,7 +131,6 @@ public class PatientService {
     }
 
     public Patient getPatientByID(int patientId){
-//        PatientDAO patientDAO = new PatientDAO();
         Patient patient = new Patient();
 
         try {
@@ -148,8 +144,6 @@ public class PatientService {
     public void savePatient(int idPatient, String firstName, String familyName, String patronymic,
                             String birthDate, String passport, String SNILS, String medPolis,
                             String registerLocation, String homeLocation, String sexType){
-//        PatientDAO patientDAO = new PatientDAO();
-
         try {
             patientDAO.update(new Patient(idPatient, firstName, familyName, patronymic, birthDate,
                     passport, SNILS, medPolis, registerLocation, homeLocation, sexType));

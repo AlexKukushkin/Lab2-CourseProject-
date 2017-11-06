@@ -91,20 +91,6 @@ public class MedCenterDAO implements IAbstractDAO <MedCenter>{
     @Override
     public void updateAll(List<MedCenter> medCenterList) throws MedCenterDAOException {
 
-        try {
-            PreparedStatement statement = getUpdateStatement();
-            for (MedCenter medCenter : medCenterList) {
-                statement.setInt(1, medCenter.getIdMedCenter());
-                statement.setString(2, medCenter.getCenterName());
-                statement.setString(3, medCenter.getRegionName());
-                statement.setString(4, medCenter.getLocationName());
-                statement.addBatch();
-            }
-            statement.executeBatch();
-        } catch (SQLException e) {
-            logger.error("This is Error : " + e.getMessage());
-            throw new MedCenterDAOException();
-        }
     }
 
     @Override

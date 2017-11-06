@@ -10,7 +10,6 @@ public class Ticket implements Serializable {
     private int idPatient;
     private int idDoctor;
     private int idMedCenter;
-//    private String patientDay;
     private String patientTime;
     private String patientDate;
 
@@ -32,7 +31,6 @@ public class Ticket implements Serializable {
         this.doctorFIO = doctorFIO;
         this.office = office;
         this.specialization = specialization;
-//        this.patientDay = patientDay;
         this.patientTime = patientTime;
         this.patientDate = patientDate;
         this.centerName = centerName;
@@ -46,7 +44,6 @@ public class Ticket implements Serializable {
         this.idPatient = idPatient;
         this.idDoctor = idDoctor;
         this.idMedCenter = idMedCenter;
-//        this.patientDay = patientDay;
         this.patientTime = patientTime;
         this.patientDate = patientDate;
     }
@@ -55,7 +52,6 @@ public class Ticket implements Serializable {
         this.idPatient = idPatient;
         this.idDoctor = idDoctor;
         this.idMedCenter = idMedCenter;
-//        this.patientDay = patientDay;
         this.patientTime = patientTime;
         this.patientDate = patientDate;
     }

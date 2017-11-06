@@ -13,7 +13,6 @@ import java.util.List;
 @Repository
 public class CalendarDAO implements IAbstractDAO<Calendar> {
     public static class CalendarDAOException extends Exception {
-
     }
 
     private static IConnectionManager manager;
@@ -144,33 +143,14 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
             statement.setString(9, calendar.getSunDay());
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new CalendarDAOException();
         }
     }
 
     @Override
-    public void updateAll(List<Calendar> calendarList) throws CalendarDAOException {
+    public void updateAll(List<Calendar> calendars) throws Exception {
 
-        try { // todo remove connection
-            PreparedStatement statement = getUpdateStatement();
-            for (Calendar calendar : calendarList) {
-                statement.setInt(1, calendar.getIdCalendar());
-                statement.setInt(2, calendar.getIdDoctor());
-                statement.setString(3, calendar.getMonDay());
-                statement.setString(4, calendar.getTuesDay());
-                statement.setString(5, calendar.getWednesDay());
-                statement.setString(6, calendar.getThursDay());
-                statement.setString(7, calendar.getFriDay());
-                statement.setString(8, calendar.getSaturDay());
-                statement.setString(9, calendar.getSunDay());
-                statement.addBatch();
-            }
-            statement.executeBatch();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new CalendarDAOException();
-        }
     }
 
     @Override
@@ -182,7 +162,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
             statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new CalendarDAOException();
         }
     }
@@ -210,7 +190,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
             statement.setString(9, calendar.getSunDay());
             statement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new CalendarDAOException();
         }
 
@@ -218,7 +198,6 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
 
     @Override
     public void insertAll(List<Calendar> calendarList) throws CalendarDAOException {
-
         try {
             PreparedStatement statement = getInsertStatement();
             for (Calendar calendar : calendarList) {
@@ -235,7 +214,7 @@ public class CalendarDAO implements IAbstractDAO<Calendar> {
             }
             statement.executeBatch();
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("This is Error : " + e.getMessage());
             throw new CalendarDAOException();
         }
     }

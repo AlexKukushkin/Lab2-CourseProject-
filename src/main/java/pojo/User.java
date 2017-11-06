@@ -2,7 +2,7 @@ package pojo;
 
 import javax.xml.bind.annotation.XmlElement;
 
-public class User { // todo Дробавить id
+public class User {
     private String login;
     private String password;
     private String role;

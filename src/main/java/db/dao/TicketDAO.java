@@ -50,7 +50,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
                         resultSet.getString("office"),
                         resultSet.getString("specialization"),
                         resultSet.getString("time_patient"),
-//                        resultSet.getString("day_patient"),
                         resultSet.getString("date_patient"),
                         resultSet.getString("medcenter_name"));
                 ticketList.add(ticket);
@@ -80,7 +79,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             statement.setInt(1, idDoctor);
             statement.setInt(2, idMedCenter);
             statement.setString(3, specialization);
-//            statement.setString(4, date);
             statement.setDate(4, Date.valueOf(date));
 
             ResultSet resultSet = statement.executeQuery();
@@ -119,7 +117,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
                         resultSet.getInt("doctor_id"),
                         resultSet.getInt("medcenter_id"),
                         resultSet.getString("date_patient"),
-//                        resultSet.getString("day_patient"),
                         resultSet.getString("time_patient"));
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
@@ -149,7 +146,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
                         resultSet.getString("office"),
                         resultSet.getString("specialization"),
                         resultSet.getString("time_patient"),
-//                        resultSet.getString("day_patient"),
                         resultSet.getString("date_patient"),
                         resultSet.getString("medcenter_name"));
                 ticketList.add(ticket);
@@ -164,7 +160,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
     public Ticket getTicket(int id, int idDoctor, int idMedCenter, String time, String date) throws TicketDAOException, ParseException {
         logger.info("Log for getAll Tickets");
-//        Ticket ticket = new Ticket();
 
         try (Connection connection = manager.getConnection()){
             PreparedStatement statement = connection.prepareStatement("SELECT tk.id_ticket, pt.first_name, pt.family_name, pt.patronymic, \n" +
@@ -181,9 +176,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             statement.setInt(2, idDoctor);
             statement.setInt(3, idMedCenter);
             statement.setString(4, time);
-//            statement.setDate(5, Date.valueOf(date));
             statement.setDate(5, new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd").parse(date).getTime()));
-
 
             ResultSet resultSet = statement.executeQuery();
             resultSet.next();
@@ -196,7 +189,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
                         resultSet.getString("office"),
                         resultSet.getString("specialization"),
                         resultSet.getString("time_patient"),
-//                        resultSet.getString("day_patient"),
                         resultSet.getString("date_patient"),
                         resultSet.getString("medcenter_name"));
 
@@ -221,7 +213,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             statement.setInt(1, ticket.getIdTicket());
             statement.setString(2, ticket.getPatientTime());
             statement.setString(3, ticket.getPatientDate());
-//            statement.setString(4, ticket.getPatientDay());
             statement.setInt(5, ticket.getIdPatient());
             statement.setInt(6, ticket.getIdDoctor());
             statement.setInt(7, ticket.getIdMedCenter());
@@ -241,7 +232,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
                 statement.setInt(1, ticket.getIdTicket());
                 statement.setString(2, ticket.getPatientTime());
                 statement.setString(3, ticket.getPatientDate());
-//                statement.setString(4, ticket.getPatientDay());
                 statement.setInt(5, ticket.getIdPatient());
                 statement.setInt(6, ticket.getIdDoctor());
                 statement.setInt(7, ticket.getIdMedCenter());
@@ -256,7 +246,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
 
     @Override
     public void deleteByID(int id) throws TicketDAOException {
-        PreparedStatement statement = null;
+        PreparedStatement statement;
         try (Connection connection = manager.getConnection()) {
             statement = connection.prepareStatement(
                     "DELETE ticket WHERE id_ticket = ? ");
@@ -280,9 +270,7 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         try {
             PreparedStatement statement = getInsertStatement();
             statement.setString(1, ticket.getPatientTime());
-//            statement.setDate(2, Date.valueOf(ticket.getPatientDate()));
             statement.setDate(2, new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd").parse(ticket.getPatientDate()).getTime()));
-//            statement.setString(3, ticket.getPatientDay());
             statement.setInt(3, ticket.getIdPatient());
             statement.setInt(4, ticket.getIdDoctor());
             statement.setInt(5, ticket.getIdMedCenter());
@@ -290,9 +278,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
         } catch (SQLException e) {
             logger.error("This is Error : " + e.getMessage());
             throw new TicketDAOException();
-//        } catch (ParseException e) {
-//            logger.error("This is Error : " + e.getMessage());
-//        }
         }
     }
 
@@ -304,7 +289,6 @@ public class TicketDAO implements IAbstractDAO <Ticket> {
             for (Ticket ticket : ticketList) {
                 statement.setInt(1, ticket.getIdTicket());
                 statement.setString(2, ticket.getPatientTime());
-//                statement.setString(4, ticket.getPatientDay());
                 statement.setDate(3, new java.sql.Date(new SimpleDateFormat("yyyy-mm-dd").parse(ticket.getPatientDate()).getTime()));
                 statement.setInt(5, ticket.getIdPatient());
                 statement.setInt(6, ticket.getIdDoctor());

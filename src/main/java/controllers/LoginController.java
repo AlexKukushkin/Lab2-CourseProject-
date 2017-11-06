@@ -21,8 +21,8 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/auth", method = RequestMethod.POST)
-    public void doAuth(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        loginService.sortUser(request, response);
+    public String doAuth(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        return loginService.sortUser(request, response);
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)

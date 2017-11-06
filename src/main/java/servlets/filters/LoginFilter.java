@@ -24,7 +24,6 @@ public class LoginFilter implements Filter {
             chain.doFilter(request, response);
         } else {
             ((HttpServletResponse) response).sendRedirect("/web/auth");
-//            request.getRequestDispatcher("/index.jsp").forward(request, response);
         }
     }
 
